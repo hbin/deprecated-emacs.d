@@ -1,0 +1,12 @@
+# Ignore temperate.
+tmp/*
+!tmp/.gitkeep
+
+# Ignore auto save files.
+auto-save-list/
+
+# Ignore eshell
+eshell/
+
+# Helm Google cache
+url/

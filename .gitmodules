@@ -1,0 +1,87 @@
+[submodule "snippets"]
+	path = snippets
+	url = git@github.com:hbin/snippets.git
+[submodule "utils/rsense"]
+	path = utils/rsense
+	url = git@github.com:hbin/rsense.git
+[submodule "vendor/color-theme"]
+	path = vendor/color-theme
+	url = git://github.com/haxney/color-theme.git
+[submodule "themes/solarized"]
+	path = themes/solarized
+	url = git://github.com/sellout/emacs-color-theme-solarized.git
+[submodule "vendor/auto-complete"]
+	path = vendor/auto-complete
+	url = git://github.com/m2ym/auto-complete.git
+[submodule "vendor/fuzzy"]
+	path = vendor/fuzzy
+	url = git://github.com/m2ym/fuzzy-el.git
+[submodule "vendor/popup"]
+	path = vendor/popup
+	url = git://github.com/m2ym/popup-el.git
+[submodule "vendor/magit"]
+	path = vendor/magit
+	url = git://github.com/magit/magit.git
+[submodule "vendor/helm"]
+	path = vendor/helm
+	url = git://github.com/emacs-helm/helm.git
+[submodule "vendor/markdown-mode"]
+	path = vendor/markdown-mode
+	url = git://github.com/defunkt/markdown-mode.git
+[submodule "vendor/paredit"]
+	path = vendor/paredit
+	url = git://github.com/emacsmirror/paredit.git
+[submodule "vendor/projectile"]
+	path = vendor/projectile
+	url = git://github.com/bbatsov/projectile.git
+[submodule "vendor/rainbow-delimiters"]
+	path = vendor/rainbow-delimiters
+	url = git://github.com/jlr/rainbow-delimiters.git
+[submodule "vendor/idle-highlight"]
+	path = vendor/idle-highlight
+	url = git://github.com/nonsequitur/idle-highlight-mode.git
+[submodule "vendor/volatile-highlights"]
+	path = vendor/volatile-highlights
+	url = git@github.com:hbin/volatile-highlights.el.git
+[submodule "vendor/rinari"]
+	path = vendor/rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule "vendor/ruby-end"]
+	path = vendor/ruby-end
+	url = git://github.com/rejeep/ruby-end.git
+[submodule "vendor/ruby-block"]
+	path = vendor/ruby-block
+	url = git://github.com/emacsmirror/ruby-block.git
+[submodule "vendor/rvm"]
+	path = vendor/rvm
+	url = git://github.com/senny/rvm.el.git
+[submodule "vendor/yari"]
+	path = vendor/yari
+	url = git@github.com:hbin/yari.el.git
+[submodule "vendor/yasnippet"]
+	path = vendor/yasnippet
+	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "vendor/yaml-mode"]
+	path = vendor/yaml-mode
+	url = git://github.com/yoshiki/yaml-mode.git
+[submodule "vendor/haml-mode"]
+	path = vendor/haml-mode
+	url = git://github.com/nex3/haml-mode.git
+[submodule "vendor/slim-mode"]
+	path = vendor/slim-mode
+	url = git://github.com/minad/emacs-slim.git
+[submodule "vendor/rhtml-mode"]
+	path = vendor/rhtml-mode
+	url = git://github.com/eschulte/rhtml.git
+[submodule "vendor/rspec-mode"]
+	path = vendor/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git
+[submodule "vendor/js2-mode"]
+	path = vendor/js2-mode
+	url = git://github.com/mooz/js2-mode.git
+[submodule "vendor/coffee-mode"]
+	path = vendor/coffee-mode
+	url = git://github.com/defunkt/coffee-mode.git
+[submodule "vendor/nxhtml-mode"]
+	path = vendor/nxhtml-mode
+	url = git://github.com/emacsmirror/nxhtml.git
