@@ -85,3 +85,6 @@
 [submodule "vendor/nxhtml-mode"]
 	path = vendor/nxhtml-mode
 	url = git://github.com/emacsmirror/nxhtml.git
+[submodule "vendor/autopair"]
+	path = vendor/autopair
+	url = git://github.com/emacsmirror/autopair.git

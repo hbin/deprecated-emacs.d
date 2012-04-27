@@ -301,6 +301,14 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (volatile-highlights-mode t))
 
+(defun turn-on-auto-pair-mode ()
+  (interactive)
+  (autopair-mode))
+
+(defun turn-off-auto-pair-mode ()
+  (interactive)
+  (setq autopair-dont-activate t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'hbin-defuns)

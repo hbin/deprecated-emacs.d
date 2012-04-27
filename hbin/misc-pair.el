@@ -25,10 +25,20 @@
 ;;; Code:
 
 ;; smart indenting and pairing for all
-(when (>= emacs-major-version 24)
-  (electric-pair-mode t)
-  (electric-indent-mode t)
-  (electric-layout-mode t))
+;; (when (>= emacs-major-version 24)
+;;   (electric-pair-mode t)
+;;   (electric-indent-mode t)
+;;   (electric-layout-mode t))
+
+;; Auto Pair
+(require 'autopair)
+(if (>= emacs-major-version 24)
+    (progn
+      (add-hook 'prog-mode-hook 'turn-on-auto-pair-mode))
+  (progn
+    (autopair-global-mode)
+    (add-hook 'text-mode-hook 'turn-off-auto-pair-mode)
+    (add-hook 'message-mode-hook 'turn-off-auto-pair-mode)))
 
 ;; ParEdit 自动补全括号(更强大)
 (autoload 'paredit-mode "paredit"
