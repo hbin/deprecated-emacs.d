@@ -32,6 +32,7 @@
 (require 'projectile)                    ; Fast navigation in a project
 (require 'helm-config)                   ; Life changing extension
 (require 'expand-region)                 ; Amazing expand-region
+(require 'ace-jump-mode)                 ; A quick cursor location minor mode
 
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete

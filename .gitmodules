@@ -91,3 +91,6 @@
 [submodule "vendor/expand-region"]
 	path = vendor/expand-region
 	url = git://github.com/magnars/expand-region.el.git
+[submodule "vendor/ace-jump"]
+	path = vendor/ace-jump
+	url = git://github.com/winterTTr/ace-jump-mode.git

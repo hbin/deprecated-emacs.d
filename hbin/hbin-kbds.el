@@ -52,6 +52,12 @@
 (global-set-key (kbd "<M-up>") 'move-line-up)
 (global-set-key (kbd "<M-down>") 'move-line-down)
 
+;; Quick cursor location
+(global-set-key (kbd "M-i") 'ace-jump-mode)
+
+;; Amazing expand-region
+(global-set-key (kbd "M-h") 'er/expand-region)
+
 ;; Delete(kill) forward/backward as what I mean.
 (global-set-key (kbd "M-d") 'kill-space-or-word-forward-dwim)
 (global-set-key (kbd "C-M-h") 'kill-space-or-word-backward-dwim)
@@ -83,9 +89,6 @@
 (global-set-key (kbd "C-x C-o") 'helm-occur)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
-
-;;; Amazing expand-region
-(global-set-key (kbd "M-h") 'er/expand-region)
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
