@@ -84,6 +84,9 @@
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 (global-set-key (kbd "C-c C-f") 'helm-find-files)
 
+;;; Amazing expand-region
+(global-set-key (kbd "M-h") 'er/expand-region)
+
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
 (global-set-key (kbd "M-k") 'kill-this-buffer)
