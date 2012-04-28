@@ -27,10 +27,21 @@
 (require 'rainbow-delimiters)          ; highlights parentheses, brackets, and braces according to their depth.
 (require 'idle-highlight-mode)         ; 高亮 Buffer 中所有与光标所在单词相同的内容
 
-(add-hook 'prog-mode-hook 'turn-on-watchwords)
-(add-hook 'prog-mode-hook 'turn-on-projectile-mode)
-;; (add-hook 'prog-mode-hook 'turn-on-idle-highlight-mode)
-(add-hook 'prog-mode-hook 'turn-on-rainbow-delimiters-mode)
+(defun hbin-prog-hook ()
+  (turn-on-watchwords)
+  (turn-on-projectile-mode)
+  ;; (turn-on-idle-highlight-mode)
+  (turn-on-rainbow-delimiters-mode))
+
+(mapc (lambda (mode-hook) (add-hook mode-hook 'hbin-prog-hook))
+      '(prog-mode-hook
+        c-mode-common-hook
+        java-mode-hook
+        js-mode-hook js2-mode-hook
+        css-mode-hook sass-mode-hook
+        ruby-mode-hook rinari-minor-mode-hook
+        python-mode-hook
+        emacs-lisp-mode-hook))
 
 ;;;;;;;  Enhanced programming languages
 

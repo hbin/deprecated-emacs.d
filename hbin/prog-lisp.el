@@ -26,7 +26,6 @@
 
 ;;;###autoload
 (progn
-  (add-hook 'lisp-interaction-mode (run-hooks 'prog-mode-hook))
   )
 
 (provide 'prog-lisp)
