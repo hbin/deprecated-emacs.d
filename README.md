@@ -44,10 +44,19 @@ for a trouble check list.
 
 #### 3. No Rsense
 
-If you don't like Rsense. You can just only comment follow lines in hbin/ruby-config.el
+If you don't like Rsense. You can comment following lines in hbin/ruby-config.el
 
-```bash
-$ (define-key ruby-mode-map (kbd "M-/") 'ac-complete-rsense)
+```lisp
+(setq rsense-home (expand-file-name (concat utils-dir "rsense")))
+(add-to-list 'load-path (concat (concat utils-dir "rsense") "/etc"))
+(require 'rsense)
+```
+
+and conmment following snippets in hbin/misc-ac.el
+
+```lisp
+ac-source-rsense-method
+ac-source-rsense-constant
 ```
 
 ### Bugs & Improvements
