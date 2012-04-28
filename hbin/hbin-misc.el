@@ -30,7 +30,8 @@
 
 (require 'midnight)                      ; 自动清除 buffers
 (require 'projectile)                    ; Fast navigation in a project
-(require 'helm-config)                   ; life Changing extension
+(require 'helm-config)                   ; Life changing extension
+(require 'expand-region)                 ; Amazing expand-region
 
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
