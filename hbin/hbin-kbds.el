@@ -43,10 +43,10 @@
 (global-set-key (kbd "C-M-o") 'open-previous-line)
 
 ;; Vim like scroll up/down by line/page
-(global-set-key (kbd "C-v") 'scroll-up-line)
-(global-set-key (kbd "M-v") 'scroll-down-line)
-(global-set-key (kbd "M-V") 'scroll-down-command)
-(global-set-key (kbd "C-S-V") 'scroll-up-command)
+(global-set-key (kbd "C-v") 'hbin-scroll-up-line)
+(global-set-key (kbd "M-v") 'hbin-scroll-down-line)
+(global-set-key (kbd "M-V") 'scroll-down)
+(global-set-key (kbd "C-S-V") 'scroll-up)
 
 ;; Move current line one line up/down
 (global-set-key (kbd "<M-up>") 'move-line-up)

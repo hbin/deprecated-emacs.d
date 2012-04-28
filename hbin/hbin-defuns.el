@@ -187,6 +187,16 @@ otherwise, delete the number of arg of words backword."
       (untabify (point-min) (point-max))
       (message "Clean buffer done."))))
 
+(defun hbin-scroll-up-line ()
+  "Compatible with Emacs 23, same as scroll-up-line in Emacs 24."
+  (interactive)
+  (scroll-up 1))
+
+(defun hbin-scroll-down-line ()
+  "Compatible with Emacs 23, same as scroll-down-lin in Emacs 24."
+  (interactive)
+  (scroll-down 1))
+
 (defun comment-or-uncomment-region-or-line ()
   "comment or uncomment a region if selected, otherwise the current line."
   (interactive)
