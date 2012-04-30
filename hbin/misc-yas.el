@@ -31,11 +31,26 @@
 (require 'yasnippet)
 (require 'dropdown-list)
 
-(yas/initialize)
-
 (setq yas/prompt-functions '(yas/dropdown-prompt
                              yas/ido-prompt
                              yas/completing-prompt))
+
+;; Explicitly set key of snippets
+(setq yas/ignore-filenames-as-triggers t)
+
+;; Personal snippets
+(setq-default yas/snippet-dirs (concat user-emacs-directory "snippets"))
+
+;; Load the snippets
+(yas/load-directory yas/root-directory)
+
+;; When entering rinari-minor-mode, consider also the snippets in the
+;; snippet table "rails-mode"
+(add-hook 'rinari-minor-mode-hook
+          #'(lambda ()
+              (setq yas/mode-symbol 'rails-mode)))
+
+(yas/initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
