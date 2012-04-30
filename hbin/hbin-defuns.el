@@ -299,10 +299,6 @@ there's a region, all lines that region covers will be duplicated."
 (defun turn-on-projectile-mode ()
   (projectile-mode t))
 
-(defun turn-on-idle-highlight-mode ()
-  (interactive)
-  (idle-highlight-mode t))
-
 (defun turn-on-rainbow-delimiters-mode ()
   (interactive)
   (rainbow-delimiters-mode t))
