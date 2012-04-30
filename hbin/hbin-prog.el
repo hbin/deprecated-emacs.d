@@ -28,6 +28,7 @@
 (require 'idle-highlight-mode)         ; 高亮 Buffer 中所有与光标所在单词相同的内容
 
 (defun hbin-prog-hook ()
+  (turn-on-linum-mode)
   (turn-on-watchwords)
   (turn-on-projectile-mode)
   ;; (turn-on-idle-highlight-mode)

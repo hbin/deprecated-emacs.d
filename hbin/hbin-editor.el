@@ -35,8 +35,8 @@
 (global-auto-revert-mode t)              ; 当 Buffer 访问的文件修改时，自动更新 Buffer 中的内容
 (delete-selection-mode t)                ; 有选择域时，先删除再插入
 
-;; (require 'linum)
-;; (global-linum-mode t)                 ; 用 linum 显示行号
+(require 'linum)
+(setq linum-format "%3d")                ; 自定义等号格式
 
 (show-paren-mode t)                      ; 显示匹配括号
 (setq show-paren-delay 0)                ; 匹配无延时

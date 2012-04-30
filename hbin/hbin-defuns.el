@@ -319,6 +319,10 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (setq autopair-dont-activate t))
 
+(defun turn-on-linum-mode ()
+  (interactive)
+  (linum-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'hbin-defuns)
