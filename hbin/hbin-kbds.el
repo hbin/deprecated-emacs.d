@@ -82,9 +82,17 @@
 (global-set-key (kbd "M-[") 'previous-buffer)
 
 ;; Highlight symbols with different colors
-(global-set-key (kbd "C-M-\\") 'highlight-symbol-at-point)
+(global-set-key (kbd "M-\\") 'highlight-symbol-at-point)
 (global-set-key (kbd "C-\\") 'highlight-symbol-next)
-(global-set-key (kbd "M-\\") 'highlight-symbol-prev)
+(global-set-key (kbd "C-M-\\") 'highlight-symbol-prev)
+
+;; Use regex searches by default.
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "\C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "M-%") 'query-replace-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-M-%") 'query-replace)
 
 ;;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
