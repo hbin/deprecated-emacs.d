@@ -291,31 +291,29 @@ there's a region, all lines that region covers will be duplicated."
 
 ;;;;;;; Switch functions used for hooks
 
-(defun turn-on-watchwords ()
+(defun toggle-watchwords ()
+  (interactive)
   (font-lock-add-keywords
    nil '(("\\<\\(FIX\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
           1 font-lock-warning-face t))))
 
-(defun turn-on-projectile-mode ()
-  (projectile-mode t))
-
-(defun turn-on-rainbow-delimiters-mode ()
+(defun toggle-projectile-mode ()
   (interactive)
-  (rainbow-delimiters-mode t))
+  (projectile-mode))
 
-(defun turn-on-volatile-highlights-mode ()
+(defun toggle-rainbow-delimiters-mode ()
   (interactive)
-  (volatile-highlights-mode t))
+  (rainbow-delimiters-mode))
 
-(defun turn-on-auto-pair-mode ()
+(defun toggle-volatile-highlights-mode ()
+  (interactive)
+  (volatile-highlights-mode))
+
+(defun toggle-auto-pair-mode ()
   (interactive)
   (autopair-mode))
 
-(defun turn-off-auto-pair-mode ()
-  (interactive)
-  (setq autopair-dont-activate t))
-
-(defun turn-on-linum-mode ()
+(defun toggle-linum-mode ()
   (interactive)
   (linum-mode))
 

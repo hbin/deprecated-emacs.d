@@ -27,19 +27,20 @@
 (require 'rainbow-delimiters)          ; highlights parentheses, brackets, and braces according to their depth.
 
 (defun hbin-prog-hook ()
-  (turn-on-linum-mode)
-  (turn-on-watchwords)
-  (turn-on-projectile-mode)
-  (turn-on-rainbow-delimiters-mode))
+  (toggle-linum-mode)
+  (toggle-watchwords)
+  (toggle-projectile-mode)
+  (toggle-rainbow-delimiters-mode))
 
 (mapc (lambda (mode-hook) (add-hook mode-hook 'hbin-prog-hook))
       '(prog-mode-hook
         c-mode-common-hook
+        python-mode-hook
         java-mode-hook
         js-mode-hook js2-mode-hook
         css-mode-hook sass-mode-hook
         ruby-mode-hook rinari-minor-mode-hook
-        python-mode-hook
+        lisp-interaction-mode-hook
         emacs-lisp-mode-hook))
 
 ;;;;;;;  Enhanced programming languages

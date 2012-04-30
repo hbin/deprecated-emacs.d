@@ -26,7 +26,7 @@
 
 ;;;;;;; Here are for trickers
 (require 'volatile-highlights)           ; 高亮 Yank 出来的内容
-(turn-on-volatile-highlights-mode)       ; should before helm
+(toggle-volatile-highlights-mode)        ; should before helm
 
 (require 'midnight)                      ; 自动清除 buffers
 (require 'projectile)                    ; Fast navigation in a project
