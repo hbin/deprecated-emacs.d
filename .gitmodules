@@ -1,6 +1,6 @@
 [submodule "snippets"]
 	path = snippets
-	url = git@github.com:hbin/snippets.git
+	url = git@github.com:hbin/yasnippets-hbin.git
 [submodule "utils/rsense"]
 	path = utils/rsense
 	url = git@github.com:hbin/rsense.git
