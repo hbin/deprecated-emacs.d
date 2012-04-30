@@ -33,6 +33,7 @@
 (require 'helm-config)                   ; Life changing extension
 (require 'expand-region)                 ; Amazing expand-region
 (require 'ace-jump-mode)                 ; A quick cursor location minor mode
+(require 'highlight-symbol)              ; Highlight symbols with different colors.
 
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
@@ -43,7 +44,6 @@
 (require 'misc-eshell)                   ; Eshell
 (require 'misc-ispell)                   ; Spell check
 (require 'misc-ibuffer)                  ; Nice Ibuffer
-(require 'misc-smart-go)                 ; Vim like */#
 
 ;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
 (when (string= system-type "Darwin")

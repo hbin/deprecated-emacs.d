@@ -94,3 +94,6 @@
 [submodule "vendor/ace-jump"]
 	path = vendor/ace-jump
 	url = git://github.com/winterTTr/ace-jump-mode.git
+[submodule "vendor/highlight-symbol"]
+	path = vendor/highlight-symbol
+	url = git://github.com/nschum/highlight-symbol.el.git

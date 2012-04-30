@@ -81,6 +81,11 @@
 (global-set-key (kbd "M-]") 'next-buffer)
 (global-set-key (kbd "M-[") 'previous-buffer)
 
+;; Highlight symbols with different colors
+(global-set-key (kbd "C-M-\\") 'highlight-symbol-at-point)
+(global-set-key (kbd "C-\\") 'highlight-symbol-next)
+(global-set-key (kbd "M-\\") 'highlight-symbol-prev)
+
 ;;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini) ; better than helm-buffers-list
