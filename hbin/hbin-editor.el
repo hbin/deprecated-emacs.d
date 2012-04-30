@@ -36,7 +36,7 @@
 (delete-selection-mode t)                ; 有选择域时，先删除再插入
 
 (require 'linum)
-(setq linum-format "%3d")                ; 自定义等号格式
+(setq linum-format "%3d ")               ; 自定义等号格式
 
 (show-paren-mode t)                      ; 显示匹配括号
 (setq show-paren-delay 0)                ; 匹配无延时
