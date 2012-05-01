@@ -30,7 +30,7 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tool-bar-mode -1)           ; 不需要工具栏
   (scroll-bar-mode -1)         ; 不需要滚动条
-  (set-fringe-mode '(4 . 1))   ; 小的 fringe 边距
+  (set-fringe-mode '(0 . 0))   ; 小的 fringe 边距
   (blink-cursor-mode -1)       ; 光标不闪
   (tooltip-mode -1)
   (mouse-wheel-mode t))
