@@ -305,10 +305,6 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (rainbow-delimiters-mode))
 
-(defun toggle-volatile-highlights-mode ()
-  (interactive)
-  (volatile-highlights-mode))
-
 (defun toggle-auto-pair-mode ()
   (interactive)
   (autopair-mode))

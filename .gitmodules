@@ -37,9 +37,6 @@
 [submodule "vendor/rainbow-delimiters"]
 	path = vendor/rainbow-delimiters
 	url = git://github.com/jlr/rainbow-delimiters.git
-[submodule "vendor/volatile-highlights"]
-	path = vendor/volatile-highlights
-	url = git@github.com:hbin/volatile-highlights.el.git
 [submodule "vendor/rinari"]
 	path = vendor/rinari
 	url = git://github.com/eschulte/rinari.git
