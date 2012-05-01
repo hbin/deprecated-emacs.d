@@ -44,12 +44,6 @@
 ;; Load the snippets
 (yas/load-directory yas/root-directory)
 
-;; When entering rinari-minor-mode, consider also the snippets in the
-;; snippet table "rails-mode"
-(add-hook 'rinari-minor-mode-hook
-          #'(lambda ()
-              (setq yas/mode-symbol 'rails-mode)))
-
 (yas/initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
