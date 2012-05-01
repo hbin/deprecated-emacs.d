@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(autoload 'yari-helm "yari" "View RDoc" t)
+(require 'yari)
 
 ;;;###autoload
 (progn
@@ -65,5 +65,11 @@
         (progn (insert " =>  ")
                (backward-char))
       (insert " => "))))
+
+;;;###autoload
+(defun yari-helm (&optional rehash)
+  (interactive (list current-prefix-arg))
+  (when current-prefix-arg (yari-ruby-obarray rehash))
+  (helm 'yari-anything-source-ri-pages (yari-symbol-at-point)))
 
 (provide 'prog-ruby)

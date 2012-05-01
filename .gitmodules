@@ -49,9 +49,6 @@
 [submodule "vendor/rvm"]
 	path = vendor/rvm
 	url = git://github.com/senny/rvm.el.git
-[submodule "vendor/yari"]
-	path = vendor/yari
-	url = git@github.com:hbin/yari.el.git
 [submodule "vendor/yasnippet"]
 	path = vendor/yasnippet
 	url = git://github.com/capitaomorte/yasnippet.git
@@ -91,3 +88,6 @@
 [submodule "vendor/highlight-symbol"]
 	path = vendor/highlight-symbol
 	url = git://github.com/nschum/highlight-symbol.el.git
+[submodule "vendor/yari"]
+	path = vendor/yari
+	url = git://github.com/hron/yari.el.git
