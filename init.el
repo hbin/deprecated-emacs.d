@@ -28,6 +28,7 @@
 ;; Who am I?
 (setq user-full-name "Huang Bin")
 (setq user-mail-address "embrace.hbin@gmail.com")
+(setq global-mode-string (message " - %s" user-full-name))
 
 ;; debug begin, show error stack trace.
 ;; (setq debug-on-error t)
