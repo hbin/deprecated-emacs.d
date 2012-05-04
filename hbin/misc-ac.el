@@ -33,14 +33,15 @@
 (setq ac-use-quick-help nil)                            ; 不需要 quick-help
 (setq ac-auto-show-menu nil)                            ; 取消默认弹出补全菜单
 (setq ac-menu-height 15)                                ; ....补全菜单长一点
-(setq ac-auto-start 3)                                  ; 输入 3 个字母开始补全
+(setq ac-auto-start nil)                                ; 不要自动补全
+(setq ac-trigger-key "TAB")                             ; 按下 TAB 后开始补全
 (setq ac-use-menu-map t)                                ; 当补全列表展开时...
 (define-key ac-menu-map (kbd "C-n") 'ac-next)           ; ...可以使用 C-n....
 (define-key ac-menu-map (kbd "C-p") 'ac-previous)       ; 和 C-p 上下移动待选项
 
 ;; Key bindings
 (define-key ac-completing-map (kbd "TAB") 'ac-complete) ; 使用 Tab 键补全
-(global-set-key (kbd "M-/") 'auto-complete)             ; 按 M-/ 弹出补全下拉菜单
+(define-key ac-mode-map (kbd "M-/") 'auto-complete)     ; 按 M-/ 弹出补全下拉菜单
 ;; (define-key ac-completing-map (kbd "RET") nil)       ; 当补全列表弹出时候，回车不补全
 
 ;; Workarounds
@@ -54,7 +55,6 @@
 (defun ac-emacs-lisp-mode-setup ()
   (setq ac-sources (append '(ac-source-features
                              ac-source-functions
-                             ac-source-yasnippet
                              ac-source-variables
                              ac-source-symbols) ac-sources)))
 
@@ -63,9 +63,7 @@
                              ac-source-gtags) ac-sources)))
 
 (defun ac-ruby-mode-setup ()
-  (setq ac-sources (append '(ac-source-rsense-method
-                             ac-source-rsense-constant
-                             ac-source-yasnippet
+  (setq ac-sources (append '(ac-source-rsense
                              ac-source-gtags) ac-sources)))
 
 (defun ac-css-mode-setup ()

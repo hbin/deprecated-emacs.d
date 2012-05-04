@@ -55,8 +55,7 @@ If you don't like Rsense. You can comment following lines in hbin/ruby-config.el
 and conmment following snippets in hbin/misc-ac.el
 
 ```lisp
-ac-source-rsense-method
-ac-source-rsense-constant
+ac-source-rsense
 ```
 
 ### Bugs & Improvements
