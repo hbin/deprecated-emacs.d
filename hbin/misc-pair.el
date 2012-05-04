@@ -34,15 +34,6 @@
 (require 'autopair)
 (setq autopair-blink nil)               ; paren-blinking annoying indeed
 
-(if (>= emacs-major-version 24)
-    (progn
-      (add-hook 'prog-mode-hook 'toggle-auto-pair-mode)
-      (add-hook 'lisp-interaction-mode-hook 'toggle-auto-pair-mode))
-  (progn
-    (autopair-global-mode)
-    (add-hook 'text-mode-hook 'toggle-auto-pair-mode)
-    (add-hook 'message-mode-hook 'toggle-auto-pair-mode)))
-
 ;; ParEdit 自动补全括号(更强大)
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code." t)

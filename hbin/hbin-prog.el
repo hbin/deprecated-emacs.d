@@ -27,10 +27,11 @@
 (require 'rainbow-delimiters)          ; highlights parentheses, brackets, and braces according to their depth.
 
 (defun hbin-prog-hook ()
-  (toggle-linum-mode)
-  (toggle-watchwords)
-  (toggle-projectile-mode)
-  (toggle-rainbow-delimiters-mode))
+  (turn-on-linum-mode)
+  (turn-on-watchwords)
+  (turn-on-autopair-mode)
+  (turn-on-projectile-mode)
+  (turn-on-rainbow-delimiters-mode))
 
 (mapc (lambda (mode-hook) (add-hook mode-hook 'hbin-prog-hook))
       '(prog-mode-hook
