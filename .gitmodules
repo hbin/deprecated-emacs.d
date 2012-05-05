@@ -91,3 +91,6 @@
 [submodule "vendor/yari"]
 	path = vendor/yari
 	url = git://github.com/hron/yari.el.git
+[submodule "vendor/zencoding"]
+	path = vendor/zencoding
+	url = git://github.com/rooney/zencoding.git

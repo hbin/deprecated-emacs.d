@@ -37,10 +37,14 @@
 ;; eye candy rainbow mode
 (autoload 'rainbow-mode "rainbow-mode" "Display color names with colored background" t)
 
+;; zencoding
+(autoload 'zencoding-mode "zencoding-mode" "a neat way to write html-like documents" t)
+
 ;;;###autoload
 (progn
   (add-hook 'css-mode-hook 'rainbow-mode)
   (add-hook 'sgml-mode-hook 'rainbow-mode)
+  (add-hook 'sgml-mode-hook 'zencoding-mode)
 
   (custom-set-variables '(js-indent-level 2))
   (custom-set-variables '(coffee-tab-width 2)))
