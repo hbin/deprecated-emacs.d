@@ -313,6 +313,10 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (linum-mode 1))
 
+(defun turn-on-hs-mode ()
+  (interactive)
+  (hs-minor-mode 1))
+
 ;; (defun hbin-toggle-mode (&optional arg)
 ;;   "toggle mode example"
 ;;   (interactive)
