@@ -71,7 +71,8 @@
             (lambda ()
               (auto-complete-mode t)
               (abbrev-mode -1)          ; Don't need abbrev
-              (projectile-on)))
+              (projectile-on)
+              (define-key rhtml-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)))
 
   (add-hook 'rinari-minor-mode-hook     ; TODO: rinari-web-server-restart binding to z
             (lambda ()
