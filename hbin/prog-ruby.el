@@ -72,4 +72,10 @@
   (when current-prefix-arg (yari-ruby-obarray rehash))
   (helm 'yari-anything-source-ri-pages (yari-symbol-at-point)))
 
+;; hs-minor-mode for ruby mode
+(add-to-list 'hs-special-modes-alist
+             '(ruby-mode
+               "\\(def\\|do\\|{\\)" "\\(end\\|end\\|}\\)" "#"
+               (lambda (arg) (ruby-end-of-block)) nil))
+
 (provide 'prog-ruby)
