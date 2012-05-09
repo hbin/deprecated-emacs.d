@@ -35,13 +35,15 @@
   (turn-on-rainbow-delimiters-mode))
 
 (mapc (lambda (mode-hook) (add-hook mode-hook 'hbin-prog-hook))
-      '(prog-mode-hook
-        c-mode-common-hook
+      '(c-mode-common-hook
         python-mode-hook
         java-mode-hook
         js-mode-hook js2-mode-hook
         css-mode-hook sass-mode-hook
-        ruby-mode-hook rinari-minor-mode-hook
+        ruby-mode-hook rhtml-mode-hook
+        yaml-mode-hook coffee-mode-hook
+        haml-mode-hook slim-mode-hook
+        rspec-mode-hook
         lisp-interaction-mode-hook
         emacs-lisp-mode-hook))
 
