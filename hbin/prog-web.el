@@ -47,6 +47,7 @@
   (add-hook 'sgml-mode-hook 'zencoding-mode)
 
   (custom-set-variables '(js-indent-level 2))
+  (custom-set-variables '(css-indent-offset 2))
   (custom-set-variables '(coffee-tab-width 2)))
 
 (provide 'prog-web)
