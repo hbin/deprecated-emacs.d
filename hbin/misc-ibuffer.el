@@ -54,8 +54,12 @@
                  (mode . haml-mode)
                  (mode . slim-mode)
                  (mode . rhtml-mode)
-                 (mode . nxhtml-mode)
                  (mode . coffee-mode)))
+               ("Web Design"
+                (or
+                 (mode . css-mode)
+                 (mode . html-mode)
+                 (mode . nxhtml-mode)))
                ("Terminals"
                 (or
                  (mode . shell-mode)
