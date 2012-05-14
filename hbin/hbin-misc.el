@@ -41,6 +41,7 @@
 (require 'misc-eshell)                   ; Eshell
 (require 'misc-ispell)                   ; Spell check
 (require 'misc-ibuffer)                  ; Nice Ibuffer
+(require 'misc-flymake)                  ; On-the-fly syntax checks
 
 ;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
 (when (string= system-type "Darwin")
