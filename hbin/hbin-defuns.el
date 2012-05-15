@@ -101,25 +101,30 @@ otherwise, delete the number of arg of words backword."
       (backward-kill-word arg))))
 
 ;; Behave like vi's o command
-(defun open-next-line (arg)
-  "Move to the next line and then opens a line.
-    See also `newline-and-indent'."
-  (interactive "p")
+(defun open-next-line ()
+  "Move to the next line and then opens a line."
+  (interactive)
+  (when newline-and-indent
+    (indent-according-to-mode))
   (end-of-line)
-  (open-line arg)
+  (open-line 1)
   (next-line 1)
   (when newline-and-indent
     (indent-according-to-mode)))
 
 ;; Behave like vi's O command
-(defun open-previous-line (arg)
-  "Open a new line before the current one.
-     See also `newline-and-indent'."
-  (interactive "p")
+(defun open-previous-line ()
+  "Open a new line before the current one."
+  (interactive)
+  (when newline-and-indent
+    (indent-according-to-mode))
   (beginning-of-line)
-  (open-line arg)
+  (open-line 1)
   (when newline-and-indent
     (indent-according-to-mode)))
+
+(defvar newline-and-indent t
+  "Modify the behavior of the open-*-line functions to cause them to autoindent.")
 
 (defun move-line-up ()
   "Move up the current line."
@@ -133,9 +138,6 @@ otherwise, delete the number of arg of words backword."
   (next-line 1)
   (transpose-lines 1)
   (previous-line 1))
-
-(defvar newline-and-indent t
-  "Modify the behavior of the open-*-line functions to cause them to autoindent.")
 
 (defun insert-date ()
   "Insert a time-stamp according to locale's date and time format."
