@@ -88,6 +88,7 @@
 (add-hook 'write-file-hooks 'time-stamp) ; update when saving
 
 ;; Buffer 重名时，自动更改名字以区别
+(require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq uniquify-separator "/")
 (setq uniquify-after-kill-buffer-p t)
