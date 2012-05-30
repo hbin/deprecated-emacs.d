@@ -34,18 +34,37 @@
   (turn-on-projectile-mode)
   (turn-on-rainbow-delimiters-mode))
 
-(mapc (lambda (mode-hook) (add-hook mode-hook 'hbin-prog-hook))
-      '(c-mode-common-hook
-        python-mode-hook
-        java-mode-hook
-        js-mode-hook js2-mode-hook
-        css-mode-hook sass-mode-hook
-        ruby-mode-hook rhtml-mode-hook
-        yaml-mode-hook coffee-mode-hook
-        haml-mode-hook slim-mode-hook
-        rspec-mode-hook
-        lisp-interaction-mode-hook
-        emacs-lisp-mode-hook))
+(defvar programming-modes '(c-mode-common-hook
+                        python-mode-hook
+                        java-mode-hook
+                        js-mode-hook js2-mode-hook
+                        css-mode-hook sass-mode-hook
+                        ruby-mode-hook rhtml-mode-hook
+                        yaml-mode-hook coffee-mode-hook
+                        haml-mode-hook slim-mode-hook
+                        rspec-mode-hook
+                        lisp-interaction-mode-hook
+                        emacs-lisp-mode-hook))
+
+(mapc (lambda (mode-hook) (add-hook mode-hook 'hbin-prog-hook)) programming-modes)
+
+;; Automatically indenting yanked text if in programming-modes
+(defun yank-advised-indent-function (beg end)
+      (indent-region beg end nil))
+
+(defadvice yank (after yank-indent activate)
+  (if (and (not (ad-get-arg 0))
+           (or (derived-mode-p 'prog-mode)
+               (member major-mode programming-modes)))
+      (let ((transient-mark-mode nil))
+    (yank-advised-indent-function (region-beginning) (region-end)))))
+
+(defadvice yank-pop (after yank-pop-indent activate)
+  (if (and (not (ad-get-arg 0))
+           (or (derived-mode-p 'prog-mode)
+               (member major-mode programming-modes)))
+    (let ((transient-mark-mode nil))
+    (yank-advised-indent-function (region-beginning) (region-end)))))
 
 ;;;;;;;  Enhanced programming languages
 
