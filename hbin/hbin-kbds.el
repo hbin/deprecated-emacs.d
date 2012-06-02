@@ -107,7 +107,7 @@
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
-(global-set-key (kbd "M-k") 'kill-this-buffer)
+(global-set-key (kbd "M-k") 'kill-buffer-or-delete-window-dwim)
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-o") 'other-window)                               ; next window
 (global-set-key (kbd "M-O") (lambda () (interactive) (other-window -1))) ; back one
