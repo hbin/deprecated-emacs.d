@@ -75,7 +75,7 @@
 ;; hs-minor-mode for ruby mode
 (add-to-list 'hs-special-modes-alist
              '(ruby-mode
-               "\\(def\\|do\\|{\\)" "\\(end\\|end\\|}\\)" "#"
+               "\\(class\\|def\\|do\\|{\\)" "\\(end\\|end\\|end\\|}\\)" "#"
                (lambda (arg) (ruby-end-of-block)) nil))
 
 (provide 'prog-ruby)
