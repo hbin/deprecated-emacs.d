@@ -100,3 +100,6 @@
 [submodule "vendor/flymake-ruby"]
 	path = vendor/flymake-ruby
 	url = git://github.com/purcell/flymake-ruby.git
+[submodule "themes/molokai"]
+	path = themes/molokai
+	url = git://github.com/alloy-d/color-theme-molokai.git
