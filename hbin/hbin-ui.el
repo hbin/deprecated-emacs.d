@@ -38,7 +38,7 @@
 ;; Fonts - Monaco for Emacs 24 and DejaVu for previous versions.
 (if (>= emacs-major-version 24)
     (progn
-      (set-default-font "Monaco-12")         ; Monaco is the best font for programming
+      (set-default-font "Monaco-14")         ; To get Monaco -> http://d.yun.io/qQhWRj
       (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp")))
   (progn
     (set-default-font "DejaVu Sans Mono-12") ; Dejavu Mono is very beautiful too
