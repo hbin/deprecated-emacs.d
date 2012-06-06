@@ -33,15 +33,10 @@
 
   (eval-after-load 'ruby-mode
     '(progn
-       (require 'ruby-end)              ;  Lazy.......
-       (require 'ruby-block)            ;  ....Loading
+       (require 'ruby-end)              ;  Lazy...Load
 
        ;; Ruby-End
        (setq ruby-end-insert-newline nil)
-
-       ;; Ruby-Block
-       (ruby-block-mode t)                      ; highlight matching block of ruby
-       (setq ruby-block-highlight-toggle t)     ; display block to minibuffer and do overlay
 
        ;; RSense - http://cx4a.org/software/rsense/manual.html#What_is_RSense_
        (setq rsense-home (expand-file-name (concat utils-dir "rsense")))

@@ -43,9 +43,6 @@
 [submodule "vendor/ruby-end"]
 	path = vendor/ruby-end
 	url = git://github.com/rejeep/ruby-end.git
-[submodule "vendor/ruby-block"]
-	path = vendor/ruby-block
-	url = git://github.com/emacsmirror/ruby-block.git
 [submodule "vendor/rvm"]
 	path = vendor/rvm
 	url = git://github.com/senny/rvm.el.git
