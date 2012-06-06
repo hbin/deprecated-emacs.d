@@ -1,4 +1,4 @@
-;; prog-web.el --- Enhance HTML & CSS & Coffee programming
+;; prog-web.el --- Enhance HTML & CSS
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -24,11 +24,6 @@
 
 ;;; Code:
 
-;; coffee mode
-(autoload 'coffee-mode "coffee-mode" "Display color names with colored background" t)
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-
 ;; eye candy rainbow mode
 (autoload 'rainbow-mode "rainbow-mode" "Display color names with colored background" t)
 
@@ -41,7 +36,6 @@
   (add-hook 'sgml-mode-hook 'rainbow-mode)
   (add-hook 'sgml-mode-hook 'zencoding-mode)
 
-  (custom-set-variables '(css-indent-offset 2))
-  (custom-set-variables '(coffee-tab-width 2)))
+  (custom-set-variables '(css-indent-offset 2)))
 
 (provide 'prog-web)

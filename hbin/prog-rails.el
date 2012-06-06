@@ -30,6 +30,7 @@
 (autoload 'rspec-mode "rspec-mode" "RSpec test mode" t)
 (autoload 'rhtml-mode "rhtml-mode" "Edit erb document" t)
 (autoload 'eruby-nxhtml-mumamo-mode "autostart.el" "Edit erb document" t)
+(autoload 'coffee-mode "coffee-mode" "Display color names with colored background" t)
 
 ;; We never want to edit Rubinius bytecode or MacRuby binaries
 (add-to-list 'completion-ignored-extensions ".rbc")
@@ -52,6 +53,10 @@
 ;; Edit erb documents
 (add-to-list 'auto-mode-alist '("\\.erb" . rhtml-mode))
 
+;; Edit coffee script
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
 ;; It's an amazing mode for editing erb, jsp..etc documents.
 ;; But I got an error in menu-bar-update-hook occasionally. Error Message:
 ;; (error "This buffer cannot use 'imenu-default-create-index-function'")
@@ -73,6 +78,9 @@
               (abbrev-mode -1)          ; Don't need abbrev
               (projectile-on)
               (define-key rhtml-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)))
+
+  ;; indent two spaces
+  (custom-set-variables '(coffee-tab-width 2))
 
   (add-hook 'rinari-minor-mode-hook     ; TODO: rinari-web-server-restart binding to z
             (lambda ()
