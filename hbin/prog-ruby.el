@@ -24,11 +24,10 @@
 
 ;;; Code:
 
-(require 'yari)
-
 ;;;###autoload
 (progn
   (require 'rvm)
+  (require 'yari)
 
   (rvm-use-default)
 
@@ -75,7 +74,7 @@
 ;; hs-minor-mode for ruby mode
 (add-to-list 'hs-special-modes-alist
              '(ruby-mode
-               "\\(class\\|def\\|do\\|{\\)" "\\(end\\|end\\|end\\|}\\)" "#"
+               "\\(class\\|def\\|do\\|if\\|{\\)" "\\(end\\|end\\|end\\|end\\|}\\)" "#"
                (lambda (arg) (ruby-end-of-block)) nil))
 
 (provide 'prog-ruby)
