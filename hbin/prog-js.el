@@ -1,4 +1,4 @@
-;; prog-web.el --- Enhance HTML & CSS & Coffee programming
+;; prog-js.el --- Enhance javascript programming
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -24,24 +24,14 @@
 
 ;;; Code:
 
-;; coffee mode
-(autoload 'coffee-mode "coffee-mode" "Display color names with colored background" t)
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-
-;; eye candy rainbow mode
-(autoload 'rainbow-mode "rainbow-mode" "Display color names with colored background" t)
-
-;; zencoding
-(autoload 'zencoding-mode "zencoding-mode" "a neat way to write html-like documents" t)
+;; js2 mode
+(autoload 'js2-mode "js2-mode" "Powerful mode for programming javascript" t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
 
 ;;;###autoload
 (progn
-  (add-hook 'css-mode-hook 'rainbow-mode)
-  (add-hook 'sgml-mode-hook 'rainbow-mode)
-  (add-hook 'sgml-mode-hook 'zencoding-mode)
+  (setq js-indent-level 2)
+  (setq js2-basic-offset 2))
 
-  (custom-set-variables '(css-indent-offset 2))
-  (custom-set-variables '(coffee-tab-width 2)))
-
-(provide 'prog-web)
+(provide 'prog-js)

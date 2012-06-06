@@ -69,6 +69,7 @@
 ;;;;;;;  Enhanced programming languages
 
 (require 'prog-c)
+(require 'prog-js)
 (require 'prog-web)
 (require 'prog-lisp)
 (require 'prog-ruby)
