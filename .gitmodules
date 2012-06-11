@@ -75,7 +75,7 @@
 	url = git://github.com/emacsmirror/nxhtml.git
 [submodule "vendor/autopair"]
 	path = vendor/autopair
-	url = git://github.com/emacsmirror/autopair.git
+	url = git://github.com/capitaomorte/autopair.git
 [submodule "vendor/expand-region"]
 	path = vendor/expand-region
 	url = git://github.com/magnars/expand-region.el.git
