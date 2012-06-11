@@ -25,7 +25,8 @@
 ;;; Code:
 
 ;; Unbinding keys
-(global-unset-key (kbd "C-SPC")) ; conflict with IME
+(global-unset-key (kbd "C-SPC"))        ; conflict with IME
+(global-unset-key (kbd "C-x C-h"))      ; annoying
 
 ;;; Translate C-h with C-? in any mode.
 (global-set-key (kbd "C-?") 'help-command)
