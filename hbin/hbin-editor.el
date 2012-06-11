@@ -31,7 +31,6 @@
 (column-number-mode t)                   ; 显示列号
 (size-indication-mode t)                 ; 显示文件大小
 
-(global-hl-line-mode 1)                  ; 高亮当前行
 (global-auto-revert-mode t)              ; 当 Buffer 访问的文件修改时，自动更新 Buffer 中的内容
 (delete-selection-mode t)                ; 有选择域时，先删除再插入
 
