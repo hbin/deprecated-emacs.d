@@ -35,25 +35,20 @@
   (tooltip-mode -1)
   (mouse-wheel-mode t))
 
-;; Fonts - Monaco for Emacs 24 and DejaVu for previous versions.
+;; Fonts and Themes
 (if (>= emacs-major-version 24)
     (progn
-      (set-default-font "Monaco-14")         ; To get Monaco -> http://d.yun.io/qQhWRj
-      (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp")))
-  (progn
-    (set-default-font "DejaVu Sans Mono-12") ; Dejavu Mono is very beautiful too
-    (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))))
-
-;; Themes
-(if (>= emacs-major-version 24)
-    (progn
+      (set-default-font "Monaco-14")        ; To get Monaco -> http://d.yun.io/qQhWRj
+      (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
       (add-subfolders-to-theme-load-path themes-dir)
       (load-theme 'solarized-dark t))
   (progn
+    (set-default-font "Menlo-14")           ; Menlo is very beautiful too
+    (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
     (require 'color-theme)
-    (require 'color-theme-solarized)
+    (require 'color-theme-molokai)
     (color-theme-initialize)
-    (color-theme-solarized-dark)))
+    (color-theme-molokai)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
