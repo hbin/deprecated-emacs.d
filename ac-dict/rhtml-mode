@@ -80,6 +80,7 @@ yield
 :onmouseover
 :partial
 :recursive
+:remote
 :status
 :size
 :stylesheets

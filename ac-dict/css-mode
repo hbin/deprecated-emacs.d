@@ -3,10 +3,35 @@
 #################
 div
 form
-
+table
 
 ###################
 # HTML Attributes #
 ###################
+background
+boder
 display
+float
+font
+font-size
+font-weight
+margin
+margin-top
+margin-bottom
+margin-left
+margin-right
+padding
+padding-top
+padding-bottom
+padding-left
+padding-right
+position
+text-align
+
+###################
+# HTML Attr value #
+###################
+dotted
 inline
+solid
+relative
