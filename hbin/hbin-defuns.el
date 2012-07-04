@@ -74,31 +74,16 @@
            (list (region-beginning) (region-end))
          (list (line-beginning-position) (line-beginning-position 2)))))
 
-(defun kill-space-or-word-forward-dwim (arg)
-  "Delete all spaces and tabs after pointer if the char after pointer is whitespace,
-otherwise, delete the number of arg of words forward."
-  (interactive "p")
-  (let ((char (char-after (point))))
-    (if (and (characterp char)
-             (or (char-equal char ?\x020)
-                 (char-equal char ?\t)))
-        (delete-region (point)
-                       (progn (skip-chars-forward " \t")
-                              (point)))
-      (kill-word arg))))
+(defun delete-backward-space ()
+  (interactive)
+  (delete-horizontal-space t))
 
-(defun kill-space-or-word-backward-dwim (arg)
-  "Delete all spaces and tabs before pointer if the char before pointer is whitespace,
-otherwise, delete the number of arg of words backword."
-  (interactive "p")
-  (let ((char (char-before (point))))
-    (if (and (characterp char)
-             (or (char-equal char ?\x020)
-                 (char-equal char ?\t)))
-        (delete-region (point)
-                       (progn (skip-chars-backward " \t")
-                              (point)))
-      (backward-kill-word arg))))
+
+(defun delete-forward-space ()
+  (interactive)
+  (delete-region (point)
+                 (progn (skip-chars-forward " \t")
+                        (point))))
 
 ;; Behave like vi's o command
 (defun open-next-line ()

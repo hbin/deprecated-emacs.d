@@ -60,8 +60,9 @@
 (global-set-key (kbd "M-h") 'er/expand-region)
 
 ;; Delete(kill) forward/backward as what I mean.
-(global-set-key (kbd "M-d") 'kill-space-or-word-forward-dwim)
-(global-set-key (kbd "C-M-h") 'kill-space-or-word-backward-dwim)
+(global-set-key (kbd "C-S-D") 'delete-forward-space)
+(global-set-key (kbd "C-S-H") 'delete-backward-space)
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
 
 ;; Cleanup(untabify and indent) active region if selected, otherwise the whole buffer
 (global-set-key (kbd "C-c n") 'cleanup-region-or-buffer)
