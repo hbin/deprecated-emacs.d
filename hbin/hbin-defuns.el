@@ -250,13 +250,6 @@ there's a region, all lines that region covers will be duplicated."
       (message "Deleted file %s" filename)))
   (kill-buffer))
 
-(defun kill-buffer-or-delete-window-dwim ()
-  "Kill this buffer or delete window dwim."
-  (interactive)
-  (if (one-window-p)
-      (kill-this-buffer)
-    (delete-window)))
-
 (defun sudo-edit (&optional arg)
   (interactive "p")
   (if (or arg (not buffer-file-name))
