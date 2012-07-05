@@ -68,6 +68,9 @@
 (progn
   (require 'rinari)
 
+  ;; Automatically updating TAGS
+  (setq rinari-tags-file-name "TAGS")
+
   ;; disable mumamo color
   (add-hook 'nxhtml-mode-hook
             (lambda ()
