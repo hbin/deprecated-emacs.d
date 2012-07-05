@@ -83,8 +83,8 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Easily navigate between recent buffers
-(global-set-key (kbd "M-]") 'next-buffer)
-(global-set-key (kbd "M-[") 'previous-buffer)
+(global-set-key (kbd "M-]") 'previous-buffer)
+(global-set-key (kbd "M-[") 'next-buffer)
 
 ;; Highlight symbols with different colors
 (global-set-key (kbd "M-m") 'highlight-symbol-at-point)
