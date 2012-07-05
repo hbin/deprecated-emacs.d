@@ -10,3 +10,6 @@ eshell/
 
 # Helm Google cache
 url/
+
+# TAGS file
+TAGS

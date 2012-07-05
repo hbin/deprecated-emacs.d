@@ -100,3 +100,9 @@
 [submodule "themes/molokai"]
 	path = themes/molokai
 	url = git://github.com/alloy-d/color-theme-molokai.git
+[submodule "vendor/etags-select"]
+	path = vendor/etags-select
+	url = git://github.com/emacsmirror/etags-select.git
+[submodule "vendor/eproject"]
+	path = vendor/eproject
+	url = git://github.com/jrockway/eproject.git

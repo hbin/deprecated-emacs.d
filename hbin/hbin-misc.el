@@ -35,6 +35,7 @@
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
 (require 'misc-yas)                      ; Yasnippet
+(require 'misc-tags)                     ; Navigation in project
 (require 'misc-hist)                     ; Save some history
 (require 'misc-pair)                     ; Settings for auto pair
 (require 'misc-magit)                    ; Awesome extension!!!!
