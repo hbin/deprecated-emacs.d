@@ -25,6 +25,7 @@
 ;;; Code:
 
 ;;;;;;; Here are for trickers
+(require 'dirtree)                       ; File tree browser
 (require 'midnight)                      ; 自动清除 buffers
 (require 'projectile)                    ; Fast navigation in a project
 (require 'helm-config)                   ; Life changing extension

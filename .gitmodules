@@ -106,3 +106,12 @@
 [submodule "vendor/eproject"]
 	path = vendor/eproject
 	url = git://github.com/jrockway/eproject.git
+[submodule "vendor/tree-mode"]
+	path = vendor/tree-mode
+	url = git://github.com/emacsmirror/tree-mode.git
+[submodule "vendor/windata"]
+	path = vendor/windata
+	url = git://github.com/emacsmirror/windata.git
+[submodule "vendor/dirtree"]
+	path = vendor/dirtree
+	url = git://github.com/zkim/emacs-dirtree.git
