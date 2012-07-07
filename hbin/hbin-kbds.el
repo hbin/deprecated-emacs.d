@@ -77,6 +77,9 @@
 ;;; Find file
 (global-set-key (kbd "C-c f") 'projectile-find-file)
 
+;;; Diff
+(global-set-key (kbd "C-c d") 'diff-buffer-with-file)
+
 ;;; Buffer
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "C-c y") 'bury-buffer)
