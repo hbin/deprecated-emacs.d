@@ -36,6 +36,7 @@
 ;;; Edit
 (global-set-key (kbd "C-'") 'match-paren)
 (global-set-key (kbd "C-a") 'beginning-of-line++)
+(global-set-key (kbd "M-f") 'forward-to-word)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-^") 'join-line)
 

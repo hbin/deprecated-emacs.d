@@ -26,6 +26,8 @@
 
 ;;;;;;;; Here are for defaults
 
+(require 'misc)
+
 ;; mode line 设定
 (line-number-mode t)                     ; 显示行号
 (column-number-mode t)                   ; 显示列号
