@@ -78,6 +78,9 @@
 (require 'prog-clojure)
 (require 'prog-markdown)
 
+(modify-syntax-entry ?_ "w")
+(modify-syntax-entry ?- "w")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'hbin-prog)
