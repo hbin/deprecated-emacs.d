@@ -25,13 +25,12 @@
 ;;; Code:
 
 ;;;;;;; Here are for trickers
+(require 'misc)
 (require 'dirtree)                       ; File tree browser
 (require 'midnight)                      ; 自动清除 buffers
 (require 'projectile)                    ; Fast navigation in a project
 (require 'helm-config)                   ; Life changing extension
-(require 'expand-region)                 ; Amazing expand-region
 (require 'ace-jump-mode)                 ; A quick cursor location minor mode
-(require 'highlight-symbol)              ; Highlight symbols with different colors.
 
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
@@ -39,6 +38,7 @@
 (require 'misc-tags)                     ; Navigation in project
 (require 'misc-hist)                     ; Save some history
 (require 'misc-pair)                     ; Settings for auto pair
+(require 'misc-mark)                     ; Highlight and mark symbols
 (require 'misc-magit)                    ; Awesome extension!!!!
 (require 'misc-eshell)                   ; Eshell
 (require 'misc-ispell)                   ; Spell check

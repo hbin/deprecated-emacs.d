@@ -57,9 +57,6 @@
 ;; Quick cursor location
 (global-set-key (kbd "M-i") 'ace-jump-mode)
 
-;; Amazing expand-region
-(global-set-key (kbd "M-h") 'er/expand-region)
-
 ;; Delete(kill) forward/backward as what I mean.
 (global-set-key (kbd "C-S-D") 'delete-forward-space)
 (global-set-key (kbd "C-S-H") 'delete-backward-space)
@@ -94,14 +91,6 @@
   (progn
       (global-set-key (kbd "M-]") 'previous-buffer)
       (global-set-key (kbd "M-[") 'next-buffer)))
-
-;; Highlight symbols with different colors
-(global-set-key (kbd "M-m") 'highlight-symbol-at-point)
-(global-set-key (kbd "M-M") 'highlight-symbol-remove-all)
-(global-set-key (kbd "M-n") 'highlight-symbol-next)
-(global-set-key (kbd "M-p") 'highlight-symbol-prev)
-(global-set-key (kbd "M-N") 'highlight-symbol-next-in-defun)
-(global-set-key (kbd "M-P") 'highlight-symbol-prev-in-defun)
 
 ;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
