@@ -82,6 +82,7 @@
               (auto-complete-mode t)
               (abbrev-mode -1)          ; Don't need abbrev
               (projectile-on)
+              (define-key rhtml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
               (define-key rhtml-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)))
 
   ;; indent two spaces

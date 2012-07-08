@@ -115,3 +115,6 @@
 [submodule "vendor/dirtree"]
 	path = vendor/dirtree
 	url = git://github.com/zkim/emacs-dirtree.git
+[submodule "vendor/mark-multiple"]
+	path = vendor/mark-multiple
+	url = git://github.com/magnars/mark-multiple.el.git

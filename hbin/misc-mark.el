@@ -37,6 +37,20 @@
 (global-set-key (kbd "M-N") 'highlight-symbol-next-in-defun)
 (global-set-key (kbd "M-P") 'highlight-symbol-prev-in-defun)
 
+;; Rectangle operate
+(require 'inline-string-rectangle)
+(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
+
+;; Mark several regions at once
+(require 'mark-more-like-this)
+(global-set-key (kbd "C-<") 'mark-previous-like-this)
+(global-set-key (kbd "C->") 'mark-next-like-this)
+(global-set-key (kbd "C-M-m") 'mark-more-like-this)
+(global-set-key (kbd "C-*") 'mark-all-like-this)
+
+;; Mark pairs of html tags
+(require 'rename-sgml-tag)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'misc-mark)

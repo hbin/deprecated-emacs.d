@@ -33,8 +33,11 @@
 ;;;###autoload
 (progn
   (add-hook 'css-mode-hook 'rainbow-mode)
-  (add-hook 'sgml-mode-hook 'rainbow-mode)
-  (add-hook 'sgml-mode-hook 'zencoding-mode)
+  (add-hook 'sgml-mode-hook
+            (lambda ()
+              (rainbow-mode 1)
+              (zencoding-mode 1)
+              (define-key sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)))
 
   (custom-set-variables '(css-indent-offset 2)))
 
