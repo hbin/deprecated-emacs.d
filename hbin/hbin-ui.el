@@ -28,6 +28,7 @@
 ;; turn off mouse interface early in startup to avoid momentary dispaly
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+  (menu-bar-mode -1)           ; 不要菜单栏
   (tool-bar-mode -1)           ; 不需要工具栏
   (scroll-bar-mode -1)         ; 不需要滚动条
   (set-fringe-mode '(0 . 1))   ; 小的 fringe 边距
