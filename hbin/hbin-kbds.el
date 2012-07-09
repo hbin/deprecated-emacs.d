@@ -54,9 +54,6 @@
 (global-set-key (kbd "<M-up>") 'move-line-up)
 (global-set-key (kbd "<M-down>") 'move-line-down)
 
-;; Quick cursor location
-(global-set-key (kbd "M-i") 'ace-jump-mode)
-
 ;; Delete(kill) forward/backward as what I mean.
 (global-set-key (kbd "C-S-D") 'delete-forward-space)
 (global-set-key (kbd "C-S-H") 'delete-backward-space)
@@ -71,9 +68,6 @@
 ;;; Font size
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
-
-;;; Find file
-(global-set-key (kbd "C-c f") 'projectile-find-file)
 
 ;;; Diff
 (global-set-key (kbd "C-c d") 'diff-buffer-with-file)

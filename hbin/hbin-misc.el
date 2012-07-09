@@ -26,11 +26,8 @@
 
 ;;;;;;; Here are for trickers
 (require 'misc)
-(require 'dirtree)                       ; File tree browser
 (require 'midnight)                      ; 自动清除 buffers
-(require 'projectile)                    ; Fast navigation in a project
 (require 'helm-config)                   ; Life changing extension
-(require 'ace-jump-mode)                 ; A quick cursor location minor mode
 
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
@@ -44,6 +41,7 @@
 (require 'misc-ispell)                   ; Spell check
 (require 'misc-ibuffer)                  ; Nice Ibuffer
 (require 'misc-flymake)                  ; On-the-fly syntax checks
+(require 'misc-navigation)               ; Fast navigation
 
 ;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
 (when (string= system-type "Darwin")

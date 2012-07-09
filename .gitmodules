@@ -118,3 +118,6 @@
 [submodule "vendor/mark-multiple"]
 	path = vendor/mark-multiple
 	url = git://github.com/magnars/mark-multiple.el.git
+[submodule "vendor/full-ack"]
+	path = vendor/full-ack
+	url = git://github.com/nschum/full-ack.git
