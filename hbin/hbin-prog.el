@@ -37,6 +37,7 @@
 (defvar programming-modes '(c-mode-common-hook
                             python-mode-hook
                             java-mode-hook
+                            lua-mode-hook
                             js-mode-hook js2-mode-hook
                             css-mode-hook sass-mode-hook
                             ruby-mode-hook rhtml-mode-hook
@@ -70,6 +71,7 @@
 
 (require 'prog-c)
 (require 'prog-js)
+(require 'prog-lua)
 (require 'prog-web)
 (require 'prog-lisp)
 (require 'prog-ruby)
