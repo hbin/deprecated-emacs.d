@@ -30,6 +30,7 @@
 ;; Ack is a tool like grep, optimized for programmers
 (require 'full-ack)
 (setq ack-executable (executable-find "ack-grep"))
+(global-set-key (kbd "C-c a") 'ack)
 
 ;; A nice set of features operating on a project
 (require 'projectile)
