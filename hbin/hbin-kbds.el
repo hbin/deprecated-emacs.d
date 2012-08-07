@@ -33,6 +33,12 @@
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (define-key key-translation-map [?\C-h] [?\C-?])
 
+;;; File
+(global-set-key (kbd "C-x d") 'delete-file-and-buffer)
+
+;;; Ido list
+(global-set-key (kbd "C-x C-d") 'ido-list-directory)
+
 ;;; Edit
 (global-set-key (kbd "C-'") 'match-paren)
 (global-set-key (kbd "C-a") 'beginning-of-line++)
@@ -86,13 +92,14 @@
       (global-set-key (kbd "M-]") 'previous-buffer)
       (global-set-key (kbd "M-[") 'next-buffer)))
 
-;; Use regex searches by default.
+;;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "\C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
+(global-set-key (kbd "M-R") 'highlight-symbol-query-replace)
 
 ;;; Helm
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -100,7 +107,9 @@
 (global-set-key (kbd "C-x C-i") 'helm-imenu)
 (global-set-key (kbd "C-x C-o") 'helm-occur)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
-(global-set-key (kbd "C-c C-f") 'helm-find-files)
+
+;;; Projectile find
+(global-set-key (kbd "C-c C-f") 'projectile-find-file)
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
