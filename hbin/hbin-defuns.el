@@ -89,24 +89,18 @@
 (defun open-next-line ()
   "Move to the next line and then opens a line."
   (interactive)
-  (when newline-and-indent
-    (indent-according-to-mode))
   (end-of-line)
   (open-line 1)
   (next-line 1)
-  (when newline-and-indent
-    (indent-according-to-mode)))
+  (indent-according-to-mode))
 
 ;; Behave like vi's O command
 (defun open-previous-line ()
   "Open a new line before the current one."
   (interactive)
-  (when newline-and-indent
-    (indent-according-to-mode))
   (beginning-of-line)
   (open-line 1)
-  (when newline-and-indent
-    (indent-according-to-mode)))
+  (indent-according-to-mode))
 
 (defvar newline-and-indent t
   "Modify the behavior of the open-*-line functions to cause them to autoindent.")
