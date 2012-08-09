@@ -26,7 +26,6 @@
 
 ;; Unbinding keys
 (global-unset-key (kbd "C-SPC"))        ; conflict with IME
-(global-unset-key (kbd "C-x C-h"))      ; annoying
 
 ;;; Translate C-h with C-? in any mode.
 (global-set-key (kbd "C-?") 'help-command)
@@ -37,7 +36,7 @@
 (global-set-key (kbd "C-x d") 'delete-file-and-buffer)
 
 ;;; Ido list
-(global-set-key (kbd "C-x C-d") 'ido-list-directory)
+(global-set-key (kbd "C-x C-d") 'ido-dired)
 
 ;;; Edit
 (global-set-key (kbd "C-'") 'match-paren)
@@ -82,6 +81,9 @@
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "C-c y") 'bury-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-k") 'kill-buffer-or-delete-window-dwim)
+(global-set-key (kbd "M-K") 'kill-this-buffer)
+(global-set-key (kbd "M-1") 'delete-other-windows)
 
 ;;; Easily navigate between recent buffers
 (if (>= emacs-major-version 24)
@@ -113,8 +115,6 @@
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
-(global-set-key (kbd "M-k") 'kill-this-buffer)
-(global-set-key (kbd "M-K") 'delete-window)
 (global-set-key (kbd "M-o") 'other-window)                               ; next window
 (global-set-key (kbd "M-O") (lambda () (interactive) (other-window -1))) ; back one
 
@@ -129,8 +129,9 @@
 (global-set-key (kbd "<C-kp-3>") 'kill-this-buffer)
 (global-set-key (kbd "<C-kp-0>") 'delete-window)
 (global-set-key (kbd "<C-kp-5>") 'other-window)
-(global-set-key (kbd "<C-kp-divide>") 'previous-buffer)
-(global-set-key (kbd "<C-kp-multiply>") 'next-buffer)
+(global-set-key (kbd "<C-kp-divide>") 'swap-windows)
+(global-set-key (kbd "<C-kp-subtrcat>") 'previous-buffer)
+(global-set-key (kbd "<C-kp-add>") 'next-buffer)
 (global-set-key (kbd "<C-S-kp-begin>") (lambda () (interactive) (other-window -1)))
 
 ;;; Eshell and shell

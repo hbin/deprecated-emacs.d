@@ -24,29 +24,6 @@
 
 ;;; Code:
 
-;; www.google.com.hk instead of www.google.com
-(defun google ()
-  "Googles a query or region if any."
-  (interactive)
-  (browse-url
-   (concat
-    "http://www.google.com.hk/search?ie=utf-8&oe=utf-8&q="
-    (url-hexify-string (if mark-active
-                           (buffer-substring (region-beginning) (region-end))
-                         (read-string "Google: "))))))
-
-;; Attention! must open with GUI program, for instance, gVim not vim.
-(defun open-with ()
-  "Open the underlying file of a buffer in an external program."
-  (interactive)
-  (when buffer-file-name
-    (shell-command (concat
-                    (if (eq system-type 'darwin)
-                        "open"
-                      (read-shell-command "Open current file with: "))
-                    " "
-                    buffer-file-name))))
-
 ;; Jump between parent
 (defun match-paren (arg)
   "Go to the matching parenthesis."
@@ -78,7 +55,6 @@
   (interactive)
   (delete-horizontal-space t))
 
-
 (defun delete-forward-space ()
   (interactive)
   (delete-region (point)
@@ -101,9 +77,6 @@
   (beginning-of-line)
   (open-line 1)
   (indent-according-to-mode))
-
-(defvar newline-and-indent t
-  "Modify the behavior of the open-*-line functions to cause them to autoindent.")
 
 (defun move-line-up ()
   "Move up the current line."
@@ -238,11 +211,19 @@ there's a region, all lines that region covers will be duplicated."
 (defun delete-file-and-buffer ()
   "Kills the current buffer and deletes the file it is visiting"
   (interactive)
-  (let ((filename (buffer-file-name)))
-    (when filename
-      (delete-file filename)
-      (message "Deleted file %s" filename)))
-  (kill-buffer))
+  (if (y-or-n-p "Delete file and buffer?")
+      (progn (let ((filename (buffer-file-name)))
+               (when filename
+                 (delete-file filename)
+                 (message "Deleted file %s" filename)))
+             (kill-buffer))))
+
+(defun kill-buffer-or-delete-window-dwim ()
+  "Kill this buffer or delete window dwim."
+  (interactive)
+  (if (one-window-p)
+      (kill-this-buffer)
+    (delete-window)))
 
 (defun swap-windows ()
   "Borrow from prelude."
