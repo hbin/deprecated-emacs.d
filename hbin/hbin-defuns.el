@@ -276,10 +276,6 @@ there's a region, all lines that region covers will be duplicated."
    nil '(("\\<\\(FIX\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
           1 font-lock-warning-face t))))
 
-(defun turn-on-projectile-mode ()
-  (interactive)
-  (projectile-mode 1))
-
 (defun turn-on-rainbow-delimiters-mode ()
   (interactive)
   (rainbow-delimiters-mode 1))

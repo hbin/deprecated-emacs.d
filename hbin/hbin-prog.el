@@ -31,7 +31,6 @@
   (turn-on-linum-mode)
   (turn-on-watchwords)
   (turn-on-autopair-mode)
-  (turn-on-projectile-mode)
   (turn-on-rainbow-delimiters-mode))
 
 (defvar programming-modes '(c-mode-common-hook

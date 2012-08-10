@@ -44,6 +44,7 @@
 (global-set-key (kbd "M-f") 'forward-to-word)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-^") 'join-line)
+(global-set-key (kbd "M-@") 'hs-toggle-hiding)
 
 ;; Vim like open previous/next line
 (global-set-key (kbd "C-o") 'open-next-line)
@@ -108,9 +109,6 @@
 
 ;;; Helm
 (global-set-key (kbd "M-X") 'helm-M-x)
-
-;;; Projectile find
-(global-set-key (kbd "C-c C-f") 'projectile-find-file)
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction

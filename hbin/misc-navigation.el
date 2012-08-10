@@ -32,10 +32,6 @@
 (setq ack-executable (executable-find "ack-grep"))
 (global-set-key (kbd "C-c a") 'ack)
 
-;; A nice set of features operating on a project
-(require 'projectile)
-(global-set-key (kbd "C-c f") 'projectile-find-file)
-
 ;; A fancy and quickly cursor location minor mode
 (require 'ace-jump-mode)
 (global-set-key (kbd "M-i") 'ace-jump-mode)

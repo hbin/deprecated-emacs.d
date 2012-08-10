@@ -31,9 +31,6 @@
 [submodule "vendor/paredit"]
 	path = vendor/paredit
 	url = git://github.com/emacsmirror/paredit.git
-[submodule "vendor/projectile"]
-	path = vendor/projectile
-	url = git://github.com/bbatsov/projectile.git
 [submodule "vendor/rainbow-delimiters"]
 	path = vendor/rainbow-delimiters
 	url = git://github.com/jlr/rainbow-delimiters.git
