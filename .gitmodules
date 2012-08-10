@@ -124,3 +124,6 @@
 [submodule "vendor/lua-mode"]
 	path = vendor/lua-mode
 	url = git://github.com/immerrr/lua-mode.git
+[submodule "vendor/smex"]
+	path = vendor/smex
+	url = git://github.com/nonsequitur/smex.git

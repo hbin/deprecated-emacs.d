@@ -29,6 +29,10 @@
 (require 'midnight)                      ; 自动清除 buffers
 (require 'helm-config)                   ; Life changing extension
 
+;; Ido-style  M-x
+(require 'smex)
+(smex-initialize)
+
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
 (require 'misc-yas)                      ; Yasnippet

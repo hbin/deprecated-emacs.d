@@ -36,6 +36,7 @@
 (setq bookmark-default-file (concat tmp-dir "bookmarks.cache"))     ; Bookmark history
 (setq save-place-file (concat tmp-dir "saveplace.cache"))
 (setq savehist-file (concat tmp-dir "savehist.cache"))
+(setq smex-save-file (concat tmp-dir "smex.cache"))                 ; Smex history
 
 ;; Enable history-save
 (savehist-mode t)

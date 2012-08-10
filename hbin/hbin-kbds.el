@@ -103,12 +103,11 @@
 (global-set-key (kbd "C-M-%") 'query-replace)
 (global-set-key (kbd "M-R") 'highlight-symbol-query-replace)
 
+;;; Smex
+(global-set-key (kbd "M-x") 'smex)
+
 ;;; Helm
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x C-i") 'helm-imenu)
-(global-set-key (kbd "C-x C-o") 'helm-occur)
-(global-set-key (kbd "C-x C-r") 'helm-recentf)
+(global-set-key (kbd "M-X") 'helm-M-x)
 
 ;;; Projectile find
 (global-set-key (kbd "C-c C-f") 'projectile-find-file)
