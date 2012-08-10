@@ -55,6 +55,12 @@
 ;; Edit erb documents
 (add-to-list 'auto-mode-alist '("\\.erb" . rhtml-mode))
 
+;; Edit haml documents
+(add-to-list 'auto-mode-alist '("\\.haml" . haml-mode))
+
+;; Edit slim documents
+(add-to-list 'auto-mode-alist '("\\.slim" . slim-mode))
+
 ;; Edit coffee script
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
