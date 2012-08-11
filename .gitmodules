@@ -22,9 +22,6 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = git://github.com/magit/magit.git
-[submodule "vendor/helm"]
-	path = vendor/helm
-	url = git://github.com/emacs-helm/helm.git
 [submodule "vendor/markdown-mode"]
 	path = vendor/markdown-mode
 	url = git://github.com/defunkt/markdown-mode.git

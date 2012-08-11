@@ -44,7 +44,6 @@
        (require 'rsense)
 
        ;; Ruby key Binding
-       (define-key 'help-command "r" 'yari-helm)
        (define-key ruby-mode-map (kbd "C-.") 'insert-arrow)
        (define-key ruby-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line))))
 
@@ -59,12 +58,6 @@
         (progn (insert " =>  ")
                (backward-char))
       (insert " => "))))
-
-;;;###autoload
-(defun yari-helm (&optional rehash)
-  (interactive (list current-prefix-arg))
-  (when current-prefix-arg (yari-ruby-obarray rehash))
-  (helm 'yari-anything-source-ri-pages (yari-symbol-at-point)))
 
 ;; hs-minor-mode for ruby mode
 (add-to-list 'hs-special-modes-alist

@@ -26,15 +26,10 @@
 
 ;;;;;;; Here are for trickers
 (require 'misc)
-(require 'midnight)                      ; 自动清除 buffers
-(require 'helm-config)                   ; Life changing extension
-
-;; Ido-style  M-x
-(require 'smex)
-(smex-initialize)
 
 ;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
+(require 'misc-ido)                      ; Ido-style interactive
 (require 'misc-yas)                      ; Yasnippet
 (require 'misc-tags)                     ; Navigation in project
 (require 'misc-hist)                     ; Save some history

@@ -35,8 +35,9 @@
 ;;; File
 (global-set-key (kbd "C-x d") 'delete-file-and-buffer)
 
-;;; Ido list
+;;; Ido
 (global-set-key (kbd "C-x C-d") 'ido-dired)
+(global-set-key (kbd "M-x") 'smex)
 
 ;;; Edit
 (global-set-key (kbd "C-'") 'match-paren)
@@ -103,12 +104,6 @@
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
 (global-set-key (kbd "M-R") 'highlight-symbol-query-replace)
-
-;;; Smex
-(global-set-key (kbd "M-x") 'smex)
-
-;;; Helm
-(global-set-key (kbd "M-X") 'helm-M-x)
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
