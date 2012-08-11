@@ -51,13 +51,8 @@
 (defun insert-arrow ()
   "Insert arrow and put cursor at the right position."
   (interactive)
-  (delete-horizontal-space)
-  (let ((char (char-after (point))))
-    (if (and (characterp char)
-             (char-equal char ?%))
-        (progn (insert " =>  ")
-               (backward-char))
-      (insert " => "))))
+  (delete-horizontal-space t)
+  (insert " => "))
 
 ;; hs-minor-mode for ruby mode
 (add-to-list 'hs-special-modes-alist
