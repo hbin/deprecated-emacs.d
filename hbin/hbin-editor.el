@@ -55,7 +55,7 @@
 (setq dired-recursive-copies t)          ; 允许复制非空文件夹
 
 ;; 平滑滚动
-(setq scroll-margin 0                    ; 滚动边距为 0 以防止 eshell 中跳屏
+(setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
 
