@@ -51,17 +51,6 @@
            (list (region-beginning) (region-end))
          (list (line-beginning-position) (line-beginning-position 2)))))
 
-(defun delete-backward-space ()
-  (interactive)
-  (delete-horizontal-space t))
-
-(defun delete-forward-space ()
-  (interactive)
-  (delete-region (point)
-                 (progn (skip-chars-forward " \t")
-                        (point))))
-
-;; Behave like vi's o command
 (defun open-next-line ()
   "Move to the next line and then opens a line."
   (interactive)
@@ -70,7 +59,6 @@
   (next-line 1)
   (indent-according-to-mode))
 
-;; Behave like vi's O command
 (defun open-previous-line ()
   "Open a new line before the current one."
   (interactive)
@@ -141,16 +129,6 @@
       (untabify (point-min) (point-max))
       (message "Clean buffer done."))))
 
-(defun hbin-scroll-up-line ()
-  "Compatible with Emacs 23, same as scroll-up-line in Emacs 24."
-  (interactive)
-  (scroll-up 1))
-
-(defun hbin-scroll-down-line ()
-  "Compatible with Emacs 23, same as scroll-down-lin in Emacs 24."
-  (interactive)
-  (scroll-down 1))
-
 (defun comment-or-uncomment-region-or-line ()
   "comment or uncomment a region if selected, otherwise the current line."
   (interactive)
@@ -160,7 +138,7 @@
     (progn
       (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
 
-(defun copy-file-name-to-clipboard ()
+(defun copy-filename ()
   "Put the current file name on the clipboard"
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)

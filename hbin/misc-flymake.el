@@ -27,8 +27,6 @@
 (require 'flymake-cursor)
 (require 'flymake-ruby)
 
-(global-set-key (kbd "C-`") 'flymake-goto-next-error)
-
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 
 (provide 'misc-flymake)

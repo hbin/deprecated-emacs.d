@@ -24,68 +24,55 @@
 
 ;;; Code:
 
-;; Unbinding keys
+;;; Unbinding keys
 (global-unset-key (kbd "C-SPC"))        ; conflict with IME
 
 ;;; Translate C-h with C-? in any mode.
 (global-set-key (kbd "C-?") 'help-command)
 (global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
 (define-key key-translation-map [?\C-h] [?\C-?])
 
-;;; File
-(global-set-key (kbd "C-x d") 'delete-file-and-buffer)
+;;; Buffer manipulate
+(global-set-key (kbd "C-c n") 'cleanup-region-or-buffer)
+(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "C-c y") 'bury-buffer)
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-k") 'kill-buffer-or-delete-window-dwim)
+(global-set-key (kbd "M-K") 'kill-this-buffer)
+(global-set-key (kbd "M-1") 'delete-other-windows)
 
-;;; Ido
-(global-set-key (kbd "C-x C-d") 'ido-dired)
-(global-set-key (kbd "M-x") 'smex)
+;;; File manipulate
+(global-set-key (kbd "C-c d") 'diff-buffer-with-file)
+(global-set-key (kbd "C-x d") 'delete-file-and-buffer)
 
 ;;; Edit
 (global-set-key (kbd "C-'") 'match-paren)
 (global-set-key (kbd "C-a") 'beginning-of-line++)
+(global-set-key (kbd "M-Z") 'zap-up-to-char)
 (global-set-key (kbd "M-f") 'forward-to-word)
-(global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-^") 'join-line)
 (global-set-key (kbd "M-@") 'hs-toggle-hiding)
+
+;; Vim lke scroll up/down line
+(global-set-key (kbd "C-z") (lambda () (interactive) (scroll-up 1)))
+(global-set-key (kbd "M-z") (lambda () (interactive) (scroll-down 1)))
 
 ;; Vim like open previous/next line
 (global-set-key (kbd "C-o") 'open-next-line)
 (global-set-key (kbd "C-M-o") 'open-previous-line)
 
-;; Vim like scroll up/down by line/page
-(global-set-key (kbd "C-v") 'hbin-scroll-up-line)
-(global-set-key (kbd "M-v") 'hbin-scroll-down-line)
-(global-set-key (kbd "M-V") 'scroll-down)
-(global-set-key (kbd "C-S-V") 'scroll-up)
-
 ;; Move current line one line up/down
 (global-set-key (kbd "<M-up>") 'move-line-up)
 (global-set-key (kbd "<M-down>") 'move-line-down)
 
-;; Delete(kill) forward/backward as what I mean.
-(global-set-key (kbd "C-S-D") 'delete-forward-space)
-(global-set-key (kbd "C-S-H") 'delete-backward-space)
-(global-set-key (kbd "C-M-h") 'backward-kill-word)
-
-;; Cleanup(untabify and indent) active region if selected, otherwise the whole buffer
-(global-set-key (kbd "C-c n") 'cleanup-region-or-buffer)
-
-;; Comment-or-uncomment active region if selected, otherwise current line
-(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
+;; Jump to a definition
+(global-set-key (kbd "C-x C-i") 'ido-goto-symbol)
 
 ;;; Font size
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
-
-;;; Diff
-(global-set-key (kbd "C-c d") 'diff-buffer-with-file)
-
-;;; Buffer
-(global-set-key (kbd "C-c r") 'revert-buffer)
-(global-set-key (kbd "C-c y") 'bury-buffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "M-k") 'kill-buffer-or-delete-window-dwim)
-(global-set-key (kbd "M-K") 'kill-this-buffer)
-(global-set-key (kbd "M-1") 'delete-other-windows)
 
 ;;; Easily navigate between recent buffers
 (if (>= emacs-major-version 24)
@@ -98,12 +85,12 @@
 
 ;;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
-(global-set-key (kbd "M-R") 'highlight-symbol-query-replace)
+(global-set-key (kbd "M-r") 'highlight-symbol-query-replace)
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
@@ -131,8 +118,16 @@
 (global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t))) ; Start a new eshell even if one is active.
 (global-set-key (kbd "C-x C-m") 'shell)                             ; Start a regular shell if you prefer that.
 
+;;; Flymake
+(global-set-key (kbd "M-g M-n") 'flymake-goto-next-error)
+(global-set-key (kbd "M-g M-p") 'flymake-goto-prev-error)
+
 ;;; Magit
 (global-set-key (kbd "C-c g") 'magit-status)
+
+;;; Ido
+(global-set-key (kbd "C-x C-d") 'ido-dired)
+(global-set-key (kbd "M-x") 'smex)
 
 ;; This is a little hacky since VC doesn't support git add internally
 (eval-after-load 'vc
