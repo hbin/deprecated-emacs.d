@@ -1,9 +1,6 @@
 [submodule "snippets"]
 	path = snippets
 	url = git@github.com:hbin/yasnippets-hbin.git
-[submodule "utils/rsense"]
-	path = utils/rsense
-	url = git@github.com:hbin/rsense.git
 [submodule "vendor/color-theme"]
 	path = vendor/color-theme
 	url = git://github.com/haxney/color-theme.git
@@ -34,9 +31,6 @@
 [submodule "vendor/rinari"]
 	path = vendor/rinari
 	url = git://github.com/eschulte/rinari.git
-[submodule "vendor/ruby-end"]
-	path = vendor/ruby-end
-	url = git://github.com/rejeep/ruby-end.git
 [submodule "vendor/rvm"]
 	path = vendor/rvm
 	url = git://github.com/senny/rvm.el.git

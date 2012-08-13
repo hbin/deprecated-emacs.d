@@ -36,9 +36,6 @@
 (defvar vendor-dir (concat user-emacs-directory "vendor/")
   "The root folder of external packages")
 
-(defvar utils-dir (concat user-emacs-directory "utils/")
-  "The root folder of utilities")
-
 (defvar themes-dir (concat user-emacs-directory "themes/")
   "The root folder of themes")
 

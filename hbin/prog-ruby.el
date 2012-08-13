@@ -33,16 +33,6 @@
 
   (eval-after-load 'ruby-mode
     '(progn
-       (require 'ruby-end)              ;  Lazy...Load
-
-       ;; Ruby-End
-       (setq ruby-end-insert-newline nil)
-
-       ;; RSense - http://cx4a.org/software/rsense/manual.html#What_is_RSense_
-       (setq rsense-home (expand-file-name (concat utils-dir "rsense")))
-       (add-to-list 'load-path (concat (concat utils-dir "rsense") "/etc"))
-       (require 'rsense)
-
        ;; Ruby key Binding
        (define-key ruby-mode-map (kbd "C-.") 'insert-arrow)
        (define-key ruby-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line))))
