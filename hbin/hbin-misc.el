@@ -26,8 +26,6 @@
 
 ;;;;;;; Here are for trickers
 (require 'misc)
-
-;;;;;;; Here are for vendors
 (require 'misc-ac)                       ; Auto Complete
 (require 'misc-ido)                      ; Ido-style interactive
 (require 'misc-yas)                      ; Yasnippet
@@ -41,6 +39,10 @@
 (require 'misc-ibuffer)                  ; Nice Ibuffer
 (require 'misc-flymake)                  ; On-the-fly syntax checks
 (require 'misc-navigation)               ; Fast navigation
+
+;;;;;;; Here are for vendors
+(require 'whole-line-or-region)
+(whole-line-or-region-mode)
 
 ;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
 (when (string= system-type "Darwin")

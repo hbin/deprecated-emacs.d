@@ -37,7 +37,7 @@
 (global-set-key (kbd "C-c n") 'cleanup-region-or-buffer)
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "C-c y") 'bury-buffer)
-(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "M-k") 'kill-buffer-or-delete-window-dwim)
 (global-set-key (kbd "M-K") 'kill-this-buffer)

@@ -115,3 +115,6 @@
 [submodule "vendor/smex"]
 	path = vendor/smex
 	url = git://github.com/nonsequitur/smex.git
+[submodule "vendor/whole-line-or-region"]
+	path = vendor/whole-line-or-region
+	url = git://github.com/emacsmirror/whole-line-or-region.git

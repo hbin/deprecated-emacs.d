@@ -38,19 +38,6 @@
       (back-to-indentation)
     (beginning-of-line)))
 
-;; WholeLineOrRegion - http://www.emacswiki.org/emacs/WholeLineOrRegion
-(put 'kill-ring-save 'interactive-form
-     '(interactive
-       (if (use-region-p)
-           (list (region-beginning) (region-end))
-         (message "Copid line")
-         (list (line-beginning-position) (line-beginning-position 2)))))
-(put 'kill-region 'interactive-form
-     '(interactive
-       (if (use-region-p)
-           (list (region-beginning) (region-end))
-         (list (line-beginning-position) (line-beginning-position 2)))))
-
 (defun open-next-line ()
   "Move to the next line and then opens a line."
   (interactive)
@@ -128,15 +115,6 @@
       (indent-region (point-min) (point-max))
       (untabify (point-min) (point-max))
       (message "Clean buffer done."))))
-
-(defun comment-or-uncomment-region-or-line ()
-  "comment or uncomment a region if selected, otherwise the current line."
-  (interactive)
-  (if (region-active-p)
-      (progn
-        (comment-or-uncomment-region (region-beginning) (region-end)))
-    (progn
-      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
 
 (defun copy-filename ()
   "Put the current file name on the clipboard"
