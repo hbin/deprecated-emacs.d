@@ -34,6 +34,7 @@
   (eval-after-load 'ruby-mode
     '(progn
        ;; Ruby key Binding
+       (define-key 'help-command "R" 'yari)
        (define-key ruby-mode-map (kbd "C-.") 'insert-arrow)
        (define-key ruby-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line))))
 
