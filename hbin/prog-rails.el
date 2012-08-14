@@ -27,6 +27,7 @@
 (autoload 'yaml-mode "yaml-mode" "Edit yml document" t)
 (autoload 'haml-mode "haml-mode" "Edit haml document" t)
 (autoload 'slim-mode "slim-mode" "Edit slim documetn" t)
+(autoload 'sass-mode "sass-mode" "Edit sass documetn" t)
 (autoload 'rspec-mode "rspec-mode" "RSpec test mode" t)
 (autoload 'rhtml-mode "rhtml-mode" "Edit erb document" t)
 (autoload 'eruby-nxhtml-mumamo-mode "autostart.el" "Edit erb document" t)
@@ -60,6 +61,9 @@
 
 ;; Edit slim documents
 (add-to-list 'auto-mode-alist '("\\.slim" . slim-mode))
+
+;; Edit sass documents
+(add-to-list 'auto-mode-alist '("\\.sass" . sass-mode))
 
 ;; Edit coffee script
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))

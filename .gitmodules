@@ -118,3 +118,6 @@
 [submodule "vendor/whole-line-or-region"]
 	path = vendor/whole-line-or-region
 	url = git://github.com/emacsmirror/whole-line-or-region.git
+[submodule "vendor/sass-mode"]
+	path = vendor/sass-mode
+	url = git://github.com/nex3/sass-mode.git
