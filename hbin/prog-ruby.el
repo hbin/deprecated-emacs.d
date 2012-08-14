@@ -36,7 +36,7 @@
        ;; Ruby key Binding
        (define-key 'help-command "R" 'yari)
        (define-key ruby-mode-map (kbd "C-.") 'insert-arrow)
-       (define-key ruby-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line))))
+       (define-key ruby-mode-map (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2))))
 
 ;;;###autoload
 (defun insert-arrow ()

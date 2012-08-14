@@ -88,7 +88,7 @@
               (auto-complete-mode t)
               (abbrev-mode -1)          ; Don't need abbrev
               (define-key rhtml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
-              (define-key rhtml-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)))
+              (define-key rhtml-mode-map (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2)))
 
   ;; indent two spaces
   (custom-set-variables '(coffee-tab-width 2))
