@@ -27,7 +27,6 @@
 ;;;;;;; Here are for trickers
 (require 'misc)
 (require 'misc-ac)                       ; Auto Complete
-(require 'misc-ido)                      ; Ido-style interactive
 (require 'misc-yas)                      ; Yasnippet
 (require 'misc-tags)                     ; Navigation in project
 (require 'misc-hist)                     ; Save some history
@@ -49,6 +48,9 @@
 
 (require 'whole-line-or-region)
 (whole-line-or-region-mode)
+
+(require 'smex)
+(smex-initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
