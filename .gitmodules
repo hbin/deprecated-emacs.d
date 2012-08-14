@@ -58,9 +58,6 @@
 [submodule "vendor/coffee-mode"]
 	path = vendor/coffee-mode
 	url = git://github.com/defunkt/coffee-mode.git
-[submodule "vendor/nxhtml-mode"]
-	path = vendor/nxhtml-mode
-	url = git://github.com/emacsmirror/nxhtml.git
 [submodule "vendor/autopair"]
 	path = vendor/autopair
 	url = git://github.com/capitaomorte/autopair.git
@@ -121,3 +118,6 @@
 [submodule "vendor/sass-mode"]
 	path = vendor/sass-mode
 	url = git://github.com/nex3/sass-mode.git
+[submodule "vendor/scss-mode"]
+	path = vendor/scss-mode
+	url = git://github.com/antonj/scss-mode.git
