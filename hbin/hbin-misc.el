@@ -31,7 +31,6 @@
 (require 'misc-yas)                      ; Yasnippet
 (require 'misc-tags)                     ; Navigation in project
 (require 'misc-hist)                     ; Save some history
-(require 'misc-pair)                     ; Settings for auto pair
 (require 'misc-mark)                     ; Highlight and mark symbols
 (require 'misc-magit)                    ; Awesome extension!!!!
 (require 'misc-eshell)                   ; Eshell
@@ -40,13 +39,16 @@
 (require 'misc-flymake)                  ; On-the-fly syntax checks
 (require 'misc-navigation)               ; Fast navigation
 
-;;;;;;; Here are for vendors
-(require 'whole-line-or-region)
-(whole-line-or-region-mode)
-
 ;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
 (when (string= system-type "Darwin")
   (require 'misc-mac))
+
+;;;;;;; Here are for vendors
+(require 'autopair)
+(setq autopair-blink nil)
+
+(require 'whole-line-or-region)
+(whole-line-or-region-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
