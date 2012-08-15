@@ -63,8 +63,9 @@
   (require 'rhtml-mode)
   (add-hook 'rhtml-mode-hook
             (lambda ()
-              (auto-complete-mode t)
+              (auto-complete-mode 1)
               (abbrev-mode -1)          ; Don't need abbrev
+              (ruby-tools-mode 1)
               (define-key rhtml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
               (define-key rhtml-mode-map (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2)))
 
