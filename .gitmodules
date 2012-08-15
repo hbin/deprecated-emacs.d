@@ -49,9 +49,6 @@
 [submodule "vendor/rhtml-mode"]
 	path = vendor/rhtml-mode
 	url = git://github.com/eschulte/rhtml.git
-[submodule "vendor/rspec-mode"]
-	path = vendor/rspec-mode
-	url = git://github.com/pezra/rspec-mode.git
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = git://github.com/mooz/js2-mode.git
