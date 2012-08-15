@@ -121,3 +121,6 @@
 [submodule "vendor/scss-mode"]
 	path = vendor/scss-mode
 	url = git://github.com/antonj/scss-mode.git
+[submodule "vendor/ruby-tools"]
+	path = vendor/ruby-tools
+	url = git://github.com/rejeep/ruby-tools.git

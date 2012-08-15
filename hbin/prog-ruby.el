@@ -28,6 +28,7 @@
 (progn
   (require 'rvm)
   (require 'yari)
+  (require 'ruby-tools)
 
   (rvm-use-default)
 
