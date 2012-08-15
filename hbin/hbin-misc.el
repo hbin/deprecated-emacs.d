@@ -52,6 +52,11 @@
 (require 'smex)
 (smex-initialize)
 
+;;; Remove the minor mode line lighter
+(setcar (cdr (assq 'autopair-mode minor-mode-alist)) nil)
+(setcar (cdr (assq 'eproject-mode minor-mode-alist)) nil)
+(setcar (cdr (assq 'whole-line-or-region-mode minor-mode-alist)) nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'hbin-misc)

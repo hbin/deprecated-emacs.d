@@ -29,6 +29,7 @@
   (require 'rvm)
   (require 'yari)
   (require 'ruby-tools)
+  (setcar (cdr (assq 'ruby-tools-mode minor-mode-alist)) nil)
 
   (rvm-use-default)
 

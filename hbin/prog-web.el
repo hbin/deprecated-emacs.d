@@ -24,14 +24,12 @@
 
 ;;; Code:
 
-;; eye candy rainbow mode
-(autoload 'rainbow-mode "rainbow-mode" "Display color names with colored background" t)
-
-;; zencoding
-(autoload 'zencoding-mode "zencoding-mode" "a neat way to write html-like documents" t)
-
 ;;;###autoload
 (progn
+  (require 'rainbow-mode)
+  (require 'zencoding-mode)
+  (setcar (cdr (assq 'rainbow-mode minor-mode-alist)) nil)
+
   (add-hook 'css-mode-hook 'rainbow-mode)
   (add-hook 'sgml-mode-hook
             (lambda ()
