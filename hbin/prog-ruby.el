@@ -38,8 +38,6 @@
        ;; Ruby key Binding
        (define-key 'help-command "R" 'yari)
        (define-key ruby-mode-map (kbd "C-.") 'insert-arrow)
-       (define-key ruby-mode-map (kbd "C-M-n") (lambda () (interactive) (scroll-up 1)))
-       (define-key ruby-mode-map (kbd "C-M-p") (lambda () (interactive) (scroll-down 1)))
        (define-key ruby-mode-map (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2))))
 
 ;;;###autoload

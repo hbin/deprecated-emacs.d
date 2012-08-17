@@ -56,8 +56,8 @@
 (global-set-key (kbd "M-@") 'hs-toggle-hiding)
 
 ;; Vim lke scroll up/down line
-(global-set-key (kbd "C-M-n") (lambda () (interactive) (scroll-up 1)))
-(global-set-key (kbd "C-M-p") (lambda () (interactive) (scroll-down 1)))
+(global-set-key (kbd "C-z") (lambda () (interactive) (scroll-up 1)))
+(global-set-key (kbd "C-M-z") (lambda () (interactive) (scroll-down 1)))
 
 ;; Vim like open previous/next line
 (global-set-key (kbd "C-o") 'open-next-line)
