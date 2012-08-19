@@ -53,7 +53,7 @@
                  (mode . yaml-mode)
                  (mode . haml-mode)
                  (mode . slim-mode)
-                 (mode . sass-mode)
+                 (mode . scss-mode)
                  (mode . rhtml-mode)
                  (mode . coffee-mode)))
                ("Web Design"
