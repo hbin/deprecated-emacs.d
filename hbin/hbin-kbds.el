@@ -51,9 +51,9 @@
 (global-set-key (kbd "%") 'match-paren)
 (global-set-key (kbd "C-a") 'beginning-of-line++)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
-(global-set-key (kbd "M-f") 'forward-to-word)
 (global-set-key (kbd "M-^") 'join-line)
 (global-set-key (kbd "M-@") 'hs-toggle-hiding)
+(global-set-key (kbd "M-f") (lambda (arg) (interactive "^p") (forward-to-word arg)))
 
 ;; Vim lke scroll up/down line
 (global-set-key (kbd "C-z") (lambda () (interactive) (scroll-up 1)))
@@ -80,8 +80,8 @@
       (global-set-key (kbd "M-]") 'next-buffer)
       (global-set-key (kbd "M-[") 'previous-buffer))
   (progn
-      (global-set-key (kbd "M-]") 'previous-buffer)
-      (global-set-key (kbd "M-[") 'next-buffer)))
+    (global-set-key (kbd "M-]") 'previous-buffer)
+    (global-set-key (kbd "M-[") 'next-buffer)))
 
 ;;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
