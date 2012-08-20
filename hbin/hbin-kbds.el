@@ -39,9 +39,7 @@
 (global-set-key (kbd "C-c y") 'bury-buffer)
 (global-set-key (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "M-k") 'kill-buffer-or-delete-window-dwim)
-(global-set-key (kbd "M-K") 'kill-this-buffer)
-(global-set-key (kbd "M-1") 'delete-other-windows)
+(global-set-key (kbd "M-k") 'kill-this-buffer)
 
 ;;; File manipulate
 (global-set-key (kbd "C-c d") 'diff-buffer-with-file)
@@ -94,6 +92,8 @@
 
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
+(global-set-key (kbd "M-0") 'delete-window)
+(global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-o") 'other-window)                               ; next window
 (global-set-key (kbd "M-O") (lambda () (interactive) (other-window -1))) ; back one
 
