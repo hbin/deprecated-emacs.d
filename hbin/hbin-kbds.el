@@ -66,7 +66,7 @@
 (global-set-key (kbd "<M-down>") 'move-line-down)
 
 ;; Jump to a definition
-(global-set-key (kbd "C-x C-i") 'ido-goto-symbol)
+(global-set-key (kbd "C-x C-i") 'textmate-goto-symbol)
 
 ;;; Font size
 (global-set-key (kbd "C-+") 'text-scale-increase)

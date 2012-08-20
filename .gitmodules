@@ -121,3 +121,6 @@
 [submodule "vendor/ruby-tools"]
 	path = vendor/ruby-tools
 	url = git://github.com/rejeep/ruby-tools.git
+[submodule "vendor/textmate-minor-mode"]
+	path = vendor/textmate-minor-mode
+	url = git://github.com/defunkt/textmate.el.git

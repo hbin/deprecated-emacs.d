@@ -52,10 +52,15 @@
 (require 'smex)
 (smex-initialize)
 
+(require 'textmate)
+(require 'rainbow-delimiters)
+
 ;;; Remove the minor mode line lighter
 (setcar (cdr (assq 'autopair-mode minor-mode-alist)) nil)
+(setcar (cdr (assq 'textmate-mode minor-mode-alist)) nil)
 (setcar (cdr (assq 'eproject-mode minor-mode-alist)) nil)
 (setcar (cdr (assq 'whole-line-or-region-mode minor-mode-alist)) nil)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
