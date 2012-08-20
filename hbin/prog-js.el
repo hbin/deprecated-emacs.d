@@ -32,6 +32,10 @@
 ;;;###autoload
 (progn
   (setq js-indent-level 2)
-  (setq js2-basic-offset 2))
+  (setq js2-basic-offset 2)
+
+  (eval-after-load 'js2-mode
+    '(progn
+       (define-key js2-mode-map (kbd "C-M-h") 'backward-kill-word))))
 
 (provide 'prog-js)
