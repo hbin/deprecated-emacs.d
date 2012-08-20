@@ -25,7 +25,6 @@
 ;;; Code:
 
 (defun hbin-prog-hook ()
-  (turn-on-linum-mode)
   (turn-on-watchwords)
   (turn-on-autopair-mode)
   (turn-on-textmate-mode)
