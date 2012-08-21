@@ -34,14 +34,40 @@
 (setq ac-comphist-file (concat tmp-dir "ac.cache"))                 ; Auto Complete history
 (setq ido-save-directory-list-file (concat tmp-dir "ido.cache"))    ; Ido history
 (setq bookmark-default-file (concat tmp-dir "bookmarks.cache"))     ; Bookmark history
-(setq save-place-file (concat tmp-dir "saveplace.cache"))
-(setq savehist-file (concat tmp-dir "savehist.cache"))
 (setq smex-save-file (concat tmp-dir "smex.cache"))                 ; Smex history
 
-;; Enable history-save
-(savehist-mode t)
+;; Auto-save
+(setq auto-save-directory (concat tmp-dir "autosave")
+      auto-save-hash-directory (concat tmp-dir "autosave-hash")
+      auto-save-directory-fallback "/tmp/"
+      auto-save-list-file-prefix (concat tmp-dir "autosave/autosave-")
+      auto-save-hash-p nil
+      auto-save-timeout 100
+      auto-save-interval 300)
+(unless (file-exists-p auto-save-directory)
+  (make-directory auto-save-directory))
+
+;; Save place
+(setq save-place-file (concat tmp-dir "saveplace.cache"))
 (setq-default save-place t)
 (require 'saveplace)
+
+;; savehist
+(setq savehist-additional-variables
+      '(search ring regexp-search-ring)
+      savehist-autosave-interval 60
+      savehist-file (concat tmp-dir "savehist.cache"))
+(savehist-mode t)
+
+;; save recent files
+(setq recentf-save-file (concat tmp-dir "recentf.cache")
+      recentf-max-saved-items 200
+      recentf-max-menu-items 15)
+(recentf-mode t)
+
+;; eshell
+(require 'eshell)
+(setq eshell-directory-name (concat tmp-dir "eshell/"))
 
 ;; Desktop
 (require 'desktop)
@@ -50,8 +76,8 @@
 (desktop-save-mode 1)
 
 ;; use only one desktop
-(setq desktop-path '("~/.emacs.d/tmp/"))
-(setq desktop-dirname "~/.emacs.d/tmp/")
+(setq desktop-path (list tmp-dir))
+(setq desktop-dirname tmp-dir)
 (setq desktop-base-file-name "desktop.cache")
 
 (setq desktop-restore-eager 15)

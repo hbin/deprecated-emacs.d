@@ -39,8 +39,12 @@
 (defvar themes-dir (concat user-emacs-directory "themes/")
   "The root folder of themes")
 
-(defvar tmp-dir (concat user-emacs-directory "tmp/")
+(defvar tmp-dir (concat user-emacs-directory "temp/")
   "The root folder of temps")
+
+;; Borrow from bbatsov's prelude to create automatically.
+(unless (file-exists-p tmp-dir)
+  (make-directory tmp-dir))
 
 (defun add-subfolders-to-load-path (parent-dir)
   "Add subfolders to load path"
