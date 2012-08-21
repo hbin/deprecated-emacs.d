@@ -25,14 +25,12 @@
 ;;; Code:
 
 ;;;###autoload
-(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
-
-;; Automatically edit files end in .lua
-(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
-
-;;;###autoload
 (progn
+  (require 'lua-mode)
+
+  (add-hook 'lua-mode-hook
+            (lambda ()
+              (prog-common-setting)))
   )
 
 (provide 'prog-lua)

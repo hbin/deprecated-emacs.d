@@ -112,9 +112,6 @@
 [submodule "vendor/whole-line-or-region"]
 	path = vendor/whole-line-or-region
 	url = git://github.com/emacsmirror/whole-line-or-region.git
-[submodule "vendor/sass-mode"]
-	path = vendor/sass-mode
-	url = git://github.com/nex3/sass-mode.git
 [submodule "vendor/scss-mode"]
 	path = vendor/scss-mode
 	url = git://github.com/antonj/scss-mode.git
@@ -124,3 +121,6 @@
 [submodule "vendor/textmate-minor-mode"]
 	path = vendor/textmate-minor-mode
 	url = git://github.com/defunkt/textmate.el.git
+[submodule "vendor/feature-mode"]
+	path = vendor/feature-mode
+	url = git://github.com/michaelklishin/cucumber.el.git

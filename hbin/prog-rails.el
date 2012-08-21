@@ -43,37 +43,20 @@
 
 ;;;###autoload
 (progn
-  (require 'haml-mode)
-  (require 'sass-mode)
-  (require 'slim-mode)
-  (require 'yaml-mode)
-
-  (require 'coffee-mode)
-  (custom-set-variables '(coffee-tab-width 2))
-
-  ;; Setting Scss
-  (require 'scss-mode)
-  (add-hook 'scss-mode-hook
-            (lambda ()
-              (rainbow-mode)
-              (setq scss-compile-at-save nil)
-              (define-key scss-mode-map (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2)))
-
   ;; Minor modes in rhtml
   (require 'rhtml-mode)
   (add-hook 'rhtml-mode-hook
             (lambda ()
+              (prog-common-setting)
+              (abbrev-mode -1)
               (auto-complete-mode 1)
-              (abbrev-mode -1)          ; Don't need abbrev
-              (ruby-tools-mode 1)
-              (define-key rhtml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
-              (define-key rhtml-mode-map (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2)))
+              (ruby-tools-mode 1)))
+  (define-key rhtml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
 
   ;; Awesome plugin for programming Rails App.
   (require 'rinari)
   (setq rinari-tags-file-name "TAGS")
-  (add-hook 'rinari-minor-mode-hook     ; TODO: rinari-web-server-restart binding to z
-            (lambda ()
-              (define-key rinari-minor-mode-map (kbd "C-.") 'insert-arrow))))
+  (define-key rinari-minor-mode-map (kbd "C-.") 'insert-arrow)
+  )
 
 (provide 'prog-rails)

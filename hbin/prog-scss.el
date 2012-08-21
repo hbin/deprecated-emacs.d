@@ -1,4 +1,4 @@
-;; prog-web.el --- Enhance HTML & CSS
+;; prog-scss.el --- Enhance sass language programming
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -26,15 +26,12 @@
 
 ;;;###autoload
 (progn
-  ;; CSS
-  (add-hook 'css-mode-hook 'rainbow-mode)
-  (custom-set-variables '(css-indent-offset 2))
+  (require 'scss-mode)
 
-  ;; HTML
-  (add-hook 'sgml-mode-hook
+  (add-hook 'scss-mode-hook
             (lambda ()
-              (rainbow-mode 1)
-              (zencoding-mode 1)))
+              (prog-common-setting)
+              (setq scss-compile-at-save nil)))
   )
 
-(provide 'prog-web)
+(provide 'prog-scss)

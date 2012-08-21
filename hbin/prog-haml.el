@@ -1,4 +1,4 @@
-;; prog-c.el --- Enhance C programming
+;; prog-haml.el
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -26,6 +26,11 @@
 
 ;;;###autoload
 (progn
+  (require 'haml-mode)
+
+  (add-hook 'haml-mode-hook
+            (lambda ()
+              (prog-common-setting)))
   )
 
-(provide 'prog-c)
+(provide 'prog-haml)

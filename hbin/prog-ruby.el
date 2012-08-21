@@ -26,19 +26,11 @@
 
 ;;;###autoload
 (progn
-  (require 'rvm)
   (require 'yari)
   (require 'ruby-tools)
   (setcar (cdr (assq 'ruby-tools-mode minor-mode-alist)) nil)
-
-  (rvm-use-default)
-
-  (eval-after-load 'ruby-mode
-    '(progn
-       ;; Ruby key Binding
-       (define-key 'help-command "R" 'yari)
-       (define-key ruby-mode-map (kbd "C-.") 'insert-arrow)
-       (define-key ruby-mode-map (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2))))
+  (define-key 'help-command "R" 'yari)
+  (define-key ruby-mode-map (kbd "C-.") 'insert-arrow))
 
 ;;;###autoload
 (defun insert-arrow ()

@@ -55,12 +55,16 @@
 (require 'textmate)
 (require 'rainbow-delimiters)
 
+;;; Markdown-mode
+(autoload 'markdown-mode "markdown-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+
 ;;; Remove the minor mode line lighter
 (setcar (cdr (assq 'autopair-mode minor-mode-alist)) nil)
 (setcar (cdr (assq 'textmate-mode minor-mode-alist)) nil)
 (setcar (cdr (assq 'eproject-mode minor-mode-alist)) nil)
 (setcar (cdr (assq 'whole-line-or-region-mode minor-mode-alist)) nil)
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -198,6 +198,37 @@ there's a region, all lines that region covers will be duplicated."
       (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
+;;;;;;; Automatically indenting yanked text if in programming-modes
+(defvar yank-indent-modes '(python-mode LaTeX-mode TeX-mode)
+  "Modes in which to indent regions that are yanked (or yank-popped). Only
+modes that don't derive from `prog-mode' should be listed here.")
+
+(defvar yank-advised-indent-threshold 1000
+  "Threshold (# chars) over which indentation does not automatically occur.")
+
+(defun yank-advised-indent-function (beg end)
+  "Do indentation, as long as the region isn't too large."
+  (if (<= (- end beg) yank-advised-indent-threshold)
+      (indent-region beg end nil)))
+
+(defadvice yank (after yank-indent activate)
+  "If current mode is one of 'yank-indent-modes,
+indent yanked text (with prefix arg don't indent)."
+  (if (and (not (ad-get-arg 0))
+           (or (derived-mode-p 'prog-mode)
+               (member major-mode yank-indent-modes)))
+      (let ((transient-mark-mode nil))
+        (yank-advised-indent-function (region-beginning) (region-end)))))
+
+(defadvice yank-pop (after yank-pop-indent activate)
+  "If current mode is one of 'yank-indent-modes,
+indent yanked text (with prefix arg don't indent)."
+  (if (and (not (ad-get-arg 0))
+           (or (derived-mode-p 'prog-mode)
+               (member major-mode yank-indent-modes)))
+      (let ((transient-mark-mode nil))
+        (yank-advised-indent-function (region-beginning) (region-end)))))
+
 ;;;;;;; Scratch
 
 ;; If the *scratch* buffer is killed...

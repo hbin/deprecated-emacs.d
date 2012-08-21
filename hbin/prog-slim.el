@@ -1,4 +1,4 @@
-;; prog-clojure.el --- Enhance Clojure programming
+;; prog-slim.el
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -26,6 +26,11 @@
 
 ;;;###autoload
 (progn
+  (require 'slim-mode)
+
+  (add-hook 'slim-mode-hook
+            (lambda ()
+              (prog-common-setting)))
   )
 
-(provide 'prog-clojure)
+(provide 'prog-slim)

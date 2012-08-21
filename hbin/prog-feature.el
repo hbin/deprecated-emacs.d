@@ -1,4 +1,4 @@
-;; prog-markdown.el --- Enhance markdown mode
+;; prog-feature.el --- feature mode
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -23,9 +23,15 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Code:
-(autoload 'markdown-mode "markdown-mode" nil t)
 
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+;;;###autoload
+(progn
+  (autoload 'feature-mode "feature-mode" "autoload feature-mode" t)
+  (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
 
-(provide 'prog-markdown)
+  (add-hook 'feature-mode-hook
+            (lambda ()
+              (prog-common-setting)))
+  )
+
+(provide 'prog-feature)

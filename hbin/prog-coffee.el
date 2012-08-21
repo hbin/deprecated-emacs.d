@@ -1,4 +1,4 @@
-;; prog-web.el --- Enhance HTML & CSS
+;; prog-coffee.el --- Enhance coffee programming
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -26,15 +26,13 @@
 
 ;;;###autoload
 (progn
-  ;; CSS
-  (add-hook 'css-mode-hook 'rainbow-mode)
-  (custom-set-variables '(css-indent-offset 2))
+  (require 'coffee-mode)
 
-  ;; HTML
-  (add-hook 'sgml-mode-hook
-            (lambda ()
-              (rainbow-mode 1)
-              (zencoding-mode 1)))
+  (eval-after-load 'coffee-mode
+    '(progn
+       (prog-common-setting)
+       (custom-set-variables '(coffee-tab-width 2))
+       (setq coffee-args-compile '("-c" "--bare"))))
   )
 
-(provide 'prog-web)
+(provide 'prog-coffee)

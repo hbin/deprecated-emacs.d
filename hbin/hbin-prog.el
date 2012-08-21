@@ -24,60 +24,47 @@
 
 ;;; Code:
 
-(defun hbin-prog-hook ()
-  (turn-on-watchwords)
-  (turn-on-autopair-mode)
-  (turn-on-textmate-mode)
-  (turn-on-rainbow-delimiters-mode))
+;;;###autoload
+(progn
+  (require 'rvm)
+  (require 'rainbow-mode)
+  (require 'zencoding-mode)
 
-(defvar programming-modes '(c-mode-common-hook
-                            python-mode-hook
-                            java-mode-hook
-                            lua-mode-hook
-                            js-mode-hook js2-mode-hook
-                            css-mode-hook sass-mode-hook
-                            ruby-mode-hook rhtml-mode-hook
-                            yaml-mode-hook coffee-mode-hook
-                            haml-mode-hook slim-mode-hook
-                            rspec-mode-hook
-                            lisp-interaction-mode-hook
-                            emacs-lisp-mode-hook))
+  (rvm-use-default)
+  (setq feature-use-rvm t)
 
-(mapc (lambda (mode-hook) (add-hook mode-hook 'hbin-prog-hook)) programming-modes)
+  (defvar hbin-syntax-table
+    (let ((table (make-syntax-table)))
+      (modify-syntax-entry ?_ "w" table)
+      (modify-syntax-entry ?- "w" table)
+      table))
 
-;; Automatically indenting yanked text if in programming-modes
-(defun yank-advised-indent-function (beg end)
-  (indent-region beg end nil))
+  (defun prog-common-setting ()
+    "Common settings for programming."
+    (turn-on-watchwords)
+    (turn-on-autopair-mode)
+    (turn-on-textmate-mode)
+    (turn-on-rainbow-delimiters-mode)
+    (set-syntax-table hbin-syntax-table)
+    (local-set-key (kbd "C-M-h") 'backward-kill-word)
+    (local-set-key (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2))
 
-(defadvice yank (after yank-indent activate)
-  (if (and (not (ad-get-arg 0))
-           (or (derived-mode-p 'prog-mode)
-               (member major-mode programming-modes)))
-      (let ((transient-mark-mode nil))
-        (yank-advised-indent-function (region-beginning) (region-end)))))
+  (add-hook 'prog-mode-hook 'prog-common-setting))
 
-(defadvice yank-pop (after yank-pop-indent activate)
-  (if (and (not (ad-get-arg 0))
-           (or (derived-mode-p 'prog-mode)
-               (member major-mode programming-modes)))
-      (let ((transient-mark-mode nil))
-        (yank-advised-indent-function (region-beginning) (region-end)))))
-
-;;;;;;;  Enhanced programming languages
-
-(require 'prog-c)
+;;;  Enhanced programming languages
 (require 'prog-js)
 (require 'prog-lua)
 (require 'prog-web)
 (require 'prog-lisp)
+(require 'prog-scss)
+(require 'prog-haml)
+(require 'prog-yaml)
+(require 'prog-slim)
 (require 'prog-ruby)
 (require 'prog-rails)
+(require 'prog-coffee)
 (require 'prog-python)
-(require 'prog-clojure)
-(require 'prog-markdown)
-
-(modify-syntax-entry ?_ "w")
-(modify-syntax-entry ?- "w")
+(require 'prog-feature)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 

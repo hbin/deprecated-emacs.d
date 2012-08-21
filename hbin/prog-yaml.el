@@ -1,4 +1,4 @@
-;; prog-web.el --- Enhance HTML & CSS
+;; prog-yaml.el --- YAML Ain't Markup Language
 ;;
 ;; Copyright (C) 2012 Huang Bin
 ;;
@@ -26,15 +26,11 @@
 
 ;;;###autoload
 (progn
-  ;; CSS
-  (add-hook 'css-mode-hook 'rainbow-mode)
-  (custom-set-variables '(css-indent-offset 2))
+  (require 'yaml-mode)
 
-  ;; HTML
-  (add-hook 'sgml-mode-hook
+  (add-hook 'yaml-mode-hook
             (lambda ()
-              (rainbow-mode 1)
-              (zencoding-mode 1)))
+              (prog-common-setting)))
   )
 
-(provide 'prog-web)
+(provide 'prog-yaml)
