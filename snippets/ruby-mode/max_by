@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: max_by
+# --
+max_by { |${1:x}| $0 }

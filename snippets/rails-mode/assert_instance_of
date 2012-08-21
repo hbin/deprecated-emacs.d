@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: assert_instance_of
+# --
+assert_instance_of ${1:ExpectedClass}, ${0:actual_instance}

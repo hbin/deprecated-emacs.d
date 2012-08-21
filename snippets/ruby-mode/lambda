@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: lambda
+# --
+lambda { |$1| $0 }

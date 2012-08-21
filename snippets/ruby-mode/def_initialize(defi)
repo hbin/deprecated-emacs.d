@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: defi
+# --
+def initialize(${1:params})
+  $0
+end

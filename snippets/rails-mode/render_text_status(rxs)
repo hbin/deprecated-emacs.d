@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: render :text => " ... ", :status =>  ...
+# key: rxs
+# --
+render :text => "${Text here...}", :status => ${401}

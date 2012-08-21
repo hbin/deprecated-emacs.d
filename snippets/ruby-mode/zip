@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: zip(...) { |...| ... }
+# key: zip
+# --
+zip(${enums}) { |${row}| $0 }

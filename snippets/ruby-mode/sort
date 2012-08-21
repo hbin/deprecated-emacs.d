@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: sort { |a, b| .. }
+# key: sort
+# --
+sort { |a, b| $0 }

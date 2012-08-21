@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: defc
+# --
+def coerce(other)
+  [self, other]
+end

@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: all? { |...| ... }
+# key: all?
+# --
+all? { |${1:e}| $0 }

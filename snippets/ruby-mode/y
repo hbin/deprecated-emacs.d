@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: yield ...
+# key: y
+# --
+yield $0

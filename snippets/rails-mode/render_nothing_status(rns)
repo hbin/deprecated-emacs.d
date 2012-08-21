@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: render :nothing =>  ... , :status =>  ...
+# key: rns
+# --
+render :nothing => ${true}, :status => ${401}

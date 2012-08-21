@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: render :inline => " ... ", :locals => {  ...  => " ... " }
+# key: ril
+# --
+render :inline => "${<%= 'hello' %>}", :locals => { ${name} => "${value}" }

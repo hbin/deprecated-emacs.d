@@ -1,0 +1,7 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: def method_missing ... end
+# key: defmm
+# --
+def method_missing(method, *args)
+  $0
+end

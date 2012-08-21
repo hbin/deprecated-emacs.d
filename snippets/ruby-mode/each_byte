@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: each_byte
+# key: each_byte
+# --
+each_byte { |${1:b}| $0 }

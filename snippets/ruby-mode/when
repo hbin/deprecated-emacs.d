@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: when ...
+# key: when
+# --
+when ${1:condition}
+  $0

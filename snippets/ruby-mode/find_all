@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: find_all
+# --
+find_all { |${1:x}| $0 }

@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: %do
+# --
+<% ${1:method} do |$2| %>
+  $0
+<% end %>

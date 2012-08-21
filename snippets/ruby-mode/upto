@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: upto(n) { |...| ... }
+# key: upto
+# --
+upto(${1:n}) { |${2:x}| $0 }

@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: test
+# --
+test "${1:the truth}" do
+  ${0:assert true}
+end

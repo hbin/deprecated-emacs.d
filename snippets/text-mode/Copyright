@@ -1,0 +1,4 @@
+# name: (Copyright)
+# key: Copyright
+# --
+Copyright (C) `(format-time-string "%Y" (current-time))` `(user-full-name)`

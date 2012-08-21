@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: times { ... }
+# key: times
+# --
+times { $0 }

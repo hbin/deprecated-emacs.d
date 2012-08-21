@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: assert_no_match
+# --
+assert_no_match ${1:unexpected_pattern}, ${0:actual_string}

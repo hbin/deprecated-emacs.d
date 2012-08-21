@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: namespace
+# --
+namespace :$1 do
+  $0
+end

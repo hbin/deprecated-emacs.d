@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: min_by
+# --
+min_by { |${1:x}| $0 }

@@ -1,0 +1,9 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: if ... else ... end
+# key: ife
+# --
+if ${1:condition}
+  $2
+else
+  $3
+end

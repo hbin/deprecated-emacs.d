@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: =ff
+# --
+<%= form_for(${1::$2, url: $3}) do |${4:f}| %>
+  $0
+<% end %>

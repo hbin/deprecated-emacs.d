@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: minmax
+# --
+minmax { |a, b| $0 }

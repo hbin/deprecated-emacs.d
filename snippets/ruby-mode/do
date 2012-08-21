@@ -1,0 +1,7 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name : do |variable| ... end
+# key: do
+# --
+do ${1:|${2:variable}|}
+  $0
+end

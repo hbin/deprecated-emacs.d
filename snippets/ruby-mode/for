@@ -1,0 +1,7 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: for ... in ...; ... end
+# key: for
+# --
+for ${1:x} in ${2:collection}
+  $0
+end

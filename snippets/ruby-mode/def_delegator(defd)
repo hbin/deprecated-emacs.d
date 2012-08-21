@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: defd
+# --
+def_delegator${1} :${2:@del_obj}, :${3:del_meth}}

@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: each_slice(2) { |group| ... }
+# key: each_slice
+# --
+each_slice(${1:2}) { |${2:group}| $0 }

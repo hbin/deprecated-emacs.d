@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: render :inline => " ... ", :type => : ... )
+# key: rit
+# --
+render :inline => "${<%= 'hello' %>}", :type => :${rxml})

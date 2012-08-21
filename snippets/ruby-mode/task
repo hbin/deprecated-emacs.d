@@ -1,0 +1,7 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: task :name ... end
+# key: task
+# --
+task :${2:name} do
+  $0
+end

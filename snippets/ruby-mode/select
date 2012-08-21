@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: select { |...| ... }
+# key: select
+# --
+select { |${1:element}| $0 }

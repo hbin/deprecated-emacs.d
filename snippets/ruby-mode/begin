@@ -1,0 +1,9 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: begin ... rescue ... end
+# key: begin
+# --
+begin
+  $4
+rescue ${1:${2:Exception} => ${3:ex}}
+  $0
+end

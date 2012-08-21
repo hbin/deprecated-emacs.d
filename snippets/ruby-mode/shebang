@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: /usr/bin/ruby
+# key: shebang
+# --
+#!/usr/bin/ruby -w

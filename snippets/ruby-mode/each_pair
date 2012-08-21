@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: each_pair { |name, value| ... }
+# key: each_pair
+# --
+each_pair { |${1:name}, ${2:val}| $0 }

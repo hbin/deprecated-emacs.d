@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: scan(/../) { |match| .. }
+# key: scan
+# --
+scan(/${1:pattern}/) { |${2:match}| $0 }

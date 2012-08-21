@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: assert_throws
+# --
+assert_throws(:${1:expected}) { $0 }

@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: each_with_index { |e, i| ... }
+# key: each_with_index
+# --
+each_with_index { |${e}, ${i}| $0 }

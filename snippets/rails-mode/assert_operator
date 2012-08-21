@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: assert_operator
+# --
+assert_operator ${1:left}, :${2:operator}, ${0:right}

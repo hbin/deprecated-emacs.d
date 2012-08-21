@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: assert_raise
+# --
+assert_raise(${1:Exception}) { $0 }

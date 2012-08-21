@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: map
+# --
+map { |${1:x}| $0 }

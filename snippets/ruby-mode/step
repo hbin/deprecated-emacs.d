@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: step(2) { |e| .. }
+# key: step
+# --
+step(${1:2}) { |${2:x}| $0 }

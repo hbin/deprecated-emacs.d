@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: each_char
+# key: each_char
+# --
+each_char { |${1:chr}| $0 }

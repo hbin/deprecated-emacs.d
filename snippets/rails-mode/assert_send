@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: assert_send
+# --
+assert_send [${1:object}, :${2:message}, ${0:args}]

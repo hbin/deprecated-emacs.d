@@ -1,6 +1,3 @@
-[submodule "snippets"]
-	path = snippets
-	url = git@github.com:hbin/yasnippets-hbin.git
 [submodule "vendor/color-theme"]
 	path = vendor/color-theme
 	url = git://github.com/haxney/color-theme.git

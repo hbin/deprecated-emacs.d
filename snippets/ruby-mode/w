@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: attr_writer ...
+# key: w
+# --
+attr_writer :

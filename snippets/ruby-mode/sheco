@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: shebang and coding comments
+# key: sheco
+# --
+#!/usr/bin/ruby
+# -*- coding: utf-8 -*-
