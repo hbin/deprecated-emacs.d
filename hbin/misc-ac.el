@@ -52,23 +52,10 @@
 (setq ac-stop-flymake-on-completing t)
 (ac-flyspell-workaround)
 
-;; Override this function to fix compatibility issue with yasnippet-0.7.0.
+;; Override this function to fix compatibility issue with yasnippet-0.8
 (defun ac-yasnippet-candidates ()
   (with-no-warnings
-    (if (fboundp 'yas/get-snippet-tables)
-        (if (null (help-function-arglist 'yas/get-snippet-tables))
-            ;; >0.7.0
-            (apply 'append (mapcar 'ac-yasnippet-candidate-1 (yas/get-snippet-tables)))
-          ;; 0.6.0 < x < 0.7.0
-          (apply 'append (mapcar 'ac-yasnippet-candidate-1 (yas/get-snippet-tables major-mode))))
-      (let ((table
-             (if (fboundp 'yas/snippet-table)
-                 ;; <0.6.0
-                 (yas/snippet-table major-mode)
-               ;; 0.6.0
-               (yas/current-snippet-table))))
-        (if table
-            (ac-yasnippet-candidate-1 table))))))
+    (all-completions ac-prefix (yas-active-keys))))
 
 ;; Override the default settings
 (defun ac-common-setup ()

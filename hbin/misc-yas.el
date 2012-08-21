@@ -31,20 +31,14 @@
 (require 'yasnippet)
 (require 'dropdown-list)
 
-(setq yas/prompt-functions '(yas/dropdown-prompt
-                             yas/ido-prompt
-                             yas/completing-prompt))
+(setq yas-prompt-functions '(yas-dropdown-prompt
+                             yas-ido-prompt
+                             yas-completing-prompt))
 
-;; Explicitly set key of snippets
-(setq yas/ignore-filenames-as-triggers t)
+;; Set personal snippets as default
+(setq yas-snippet-dirs (concat user-emacs-directory "snippets"))
 
-;; Personal snippets
-(setq-default yas/snippet-dirs (concat user-emacs-directory "snippets"))
-
-;; Load the snippets
-(yas/load-directory yas/root-directory)
-
-(yas/initialize)
+(yas-global-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
