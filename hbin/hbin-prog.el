@@ -31,7 +31,6 @@
   (require 'zencoding-mode)
 
   (rvm-use-default)
-  (setq feature-use-rvm t)
 
   (defun hbin-modify-syntax ()
     (modify-syntax-entry ?_ "w")

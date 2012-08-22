@@ -29,6 +29,8 @@
   (autoload 'feature-mode "feature-mode" "autoload feature-mode" t)
   (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
 
+  (setq feature-use-rvm t)
+
   (add-hook 'feature-mode-hook
             (lambda ()
               (prog-common-setting)))
