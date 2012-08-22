@@ -33,19 +33,17 @@
   (rvm-use-default)
   (setq feature-use-rvm t)
 
-  (defvar hbin-syntax-table
-    (let ((table (make-syntax-table)))
-      (modify-syntax-entry ?_ "w" table)
-      (modify-syntax-entry ?- "w" table)
-      table))
+  (defun hbin-modify-syntax ()
+    (modify-syntax-entry ?_ "w")
+    (modify-syntax-entry ?- "w"))
 
   (defun prog-common-setting ()
     "Common settings for programming."
+    (hbin-modify-syntax)
     (turn-on-watchwords)
     (turn-on-autopair-mode)
     (turn-on-textmate-mode)
     (turn-on-rainbow-delimiters-mode)
-    (set-syntax-table hbin-syntax-table)
     (local-set-key (kbd "C-M-h") 'backward-kill-word)
     (local-set-key (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2))
 
