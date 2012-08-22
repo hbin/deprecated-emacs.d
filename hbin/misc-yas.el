@@ -31,6 +31,10 @@
 (require 'yasnippet)
 (require 'dropdown-list)
 
+;; Explicitly setting trigger key to "TAB", rather than <tab>
+(setq yas-trigger-key "TAB")
+
+;; Nice dropdown
 (setq yas-prompt-functions '(yas-dropdown-prompt
                              yas-ido-prompt
                              yas-completing-prompt))
