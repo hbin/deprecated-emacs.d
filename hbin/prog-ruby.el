@@ -29,6 +29,12 @@
   (require 'yari)
   (require 'ruby-tools)
   (setcar (cdr (assq 'ruby-tools-mode minor-mode-alist)) nil)
+
+  (add-hook 'ruby-mode-hook
+    (lambda ()
+      (modify-syntax-entry ?$ "w")
+      (modify-syntax-entry ?@ "w")))
+
   (define-key 'help-command "R" 'yari)
   (define-key ruby-mode-map (kbd "C-.") 'insert-arrow))
 
