@@ -27,10 +27,17 @@
 ;;;###autoload
 (progn
   (require 'rvm)
+  (require 'yari)
+  (require 'ruby-block)
+  (require 'ruby-tools)
+
   (rvm-use-default)
 
-  (require 'yari)
-  (require 'ruby-tools)
+  (setq ruby-block-delay 0)
+  (setq ruby-block-highlight-toggle t)
+  (ruby-block-mode t)
+
+  (hbin-remove-mm-lighter 'ruby-block-mode)
   (hbin-remove-mm-lighter 'ruby-tools-mode)
 
   (add-hook 'ruby-mode-hook
