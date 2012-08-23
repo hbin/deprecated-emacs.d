@@ -26,6 +26,11 @@
 
 ;;;###autoload
 (progn
+  (require 'rainbow-mode)
+  (require 'zencoding-mode)
+
+  (hbin-remove-mm-lighter 'rainbow-mode)
+
   ;; CSS
   (add-hook 'css-mode-hook 'rainbow-mode)
   (custom-set-variables '(css-indent-offset 2))

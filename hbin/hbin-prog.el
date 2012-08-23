@@ -26,12 +26,6 @@
 
 ;;;###autoload
 (progn
-  (require 'rvm)
-  (require 'rainbow-mode)
-  (require 'zencoding-mode)
-
-  (rvm-use-default)
-
   (defun hbin-modify-syntax ()
     (modify-syntax-entry ?_ "w")
     (modify-syntax-entry ?- "w"))

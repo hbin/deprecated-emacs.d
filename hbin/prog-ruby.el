@@ -26,14 +26,17 @@
 
 ;;;###autoload
 (progn
+  (require 'rvm)
+  (rvm-use-default)
+
   (require 'yari)
   (require 'ruby-tools)
-  (setcar (cdr (assq 'ruby-tools-mode minor-mode-alist)) nil)
+  (hbin-remove-mm-lighter 'ruby-tools-mode)
 
   (add-hook 'ruby-mode-hook
-    (lambda ()
-      (modify-syntax-entry ?$ "w")
-      (modify-syntax-entry ?@ "w")))
+            (lambda ()
+              (modify-syntax-entry ?$ "w")
+              (modify-syntax-entry ?@ "w")))
 
   (define-key 'help-command "R" 'yari)
   (define-key ruby-mode-map (kbd "C-.") 'insert-arrow))

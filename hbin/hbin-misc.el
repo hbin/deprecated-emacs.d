@@ -61,10 +61,10 @@
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
 ;;; Remove the minor mode line lighter
-(setcar (cdr (assq 'autopair-mode minor-mode-alist)) nil)
-(setcar (cdr (assq 'textmate-mode minor-mode-alist)) nil)
-(setcar (cdr (assq 'eproject-mode minor-mode-alist)) nil)
-(setcar (cdr (assq 'whole-line-or-region-mode minor-mode-alist)) nil)
+(hbin-remove-mm-lighter 'autopair-mode)
+(hbin-remove-mm-lighter 'textmate-mode)
+(hbin-remove-mm-lighter 'eproject-mode)
+(hbin-remove-mm-lighter 'whole-line-or-region-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
