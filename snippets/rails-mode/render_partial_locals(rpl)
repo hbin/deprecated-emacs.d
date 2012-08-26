@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render :partial => " ... ", :locals => { : ...  => " ... "}
-# key: rpl
-# --
-render :partial => "${item}", :locals => { :${name} => "${value}"}

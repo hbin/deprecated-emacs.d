@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render :text => " ... "
-# key: rx
-# --
-render :text => "$0"

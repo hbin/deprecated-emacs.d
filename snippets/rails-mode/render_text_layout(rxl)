@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render :text => " ... ", :layout => " ... "
-# key: rxl
-# --
-render :text => "${Text here...}", :layout => "${layoutname}"

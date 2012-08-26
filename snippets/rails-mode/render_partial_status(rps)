@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render :partial => " ... ", :status =>  ...
-# key: rps
-# --
-render :partial => "${item}", :status => ${500}

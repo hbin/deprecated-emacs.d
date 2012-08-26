@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render :nothing =>  ...
-# key: rn
-# --
-render :nothing => ${true}

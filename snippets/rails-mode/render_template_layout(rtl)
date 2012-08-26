@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render :template => " ... ", :layout => " ... "
-# key: rtl
-# --
-render :template => "${template}", :layout => "${layoutname}"
