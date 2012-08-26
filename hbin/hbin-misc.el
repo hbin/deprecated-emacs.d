@@ -55,6 +55,9 @@
 (require 'textmate)
 (require 'rainbow-delimiters)
 
+(require 'undo-tree)
+(global-undo-tree-mode)
+
 ;;; Markdown-mode
 (autoload 'markdown-mode "markdown-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
@@ -64,6 +67,7 @@
 (hbin-remove-mm-lighter 'autopair-mode)
 (hbin-remove-mm-lighter 'textmate-mode)
 (hbin-remove-mm-lighter 'eproject-mode)
+(hbin-remove-mm-lighter 'undo-tree-mode)
 (hbin-remove-mm-lighter 'whole-line-or-region-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
