@@ -1,5 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# name : attr_accessor ...
 # key: rw
 # --
 attr_accessor :
