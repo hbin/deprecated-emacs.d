@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render_component :action => " ... "
-# key: rca
-# --
-render_component :action => "${index}"

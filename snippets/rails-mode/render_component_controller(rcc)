@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: render_component :controller => " ... "
-# key: rcc
-# --
-render_component :controller => "${items}"
