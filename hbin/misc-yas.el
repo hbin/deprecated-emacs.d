@@ -29,14 +29,15 @@
 ;;; Code:
 
 (require 'yasnippet)
-(require 'dropdown-list)
 
 ;; Explicitly setting trigger key to "TAB", rather than <tab>
 (setq yas-trigger-key "TAB")
 
-;; Nice dropdown
-(setq yas-prompt-functions '(yas-dropdown-prompt
-                             yas-ido-prompt
+;; Jump to end of snippet definition
+(define-key yas-keymap (kbd "<return>") 'yas-exit-all-snippets)
+
+;; ido-stype candidates
+(setq yas-prompt-functions '(yas-ido-prompt
                              yas-completing-prompt))
 
 ;; Set personal snippets as default
