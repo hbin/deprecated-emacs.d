@@ -130,3 +130,6 @@
 [submodule "vendor/popwin"]
 	path = vendor/popwin
 	url = git://github.com/m2ym/popwin-el.git
+[submodule "vendor/linum-off"]
+	path = vendor/linum-off
+	url = git://github.com/emacsmirror/linum-off.git

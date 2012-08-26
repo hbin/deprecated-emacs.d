@@ -61,6 +61,8 @@
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 
+(require 'linum-off) ;; not turn-off linum globally
+
 ;;; Markdown-mode
 (autoload 'markdown-mode "markdown-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
