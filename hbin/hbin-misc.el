@@ -58,6 +58,9 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+
 ;;; Markdown-mode
 (autoload 'markdown-mode "markdown-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
