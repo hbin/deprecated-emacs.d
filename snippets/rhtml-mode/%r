@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =lt
+# key: %r
 # --
-<%= link_to "${title}", $0 %>
+<%= render $0 %>

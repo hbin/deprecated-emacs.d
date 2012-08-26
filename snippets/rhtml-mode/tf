@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =rp
+# key: tf
 # --
-<%= render :partial => "$0" %>
+text_field($0)

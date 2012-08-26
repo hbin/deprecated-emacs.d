@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =tf
+# key: r
 # --
-<%= text_field($0) %>
+render $0

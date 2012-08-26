@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =st
+# key: %cb
 # --
-<%= submit_tag("$0") %>
+<%= check_box($0) %>

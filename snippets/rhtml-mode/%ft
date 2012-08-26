@@ -1,5 +1,5 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =ft
+# key: %ft
 # --
 <%= form_tag(:action => "$1") do %>
   $0

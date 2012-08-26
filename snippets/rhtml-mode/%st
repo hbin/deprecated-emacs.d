@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =rb
+# key: %st
 # --
-<%= radio_button($0) %>
+<%= submit_tag("$0") %>

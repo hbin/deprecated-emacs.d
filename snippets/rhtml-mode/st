@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =r
+# key: st
 # --
-<%= render $0 %>
+submit_tag("$0")

@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: =cb
+# key: %p
 # --
-<%= check_box($0) %>
+<% provide(:$1, $0) %>

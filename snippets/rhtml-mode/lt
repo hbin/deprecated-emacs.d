@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %provide
+# key: lt
 # --
-<% provide(:$1, $0) %>
+link_to "${title}", $0

@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: %bt
+# --
+<%= button_to "$1", ${0:path} %>
