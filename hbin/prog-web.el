@@ -31,6 +31,10 @@
 
   (hbin-remove-mm-lighter 'rainbow-mode)
 
+  (define-key zencoding-mode-keymap (kbd "C-j") nil)
+  (define-key zencoding-mode-keymap (kbd "<C-return>") nil)
+  (define-key zencoding-mode-keymap (kbd "C-c C-j") 'zencoding-expand-line)
+
   ;; CSS
   (add-hook 'css-mode-hook 'rainbow-mode)
   (custom-set-variables '(css-indent-offset 2))
