@@ -38,6 +38,7 @@
 (setq ac-auto-show-menu nil)                            ; 取消默认弹出补全菜单
 (setq ac-menu-height 15)                                ; ....补全菜单长一点
 (setq ac-auto-start nil)                                ; 不要自动补全
+(setq ac-ignore-case nil)                               ; 要区分大小写
 (setq ac-trigger-key "TAB")                             ; 按下 TAB 后开始补全
 (setq ac-use-menu-map t)                                ; 当补全列表展开时...
 (define-key ac-menu-map (kbd "C-n") 'ac-next)           ; ...可以使用 C-n....
