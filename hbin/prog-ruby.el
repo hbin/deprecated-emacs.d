@@ -43,7 +43,13 @@
   (add-hook 'ruby-mode-hook
             (lambda ()
               (modify-syntax-entry ?$ "w")
-              (modify-syntax-entry ?@ "w")))
+              (modify-syntax-entry ?@ "w")
+              (modify-syntax-entry ?: ".")))
+
+  ;; Borrow from [doitian](http://blog.iany.me/2012/01/hilight-ruby-new-hash-in-emacs/)
+  (font-lock-add-keywords
+   'ruby-mode
+   '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face))))
 
   (define-key 'help-command "R" 'yari)
   (define-key ruby-mode-map (kbd "C-.") 'insert-arrow))
