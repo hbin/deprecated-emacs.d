@@ -1,5 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# name: session
-# key: s
+# key: vp
 # --
-session[:$1]$0
+validates :$0, presence: ${1:true}

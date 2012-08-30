@@ -1,5 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# name: session
-# key: s
+# key: f
 # --
-session[:$1]$0
+flash[:$1]$0
