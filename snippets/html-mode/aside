@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
 # key: aside
 # --
-<aside $1>
+<aside$1>
   $0
 </aside> 
