@@ -45,12 +45,15 @@
 (progn
   ;; Minor modes in rhtml
   (require 'rhtml-mode)
+
   (add-hook 'rhtml-mode-hook
             (lambda ()
               (prog-common-setting)
+              (modify-syntax-entry ?. ".")
               (abbrev-mode -1)
               (auto-complete-mode 1)
               (ruby-tools-mode 1)))
+
   (define-key rhtml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
 
   ;; Awesome plugin for programming Rails App.
