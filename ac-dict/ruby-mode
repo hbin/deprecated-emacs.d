@@ -15,6 +15,7 @@ begin
 break
 case
 class
+classify
 def
 defined?
 do
@@ -151,7 +152,6 @@ methods
 new
 nil?
 object_id
-respond_to?
 send
 superclass
 taint
@@ -263,8 +263,14 @@ detect
 drop
 drop_while
 each
+each_byte
+each_char
 each_cons
 each_entry
+each_index
+each_key
+each_line
+each_pair
 each_slice
 each_with_index
 entries
@@ -985,27 +991,48 @@ union
 
 ;;;;; Rails dictionary {{{
 
+
+#################
+# Rails keyword #
+#################
+group
+source
+
+
 ###############
 # Rails class #
 ###############
-
 ActionController
 ApplicationController
 ActiveRecord
 ActiveRecord::Base
 ActiveRecord::Migration
 ActiveRecord::Rollback
+ActiveModel
+ActiveModel::MassAssignmentSecurity
+ActiveModel::MassAssignmentSecurity::Error
+
 
 ####################
 # Rails Exceptions #
 ####################
-
 ActiveRecord::RecordNotFound
+
+
+################
+# Rails Routes #
+################
+collection
+get
+match
+member
+post
+resources
+
 
 ####################################
 # Rails Active Record Associations #
 ####################################
-
 attr_accessible
 belongs_to
 default_scope
@@ -1013,31 +1040,33 @@ has_and_belongs_to_many
 has_many
 has_one
 
-:as
-:autosave
-:class_name
-:conditions
-:counter_cache
-:dependent
-:destroy
-:foreign_key
-:include
-:inverse_of
-:order
-:polymorphic
-:primary_key
-:readonly
-:select
-:source
-:source_type
-:through
-:touch
-:validate
+##### Hash keys #####
+
+as
+autosave
+class_name
+conditions
+counter_cache
+dependent
+destroy
+foreign_key
+include
+inverse_of
+order
+polymorphic
+primary_key
+readonly
+select
+source
+source_type
+through
+touch
+validate
+
 
 ###################################
 # Rails Acitve Record Validations #
 ###################################
-
 create
 create!
 save
@@ -1082,25 +1111,34 @@ validates_associated
 validates_each
 validates_with
 
-:acceptance
-:allow_blank
-:allow_nil
-:confirmation
-:exclusion
-:foreign_key
-:format
-:inclusion
-:length
-:message
-:numericality
-:only_integer
-:presence
-:uniqueness
+has_secure_password
+
+##### Hash keys #####
+
+acceptance
+allow_blank
+allow_nil
+case_sensitve
+confirmation
+exclusion
+foreign_key
+format
+inclusion
+length
+limit
+maximum
+minimum
+message
+numericality
+only_integer
+presence
+unique
+uniqueness
+
 
 #################################
 # Rails Active Record Migration #
 #################################
-
 binary
 boolean
 date
@@ -1133,16 +1171,19 @@ suppress_messages
 say
 say_with_time
 
-:default
-:null
-:precision
-:scale
+##### Hash keys #####
+
+default
+null
+precision
+scale
+
 
 ###########################
 # Rails Active Controller #
 ###########################
-
 accepts_nested_attributes_for
+authenticate
 cookies
 flash
 force_ssl
@@ -1163,31 +1204,44 @@ around_filter
 before_filter
 skip_before_filter
 
-:action
-:alert
-:content_type
-:edit
-:except
-:file
-:filename
-:inline
-:json
-:layout
-:location
-:nothing
-:notice
-:only
-:status
-:template
-:text
-:type
-:with
-:xml
+##### Hash keys #####
+
+action
+alert
+collection
+content_type
+edit
+except
+file
+filename
+inline
+json
+layout
+location
+nothing
+notice
+only
+partial
+status
+template
+text
+type
+with
+xml
+
+
+################
+# Rails helper #
+################
+blank?
+time_ago_in_words
+created_at
+updated_at
+
 
 ##############
 # Rails test #
 ##############
-
 assert
 assert_equal
 assert_in_delta
@@ -1212,5 +1266,66 @@ assert_send
 assert_throws
 fixtures
 test
+
+
+#############
+##  Rspec  ##
+#############
+be_false
+be_invalid
+be_success
+be_nil
+be_valid
+before
+change
+click_button
+click_link
+describe
+expect
+fill_in
+have_content
+have_link
+have_selector
+it_should_behave_like
+let
+not_to
+raise_error
+respond_to
+response
+save
+shared_examples_for
+should
+should_not
+specify
+to
+visit
+
+href
+
+############
+#   Rake   #
+############
+namespace
+task
+
+############
+#   Gem    #
+############
+### FactoryGirl
+FactoryGirl
+reload
+sequence
+
+### will_paginate
+page
+paginate
+per_page
+
+### Faker
+Faker::Name
+Faker::Lorem
+
+sentence
+
 
 ;;;;; Rails dictionary }}}
