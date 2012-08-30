@@ -1,6 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: describe
+# key: let!
 # --
-describe '$1' do
-  $0
-end
+let!(:$1) { $0 }

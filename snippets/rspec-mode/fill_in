@@ -1,6 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: describe
+# key: fill_in
 # --
-describe '$1' do
-  $0
-end
+fill_in '$1',  with: $0

@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
 # key: expect
 # --
-expect { $1 }.${2:not_}to change($3)${4:.by($0)}
+expect { $1 }.${2:not_}to change($3)${4:.by(${0:1})}
