@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: factory
+# --
+factory :$1 do
+  $0
+end

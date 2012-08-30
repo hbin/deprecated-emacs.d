@@ -1,0 +1,8 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: fgd
+# --
+FactoryGirl.define do
+  factory :$1 do
+    $0
+  end
+end
