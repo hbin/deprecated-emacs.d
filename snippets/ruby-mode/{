@@ -2,7 +2,7 @@
 # name: { |variable| ... }
 # key: {
 # --
-{ ${1:|${2:variable}| }$0 `(let ((char (char-after (point))))
+{ $0 `(let ((char (char-after (point))))
                         (unless (and (characterp char)
                                      (char-equal char ?\}))
                           (message "}")))`

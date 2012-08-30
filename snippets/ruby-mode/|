@@ -1,6 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: d
+# key: |
 # --
-do
-  $0
-end
+|${1:param}| $0

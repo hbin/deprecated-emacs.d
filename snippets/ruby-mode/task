@@ -1,7 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# name: task :name ... end
 # key: task
 # --
-task :${2:name} do
+task ${1:taks_name} :${2:environment} do
   $0
 end

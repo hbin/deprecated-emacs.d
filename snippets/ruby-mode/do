@@ -2,6 +2,6 @@
 # name : do |variable| ... end
 # key: do
 # --
-do ${1:|${2:variable}|}
+do |${1:variable}|
   $0
 end
