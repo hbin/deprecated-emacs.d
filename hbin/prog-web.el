@@ -31,6 +31,8 @@
 
   (hbin-remove-mm-lighter 'rainbow-mode)
 
+  ;; Zencoding
+  (custom-set-variables '(zencoding-indentation 2))
   (define-key zencoding-mode-keymap (kbd "C-j") nil)
   (define-key zencoding-mode-keymap (kbd "<C-return>") nil)
   (define-key zencoding-mode-keymap (kbd "C-c C-j") 'zencoding-expand-line)
