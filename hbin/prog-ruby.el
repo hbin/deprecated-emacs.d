@@ -30,12 +30,19 @@
   (require 'yari)
   (require 'ruby-block)
   (require 'ruby-tools)
+  (require 'rspec-mode)
 
   (rvm-use-default)
 
   (setq ruby-block-delay 0)
   (setq ruby-block-highlight-toggle t)
   (ruby-block-mode t)
+
+  (defadvice rspec-compile (around rspec-compile-around)
+    "Use BASH shell for running the specs because of ZSH issues."
+    (let ((shell-file-name "/bin/bash"))
+      ad-do-it))
+  (ad-activate 'rspec-compile)
 
   (hbin-remove-mm-lighter 'ruby-block-mode)
   (hbin-remove-mm-lighter 'ruby-tools-mode)

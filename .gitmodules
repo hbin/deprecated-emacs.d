@@ -133,3 +133,6 @@
 [submodule "vendor/linum-off"]
 	path = vendor/linum-off
 	url = git://github.com/emacsmirror/linum-off.git
+[submodule "vendor/rspec-mode"]
+	path = vendor/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git
