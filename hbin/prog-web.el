@@ -38,12 +38,18 @@
   (define-key zencoding-mode-keymap (kbd "C-c C-j") 'zencoding-expand-line)
 
   ;; CSS
-  (add-hook 'css-mode-hook 'rainbow-mode)
   (custom-set-variables '(css-indent-offset 2))
+  (add-hook 'css-mode-hook
+            (lambda ()
+              (prog-common-setting)
+              (rainbow-mode 1)
+              (auto-complete-mode 1)))
 
   ;; HTML
   (add-hook 'sgml-mode-hook
             (lambda ()
+              (prog-common-setting)
+              (auto-complete-mode 1)
               (rainbow-mode 1)
               (zencoding-mode 1)))
   )

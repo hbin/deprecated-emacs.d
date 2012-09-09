@@ -31,6 +31,8 @@
   (add-hook 'scss-mode-hook
             (lambda ()
               (prog-common-setting)
+              (rainbow-mode 1)
+              (auto-complete-mode 1)
               (setq scss-compile-at-save nil)))
   )
 
