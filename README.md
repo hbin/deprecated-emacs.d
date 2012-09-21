@@ -27,4 +27,4 @@ I am very interesting in Ruby on Rails and FP.<br> If you're interesting in hire
 [tell me about it](mailto:embrace.hbin@gmail.com).
 
 ### At Last
-Refacotr Done, cheer up!
+Refactor Done, cheer up!
