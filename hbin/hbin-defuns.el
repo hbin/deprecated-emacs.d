@@ -26,11 +26,10 @@
 
 ;; Jump between parent
 (defun match-paren (arg)
-  "Go to the matching parenthesis if on a paren, otherwise insert %."
+  "Go to the matching parenthesis if on a paren."
   (interactive "p")
   (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
-        ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
-        (t (self-insert-command arg))))
+        ((looking-at "\\s\)") (forward-char 1) (backward-list 1))))
 
 ;; Smart beginning of line
 (defun beginning-of-line++ ()

@@ -46,7 +46,7 @@
 (global-set-key (kbd "C-x d") 'delete-file-and-buffer)
 
 ;;; Edit
-(global-set-key (kbd "%") 'match-paren)
+(global-set-key (kbd "M-'") 'match-paren)
 (global-set-key (kbd "C-a") 'beginning-of-line++)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 (global-set-key (kbd "M-^") 'join-line)
