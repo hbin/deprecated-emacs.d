@@ -48,6 +48,7 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)      ; 空格代替制表符
 (setq-default imenu-auto-rescan t)       ; Rescanning Imenu automatically
+(setq-default truncate-lines t)          ; Disable line wrap
 
 (setq suggest-key-bindings 1)            ; 当使用命令后，过 1 秒显示绑定的键
 (setq require-final-newline t)           ; 存盘的时候，要求最后一个是换行符
