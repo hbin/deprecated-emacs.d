@@ -28,6 +28,7 @@
 (require 'misc)
 (require 'misc-ac)                       ; Auto Complete
 (require 'misc-yas)                      ; Yasnippet
+(require 'misc-doc)                      ; Documents
 (require 'misc-tags)                     ; Navigation in project
 (require 'misc-hist)                     ; Save some history
 (require 'misc-mark)                     ; Highlight and mark symbols
@@ -62,11 +63,6 @@
 (setq display-buffer-function 'popwin:display-buffer)
 
 (require 'linum-off) ;; not turn-off linum globally
-
-;;; Markdown-mode
-(autoload 'markdown-mode "markdown-mode" nil t)
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
 ;;; Remove the minor mode line lighter
 (hbin-remove-mm-lighter 'autopair-mode)
