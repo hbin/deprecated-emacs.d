@@ -232,26 +232,6 @@ indent yanked text (with prefix arg don't indent)."
       (let ((transient-mark-mode nil))
         (yank-advised-indent-function (region-beginning) (region-end)))))
 
-;;;;;;; Scratch
-
-;; If the *scratch* buffer is killed...
-(defun kill-scratch-buffer ()
-  (set-buffer (get-buffer-create "*scratch*"))
-  (remove-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
-  (kill-buffer (current-buffer))
-  (set-buffer (get-buffer-create "*scratch*"))
-  (lisp-interaction-mode)
-  (make-local-variable 'kill-buffer-query-functions)
-  (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer)
-  (insert initial-scratch-message))
-
-;; .....create it automatically
-(save-excursion
-  (set-buffer (get-buffer-create "*scratch*"))
-  (lisp-interaction-mode)
-  (make-local-variable 'kill-buffer-query-functions)
-  (add-hook 'kill-buffer-query-functions 'kill-scratch-buffer))
-
 ;;;;;;; Switch functions used for hooks
 
 (defun turn-on-watchwords ()
@@ -275,13 +255,6 @@ indent yanked text (with prefix arg don't indent)."
 (defun turn-on-hs-mode ()
   (interactive)
   (hs-minor-mode 1))
-
-;; (defun hbin-toggle-mode (&optional arg)
-;;   "toggle mode example"
-;;   (interactive)
-;;   (setq mode
-;;         (if (null arg) (not mode)
-;;           (> (prefix-numeric-value arg) 0))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

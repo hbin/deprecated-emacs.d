@@ -63,7 +63,6 @@
 (setq recentf-save-file (concat tmp-dir "recentf.cache")
       recentf-max-saved-items 200
       recentf-max-menu-items 15)
-(recentf-mode t)
 
 ;; eshell
 (require 'eshell)
