@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: pre
+# key: object
 # --
-<pre>
+<object data="$1" type="$2">
   $0
-</pre>
+</object>

@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: meta
+# --
+<meta http-equiv="$1" content="$2" />$3

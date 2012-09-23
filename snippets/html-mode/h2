@@ -1,6 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: pre
+# key: h2
 # --
-<pre>
-  $0
-</pre>
+<h2>$0</h2>

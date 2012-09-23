@@ -1,7 +1,6 @@
-# contributor: Jimmy Wu <frozenthrone88@gmail.com>
-# name: <blockquote>...</blockquote>
+# contributor: hbin <embrace.hbin@gmail.com>
 # key: quote
 # --
 <blockquote>
-  $1
+  $0
 </blockquote>

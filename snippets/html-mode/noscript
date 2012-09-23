@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: pre
+# key: noscript
 # --
-<pre>
-  $0
-</pre>
+<noscript>
+  $1
+</noscript>

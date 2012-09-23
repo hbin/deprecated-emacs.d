@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: link:css
+# --
+<link rel="stylesheet" href="${2:style}.css" type="text/css" media="${3:all}" />
