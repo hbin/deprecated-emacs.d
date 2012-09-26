@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %rp
+# key: r
 # --
-<%= render partial: $0 %>
+<%= render $0 %>

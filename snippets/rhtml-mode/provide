@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
 # key: provide
 # --
-provide(:$1, $0)
+<% provide(:$1, $0) %>

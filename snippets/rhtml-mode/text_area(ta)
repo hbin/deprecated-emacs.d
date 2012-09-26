@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %p
+# key: ta
 # --
-<% provide(:$1, $0) %>
+<%= text_area($0) %>

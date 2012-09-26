@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %each
+# key: unless
 # --
-<% ${1:@${2:girls}}.each do |${3:girl}| %>
+<% unless ${1:condition} %>
   $0
 <% end %>

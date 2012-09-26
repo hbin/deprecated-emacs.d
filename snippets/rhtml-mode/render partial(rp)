@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: ta
+# key: rp
 # --
-text_area($0)
+<%= render partial: $0 %>

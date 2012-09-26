@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: cb
+# key: tf
 # --
-check_box($0)
+<%= text_field($0) %>

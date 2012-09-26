@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %unless
+# key: ft
 # --
-<% unless ${1:condition} %>
+<%= form_tag(:action => "$1") do %>
   $0
 <% end %>

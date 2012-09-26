@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %r
+# key: jit
 # --
-<%= render $0 %>
+<%= javascript_include_tag $0 %>

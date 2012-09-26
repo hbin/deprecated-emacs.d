@@ -1,4 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %lt
+# key: do
 # --
-<%= link_to "${title}", $0 %>
+<% ${1:method} do |$2| %>
+  $0
+<% end %>

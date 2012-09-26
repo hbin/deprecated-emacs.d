@@ -1,6 +1,8 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %do
+# key: ife
 # --
-<% ${1:method} do |$2| %>
+<% if ${1:condition} %>
   $0
+<% else %>
+  
 <% end %>

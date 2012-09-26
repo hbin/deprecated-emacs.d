@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %st
+# key: lt
 # --
-<%= submit_tag("$0") %>
+<%= link_to "${title}", $0 %>

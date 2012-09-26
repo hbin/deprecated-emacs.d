@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: %ff
+# key: each
 # --
-<%= form_for(${1::$2, url: $3}) do |${4:f}| %>
+<% ${1:@${2:girls}}.each do |${3:girl}| %>
   $0
 <% end %>
