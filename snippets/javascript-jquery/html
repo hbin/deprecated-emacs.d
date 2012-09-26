@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: html
+# --
+${1:obj}.html('${0:Some text <b>and bold!</b>}')

@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: load
+# --
+${1:obj}.load(function () {
+  ${0:// event handler}
+});

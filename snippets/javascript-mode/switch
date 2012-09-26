@@ -1,0 +1,10 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: switch
+# --
+switch(${1:expression}) {
+  case '${3:case}':
+    ${4:// code}
+    break;
+  default:
+    ${2:// code}
+}

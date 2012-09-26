@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: case
+# --
+case ${1:case}:
+  ${0:// code}
+  break;

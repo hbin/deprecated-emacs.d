@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: jsonp
+# --
+JSON.parse(${1:jstr});

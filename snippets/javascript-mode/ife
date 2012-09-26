@@ -1,0 +1,8 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: ife
+# --
+if ($1) {
+  $2
+} else {
+  $0
+}

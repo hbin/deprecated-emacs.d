@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: ready
+# --
+$(function () {
+  $0
+});

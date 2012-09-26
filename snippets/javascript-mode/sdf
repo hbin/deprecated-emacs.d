@@ -1,0 +1,10 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: sdf
+# --
+var ${1:function_name} = function (${2:argument}) {
+  ${3:// initial code ...}
+
+  $1 = function ($2) {
+    ${4:// main code}
+  };
+}
