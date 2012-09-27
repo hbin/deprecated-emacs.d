@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: opt
+# --
+<option value="$1">${2:$1}</option>

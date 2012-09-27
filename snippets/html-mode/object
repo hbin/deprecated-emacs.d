@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: object
+# --
+<object data="$1" type="$2">
+  $0
+</object>

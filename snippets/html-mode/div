@@ -1,6 +1,6 @@
-# name: <div...>...</div>
+# contributor: hbin <embrace.hbin@gmail.com>
 # key: div
 # --
-<div$1>
+<div>
   $0
 </div>

@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: fun
+# --
+function ${1:function_name}(${2:argument}) {
+  ${0:// body...}
+}

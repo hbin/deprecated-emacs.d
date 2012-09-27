@@ -1,5 +1,4 @@
-# contributor: Jimmy Wu <frozenthrone88@gmail.com>
-# name: <a href="...">...</a>
+# contributor: hbin <embrace.hbin@gmail.com>
 # key: a
 # --
 <a href="$1">$0</a>

@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: addClass
+# --
+${1:obj}.addClass('${0:class name}')

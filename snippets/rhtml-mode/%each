@@ -1,6 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: %each
-# --
-<% ${1:@${2:girls}}.each do |${3:girl}| %>
-  $0
-<% end %>

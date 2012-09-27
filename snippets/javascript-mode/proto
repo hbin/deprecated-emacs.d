@@ -1,0 +1,7 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: proto
+# --
+${1:class_name}.prototype.${2:method_name} =
+function(${3:first_argument}) {
+    ${4:// body...}
+};

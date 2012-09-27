@@ -1,5 +1,4 @@
-# contributor: Jimmy Wu <frozenthrone88@gmail.com>
-# name: <link stylesheet="..." />
+# contributor: hbin <embrace.hbin@gmail.com>
 # key: link
 # --
-<link href="${1:url}" rel="${2:stylesheet}" type="${3:text/css}" media="${0:all}" />
+<link rel="$1" href="$2" title="$3" type="$4" />

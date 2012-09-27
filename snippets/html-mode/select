@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: select
+# --
+<select name="$1" id="${2:$1}">
+  $3
+</select>

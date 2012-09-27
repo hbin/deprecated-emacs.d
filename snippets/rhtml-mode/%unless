@@ -1,6 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: %unless
-# --
-<% unless ${1:condition} %>
-  $0
-<% end %>

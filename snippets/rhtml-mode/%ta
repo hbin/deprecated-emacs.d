@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: %ta
-# --
-<%= text_area($0) %>

@@ -1,0 +1,8 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: ife
+# --
+<% if ${1:condition} %>
+  $0
+<% else %>
+  
+<% end %>
