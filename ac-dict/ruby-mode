@@ -443,6 +443,7 @@ store
 to_a
 to_hash
 to_s
+to_yaml
 try_convert
 update
 value?
@@ -1003,6 +1004,8 @@ source
 # Rails class #
 ###############
 ActionController
+ActionMailer
+ActionMailer::Base
 ApplicationController
 ActiveRecord
 ActiveRecord::Base
@@ -1194,6 +1197,7 @@ logger
 params
 redirect_to
 render
+request
 respond_to
 root
 rescue_from
@@ -1228,6 +1232,20 @@ text
 type
 with
 xml
+
+
+########################
+#  Rails ActionMailer  #
+########################
+attachments
+default
+deliver
+deliveries
+headers
+from
+mail
+return_path
+subject
 
 
 ################
