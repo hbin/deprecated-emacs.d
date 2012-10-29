@@ -24,9 +24,19 @@
 
 ;;; Code:
 
+(require 'flycheck)
 (require 'flymake-cursor)
-(require 'flymake-ruby)
 
-(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+(hbin-remove-mm-lighter 'flycheck-mode)
+
+;; Need to install external utilities for the following checkers:
+;; CoffeeScript :: Install coffeelint.
+;; PHP :: Install the PHP command line.
+;; Python :: Install flake8, pyflakes or pylint.
+;; Ruby :: Install Ruby.
+;; Shell scripts :: Install Bash or Zsh depending on the type of shell file you want to check.
+;; TeX/LaTeX :: Install chktex. Most TeX distributions, including TeXLive and MacTeX, already do this for you.
+(add-hook 'coffee-mode-hook 'flycheck-mode)
+(add-hook 'ruby-mode-hook   'flycheck-mode)
 
 (provide 'misc-flymake)
