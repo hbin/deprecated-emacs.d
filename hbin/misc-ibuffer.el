@@ -28,43 +28,52 @@
 
 (setq ibuffer-saved-filter-groups
       (quote (("default"
+               ("Code"
+                (or
+                 (mode . c-mode)
+                 (mode . clojure-mode)
+                 (mode . coffee-mode)
+                 (mode . java-mode)
+                 (mode . javascript-mode)
+                 (mode . js-mode)
+                 (mode . js2-mode)
+                 (mode . python-mode)
+                 (mode . yaml-mode)))
+               ("Lisp"
+                (or
+                 (mode . lisp-mode)
+                 (mode . emacs-lisp-mode)))
+               ("Ruby"
+                (or
+                 (mode . ruby-mode)))
+               ("Web Design"
+                (or
+                 (mode . css-mode)
+                 (mode . haml-mode)
+                 (mode . html-mode)
+                 (mode . rhtml-mode)
+                 (mode . slim-mode)
+                 (mode . scss-mode)
+                 (mode . nxhtml-mode)))
                ("Documents"
                 (or
                  (mode . org-mode)
                  (mode . markdown-mode)))
-               ("Directories"
-                (mode . dired-mode))
-               ("Programming"
-                (or
-                 (mode . c-mode)
-                 (mode . java-mode)
-                 (mode . python-mode)
-                 (mode . clojure-mode)
-                 (mode . js-mode)
-                 (mode . js2-mode)
-                 (mode . javascript-mode)
-                 (mode . html-mode)
-                 (mode . nxml-mode)
-                 (mode . lisp-mode)
-                 (mode . emacs-lisp-mode)))
-               ("Ruby on Rails"
-                (or
-                 (mode . ruby-mode)
-                 (mode . yaml-mode)
-                 (mode . haml-mode)
-                 (mode . slim-mode)
-                 (mode . scss-mode)
-                 (mode . rhtml-mode)
-                 (mode . coffee-mode)))
-               ("Web Design"
-                (or
-                 (mode . css-mode)
-                 (mode . html-mode)
-                 (mode . nxhtml-mode)))
                ("Terminals"
                 (or
                  (mode . shell-mode)
                  (mode . eshell-mode)))
+               ("Magit"
+                (name . "\*magit"))
+               ("Directories"
+                (mode . dired-mode))
+               ("Help"
+                (or
+                 (mode . help-mode)
+                 (name . "\*Apropos\*")
+                 (name . "\*Help\*")
+                 (name . "\*info\*")
+                 (name . "\*Messages\*")))
                ))))
 
 (add-hook 'ibuffer-mode-hook
