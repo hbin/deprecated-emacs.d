@@ -37,15 +37,15 @@
   (mouse-wheel-mode t))
 
 ;; Fonts and Themes
-(if (>= emacs-major-version 24)
+(set-default-font "Monaco-14")        ; To get Monaco -> http://d.yun.io/qQhWRj
+(set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
+
+;; Swith the flavour
+(if (< (string-to-number (format-time-string "%w")) 7)
     (progn
-      (set-default-font "Monaco-14")        ; To get Monaco -> http://d.yun.io/qQhWRj
-      (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
       (add-subfolders-to-theme-load-path themes-dir)
       (load-theme 'solarized-dark t))
   (progn
-    (set-default-font "Menlo-14")           ; Menlo is very beautiful too
-    (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
     (require 'color-theme)
     (require 'color-theme-molokai)
     (color-theme-initialize)
