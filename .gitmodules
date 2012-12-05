@@ -136,3 +136,6 @@
 [submodule "vendor/flycheck"]
 	path = vendor/flycheck
 	url = git://github.com/lunaryorn/flycheck.git
+[submodule "vendor/ido-hacks"]
+	path = vendor/ido-hacks
+	url = git://github.com/scottjad/ido-hacks.git

@@ -72,6 +72,7 @@
       ido-use-virtual-buffers t
       ido-handle-duplicate-virtual-buffers 2
       ido-max-prospects 10
+      ido-max-directory-size 100000
       ido-default-file-method 'selected-window)
 
 ;; Ido 匹配时,忽略某些文件

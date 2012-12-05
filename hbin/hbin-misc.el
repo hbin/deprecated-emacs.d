@@ -44,25 +44,37 @@
   (require 'misc-mac))
 
 ;;;;;;; Here are for vendors
+
 (require 'autopair)
 (setq autopair-blink nil)
 
 (require 'whole-line-or-region)
 (whole-line-or-region-mode)
 
+;; Interactively Do hacks
+(require 'ido-hacks)
+(ido-hacks-mode 1)
+
 (require 'smex)
 (smex-initialize)
 
+;; Textmate like find file
 (require 'textmate)
+(setq textmate-use-file-cache nil)
+
+;; Colorful parenthesis
 (require 'rainbow-delimiters)
 
+;; Visible tree-like undo history
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+;; Popup window manager
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 
-(require 'linum-off) ;; not turn-off linum globally
+;; Turn off linum mode within some temp buffers
+(require 'linum-off)
 
 ;;; Remove the minor mode line lighter
 (hbin-remove-mm-lighter 'autopair-mode)
