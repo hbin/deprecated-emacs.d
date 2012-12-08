@@ -2,9 +2,7 @@
 
 ### Why I create this repo? ###
 I use both auto-complete and yasnippet. As we know, AC (auto-complete) can use
-yasnippets as a source to ac-expand. So I decide to create my own
-snippets. If you use these two extensions both, and encounter the same
-scenario like  me, you can get this for you too.
+yasnippets as a source to ac-expand.
 
 ### What's the difference from others' snippet ###
 
@@ -14,21 +12,6 @@ scenario like  me, you can get this for you too.
 * Rules of the snippets
   While I use other's or the default snippets shipped with Yasnippet,
   the convention of the snippets make me and AC confuse.
-
-### How to use ###
-
-#### Install ####
-After you have installed yasnippet and auto-complete work well.
-
-```bash
-$ cd ~/.emacs.d
-$ git clone git://github.com/hbin/yasnippets-hbin.git
-```
-And then, add this
-```
-(yas/load-directory "yasnippets-hbin")
-```
-into your load path.
 
 #### Compatible with default snippets ####
 Yasnippet has shipped snippets for different modes. To prevent from
