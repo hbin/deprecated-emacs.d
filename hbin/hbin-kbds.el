@@ -125,9 +125,8 @@
 ;;; Magit
 (global-set-key (kbd "C-c g") 'magit-status)
 
-;;; Ido
-(global-set-key (kbd "C-x C-d") 'ido-dired)
-(global-set-key (kbd "M-x") 'smex)
+;;; Smex
+(if (featurep 'smex) (global-set-key (kbd "M-x") 'smex))
 
 ;; This is a little hacky since VC doesn't support git add internally
 (eval-after-load 'vc
