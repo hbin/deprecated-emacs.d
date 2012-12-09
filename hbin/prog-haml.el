@@ -31,6 +31,7 @@
   (add-hook 'haml-mode-hook
             (lambda ()
               (prog-common-setting)))
-  )
+
+  (define-key haml-mode-map (kbd "C-.") 'insert-arrow))
 
 (provide 'prog-haml)
