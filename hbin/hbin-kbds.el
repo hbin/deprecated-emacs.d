@@ -65,9 +65,6 @@
 (global-set-key (kbd "<M-up>") 'move-line-up)
 (global-set-key (kbd "<M-down>") 'move-line-down)
 
-;; Jump to a definition
-(global-set-key (kbd "C-x C-i") 'textmate-goto-symbol)
-
 ;;; Font size
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
@@ -122,11 +119,14 @@
 (global-set-key (kbd "M-g M-n") 'flymake-goto-next-error)
 (global-set-key (kbd "M-g M-p") 'flymake-goto-prev-error)
 
+;;; Textmate
+(eval-after-load "textmate" '(progn (global-set-key (kbd "C-x C-i") 'textmate-goto-symbol)))
+
 ;;; Magit
-(global-set-key (kbd "C-c g") 'magit-status)
+(eval-after-load "magit" '(progn (global-set-key (kbd "C-c g") 'magit-status)))
 
 ;;; Smex
-(if (featurep 'smex) (global-set-key (kbd "M-x") 'smex))
+(eval-after-load "smex" '(progn (global-set-key (kbd "M-x") 'smex)))
 
 ;; This is a little hacky since VC doesn't support git add internally
 (eval-after-load 'vc

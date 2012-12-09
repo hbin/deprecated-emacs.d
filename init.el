@@ -72,8 +72,8 @@
 (require 'hbin-ui)                      ; eye candy
 (require 'hbin-editor)                  ; enhance the editor
 (require 'hbin-defuns)                  ; useful tricks
-(require 'hbin-misc)                    ; miscellaneous
 (require 'hbin-kbds)                    ; key bindings
+(require 'hbin-misc)                    ; miscellaneous
 (require 'hbin-prog)                    ; programming
 
 ;; set an explicit file to customization created via the UI
