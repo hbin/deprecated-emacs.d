@@ -37,7 +37,7 @@
   (mouse-wheel-mode t))
 
 ;; Fonts and Themes
-(set-default-font "Monaco-14")        ; To get Monaco -> http://d.yun.io/qQhWRj
+(set-frame-font "Monaco-14")   ; To get Monaco -> http://d.yun.io/qQhWRj
 (set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
 
 ;; Swith the flavour

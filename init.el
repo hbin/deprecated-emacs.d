@@ -23,7 +23,6 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Code:
-(require 'cl)
 
 ;; Who am I?
 (setq user-full-name "Huang Bin")
