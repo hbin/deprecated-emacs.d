@@ -26,24 +26,42 @@
 
 ;;;###autoload
 (progn
+  ;; RVM
   (require 'rvm)
-  (require 'yari)
-  (require 'ruby-block)
-  (require 'ruby-tools)
-  (require 'rspec-mode)
-
   (rvm-use-default)
 
+  ;; Ruby tools
+  (require 'yari)
+  (require 'ruby-tools)
+
+  ;; Setting for Ruby block mode
+  (require 'ruby-block)
   (setq ruby-block-delay 0)
   (setq ruby-block-highlight-toggle t)
   (ruby-block-mode t)
 
+  ;; Rspec and its workaround for ZSH issues.
+  (require 'rspec-mode)
   (defadvice rspec-compile (around rspec-compile-around)
-    "Use BASH shell for running the specs because of ZSH issues."
     (let ((shell-file-name "/bin/bash"))
       ad-do-it))
   (ad-activate 'rspec-compile)
 
+  ;; Setting for Rsense
+  (setq rsense-home (substitute-in-file-name "$RSENSE_HOME"))
+  (add-to-list 'load-path (concat rsense-home "/etc"))
+  (require 'rsense nil 'noerror)
+  (if (featurep 'rsense)
+      (progn
+        (add-hook 'ruby-mode-hook
+                  (lambda ()
+                    (add-to-list 'ac-sources 'ac-source-rsense-constant)
+                    (add-to-list 'ac-sources 'ac-source-rsense-method)))
+        (add-hook 'kill-emacs-hook
+                  (lambda ()
+                    (rsense-exit)))))
+
+  ;; No lighters
   (hbin-remove-mm-lighter 'ruby-block-mode)
   (hbin-remove-mm-lighter 'ruby-tools-mode)
 

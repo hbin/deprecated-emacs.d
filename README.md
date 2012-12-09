@@ -36,6 +36,14 @@ For preview the markdown doc(markdown-preview), you may need this.
 sudo aptitude install markdown
 ```
 
+##### 5. Rsense #####
+[Rsense](http://cx4a.org/software/rsense/manual.html) is a very smart
+code-completing plugin for coding ruby programs.
+
+- Install JRE: Both Oracle JDK and OpenJDK are supported.
+- Install Rsense: Download and extract the package to some where you want.
+- Setting for Emacs: Add RSENSE_HOME environment variable to your system.
+
 ### Bugs & Improvements
 
 Thank you very much for helping me at the [known issue list](https://github.com/hbin/dotfiles-for-emacs/issues?sort=created&direction=desc&state=open).
