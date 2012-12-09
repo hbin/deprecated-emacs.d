@@ -45,6 +45,29 @@
 ;;; Need flyspell against my poor english
 (add-hook 'magit-log-edit-mode-hook 'turn-on-flyspell)
 
+;; Full screen magit-status
+(defadvice magit-status (around magit-fullscreen activate)
+  (window-configuration-to-register :magit-fullscreen)
+  ad-do-it
+  (delete-other-windows))
+
+;; Back to previous window
+(defun magit-quit-session ()
+  (interactive)
+  (kill-buffer)
+  (jump-to-register :magit-fullscreen))
+
+;; Toggle ignore whitespace
+(defun magit-toggle-whitespace ()
+  (interactive)
+  (if (member "-w" magit-diff-options)
+      (setq magit-diff-options (remove "-w" magit-diff-options))
+    (add-to-list 'magit-diff-options "-w"))
+  (magit-refresh))
+
+(define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+(define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'misc-magit)
