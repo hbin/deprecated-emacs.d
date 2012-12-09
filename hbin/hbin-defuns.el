@@ -191,6 +191,11 @@ there's a region, all lines that region covers will be duplicated."
       (set-window-start w2 s1)))
   (other-window 1))
 
+(defun recompile-init ()
+  "Byte-compile all your dotfiles again."
+  (interactive)
+  (byte-recompile-directory user-emacs-directory 0))
+
 (defun sudo-edit (&optional arg)
   (interactive "p")
   (if (or arg (not buffer-file-name))
