@@ -32,13 +32,13 @@
 ;; debug begin, show error stack trace.
 ;; (setq debug-on-error t)
 
-(defvar vendor-dir (concat user-emacs-directory "vendor/")
+(defconst vendor-dir (expand-file-name "vendor/" user-emacs-directory)
   "The root folder of external packages")
 
-(defvar themes-dir (concat user-emacs-directory "themes/")
+(defconst themes-dir (expand-file-name "themes/" user-emacs-directory)
   "The root folder of themes")
 
-(defvar tmp-dir (concat user-emacs-directory "temp/")
+(defconst tmp-dir (expand-file-name "temp/" user-emacs-directory)
   "The root folder of temps")
 
 ;; Borrow from bbatsov's prelude to create automatically.
