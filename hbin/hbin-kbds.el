@@ -119,9 +119,6 @@
 (global-set-key (kbd "M-g M-n") 'flymake-goto-next-error)
 (global-set-key (kbd "M-g M-p") 'flymake-goto-prev-error)
 
-;;; Textmate
-(eval-after-load "textmate" '(progn (global-set-key (kbd "C-x C-i") 'textmate-goto-symbol)))
-
 ;;; Magit
 (eval-after-load "magit" '(progn (global-set-key (kbd "C-c g") 'magit-status)))
 

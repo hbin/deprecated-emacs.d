@@ -62,10 +62,10 @@
                              ac-source-symbols) ac-sources)))
 
 (defun ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-yasnippet ac-source-gtags) ac-sources)))
+  (setq ac-sources (append '(ac-source-yasnippet) ac-sources)))
 
 (defun ac-ruby-mode-setup ()
-  (setq ac-sources (append '(ac-source-yasnippet ac-source-gtags) ac-sources)))
+  (setq ac-sources (append '(ac-source-yasnippet) ac-sources)))
 
 (defun ac-css-mode-setup ()
   (setq ac-sources (append '(ac-source-css-property) ac-sources)))
