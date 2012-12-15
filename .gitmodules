@@ -139,3 +139,12 @@
 [submodule "vendor/ido-hacks"]
 	path = vendor/ido-hacks
 	url = git://github.com/scottjad/ido-hacks.git
+[submodule "vendor/dired-plus"]
+	path = vendor/dired-plus
+	url = git://github.com/emacsmirror/dired-plus.git
+[submodule "vendor/dired-details"]
+	path = vendor/dired-details
+	url = git://github.com/emacsmirror/dired-details.git
+[submodule "vendor/dired-details-plus"]
+	path = vendor/dired-details-plus
+	url = git://github.com/emacsmirror/dired-details-plus.git

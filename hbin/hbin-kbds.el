@@ -119,12 +119,6 @@
 (global-set-key (kbd "M-g M-n") 'flymake-goto-next-error)
 (global-set-key (kbd "M-g M-p") 'flymake-goto-prev-error)
 
-;;; Dired
-(eval-after-load "dired-x"
-  '(progn
-     (define-key dired-mode-map (kbd "M-o") 'other-window)
-     (define-key dired-mode-map (kbd "C-x C-o") 'dired-omit-mode)))
-
 ;;; Magit
 (eval-after-load "magit" '(progn (global-set-key (kbd "C-c g") 'magit-status)))
 

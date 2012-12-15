@@ -32,6 +32,7 @@
 (require 'misc-tags)                     ; Navigation in project
 (require 'misc-hist)                     ; Save some history
 (require 'misc-mark)                     ; Highlight and mark symbols
+(require 'misc-dired)                    ; Extends build-in dired
 (require 'misc-magit)                    ; Awesome extension!!!!
 (require 'misc-eshell)                   ; Eshell
 (require 'misc-ispell)                   ; Spell check
