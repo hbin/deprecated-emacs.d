@@ -47,9 +47,12 @@
 
 ;;;;;;; Here are for vendors
 
+;; Pair
+(require 'paredit)
 (require 'autopair)
 (setq autopair-blink nil)
 
+;; WLR
 (require 'whole-line-or-region)
 (whole-line-or-region-mode)
 
