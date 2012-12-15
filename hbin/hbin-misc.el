@@ -78,6 +78,9 @@
 ;; Turn off linum mode within some temp buffers
 (require 'linum-off)
 
+;; Show FIXME/TODO/BUG(...)
+(require 'fic-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'hbin-misc)

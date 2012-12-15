@@ -148,3 +148,6 @@
 [submodule "vendor/dired-details-plus"]
 	path = vendor/dired-details-plus
 	url = git://github.com/emacsmirror/dired-details-plus.git
+[submodule "vendor/fic-mode"]
+	path = vendor/fic-mode
+	url = git://github.com/lewang/fic-mode.git
