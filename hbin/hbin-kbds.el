@@ -26,6 +26,8 @@
 
 ;;; Unbinding keys
 (global-unset-key (kbd "C-SPC"))        ; conflict with IME
+(global-unset-key (kbd "C-x C-p"))      ; used to mark page
+(global-unset-key (kbd "C-x C-n"))      ; used to set-goal-column
 
 ;;; Translate C-h with C-? in any mode.
 (global-set-key (kbd "M-?") 'help-command)
@@ -66,8 +68,8 @@
 (global-set-key (kbd "<M-down>") 'move-line-down)
 
 ;;; Font size
-(global-set-key (kbd "C-+") 'text-scale-increase)
-(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "C-x C-+") 'text-scale-increase)
+(global-set-key (kbd "C-x C--") 'text-scale-decrease)
 
 ;;; Easily navigate between recent buffers
 (if (>= emacs-major-version 24)
