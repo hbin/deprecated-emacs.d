@@ -202,10 +202,6 @@ there's a region, all lines that region covers will be duplicated."
       (find-file (concat "/sudo:root@localhost:" (ido-read-file-name "File: ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
-(defun hbin-remove-mm-lighter (mm)
-  "Remove minor lighter from the mode line."
-  (setcar (cdr (assq mm minor-mode-alist)) nil))
-
 ;;;;;;; Automatically indenting yanked text if in programming-modes
 (defvar yank-indent-modes '(python-mode LaTeX-mode TeX-mode)
   "Modes in which to indent regions that are yanked (or yank-popped). Only

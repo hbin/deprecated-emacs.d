@@ -27,8 +27,6 @@
 (require 'flycheck)
 (require 'flymake-cursor)
 
-(hbin-remove-mm-lighter 'flycheck-mode)
-
 ;; Need to install external utilities for the following checkers:
 ;; CoffeeScript :: Install coffeelint.
 ;; PHP :: Install the PHP command line.

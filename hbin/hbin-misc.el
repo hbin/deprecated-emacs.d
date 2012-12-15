@@ -38,6 +38,7 @@
 (require 'misc-ispell)                   ; Spell check
 (require 'misc-ibuffer)                  ; Nice Ibuffer
 (require 'misc-flymake)                  ; On-the-fly syntax checks
+(require 'misc-diminish)                 ; Clean up the mode line
 (require 'misc-navigation)               ; Fast navigation
 
 ;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
@@ -76,13 +77,6 @@
 
 ;; Turn off linum mode within some temp buffers
 (require 'linum-off)
-
-;;; Remove the minor mode line lighter
-(hbin-remove-mm-lighter 'autopair-mode)
-(hbin-remove-mm-lighter 'textmate-mode)
-(hbin-remove-mm-lighter 'eproject-mode)
-(hbin-remove-mm-lighter 'undo-tree-mode)
-(hbin-remove-mm-lighter 'whole-line-or-region-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
