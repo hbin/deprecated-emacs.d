@@ -32,7 +32,7 @@
 
   (add-hook 'lua-mode-hook
             (lambda ()
-              (prog-common-setting)))
+              (hbin-prog-mode-init)))
   )
 
 (provide 'prog-lua)

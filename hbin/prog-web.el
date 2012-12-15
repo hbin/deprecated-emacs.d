@@ -24,32 +24,98 @@
 
 ;;; Code:
 
-;;;###autoload
-(progn
-  (require 'rainbow-mode)
-  (require 'zencoding-mode)
+(custom-set-variables
+ '(js-indent-level 2)
+ '(css-indent-offset 2)
+ '(coffee-tab-width 2)
+ '(zencoding-indentation 2))
 
-  ;; Zencoding
-  (custom-set-variables '(zencoding-indentation 2))
-  (define-key zencoding-mode-keymap (kbd "C-j") nil)
-  (define-key zencoding-mode-keymap (kbd "<C-return>") nil)
-  (define-key zencoding-mode-keymap (kbd "C-c C-j") 'zencoding-expand-line)
+;;; Colorize color names in buffers
+(require 'rainbow-mode)
 
-  ;; CSS
-  (custom-set-variables '(css-indent-offset 2))
-  (add-hook 'css-mode-hook
-            (lambda ()
-              (prog-common-setting)
-              (rainbow-mode 1)
-              (auto-complete-mode 1)))
+;; Zencoding {{{
+(require 'zencoding-mode)
+(custom-set-variables '(zencoding-indentation 2))
+(define-key zencoding-mode-keymap (kbd "C-j") nil)
+(define-key zencoding-mode-keymap (kbd "<C-return>") nil)
+(define-key zencoding-mode-keymap (kbd "C-c C-j") 'zencoding-expand-line)
+;;; }}}
 
-  ;; HTML
-  (add-hook 'sgml-mode-hook
-            (lambda ()
-              (prog-common-setting)
-              (auto-complete-mode 1)
-              (rainbow-mode 1)
-              (zencoding-mode 1)))
-  )
+;;; HTML {{{
+(defun hbin-html-mode-init ()
+  (rainbow-mode 1)
+  (auto-complete-mode 1)
+  (zencoding-mode 1)
+  ;; (define-key 'sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
+  (hbin-prog-mode-init))
+(add-hook 'sgml-mode-hook 'hbin-html-mode-init)
+;;; }}}
+
+;;; CSS {{{
+(defun hbin-css-mode-init ()
+  (rainbow-mode 1)
+  (hbin-prog-mode-init))
+(add-hook 'css-mode-hook 'hbin-css-mode-init)
+;;; }}}
+
+;;; Javascript {{{
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\.erb$" . js-mode))
+
+(require 'js2-mode)
+(defun hbin-js-mode-init ()
+  (hbin-prog-mode-init))
+(add-hook 'js2-mode-hook 'hbin-js-mode-init)
+;;; }}}
+
+;;; Rhtml-mode {{{
+(require 'rhtml-mode)
+(defun hbin-rhtml-mode-init ()
+  (ruby-tools-mode 1))
+
+(eval-after-load "rhtml-mode"
+  '(add-to-list
+    'rhtml-in-erb-keywords
+    '("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" . (1 font-lock-constant-face prepend))))
+(add-hook 'rhtml-mode-hook 'hbin-rhtml-mode-init)
+;;; }}}
+
+;;; Haml-mode {{{
+(require 'haml-mode)
+;;; }}}
+
+;;; Slim-mode {{{
+(require 'slim-mode)
+(defun hbin-slim-mode-init ()
+  (hbin-prog-mode-init))
+(add-hook 'slim-mode-hook 'hbin-slim-mode-init)
+;;; }}}
+
+;;; Scss-mode {{{
+(require 'scss-mode)
+(defun hbin-scss-mode-init ()
+  (rainbow-mode 1)
+  (auto-complete-mode 1)
+  (setq scss-compile-at-save nil)
+  (hbin-prog-mode-init))
+(add-hook 'scss-mode-hook 'hbin-scss-mode-init)
+;;; }}}
+
+;;; Yaml {{{
+(require 'yaml-mode)
+(defun hbin-yaml-mode-init ()
+  (hbin-prog-mode-init))
+(add-hook 'yaml-mode-hook 'hbin-yaml-mode-init)
+;;; }}}
+
+;;; Coffee {{{
+(require 'coffee-mode)
+(defun hbin-coffee-mode-init ()
+  (hbin-prog-mode-init))
+(add-hook 'coffee-mode-hook 'hbin-coffee-mode-init)
+;;; }}}
+
+;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'prog-web)

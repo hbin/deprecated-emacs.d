@@ -32,8 +32,7 @@
   (setq feature-use-rvm t)
 
   (add-hook 'feature-mode-hook
-            (lambda ()
-              (prog-common-setting)))
+            (lambda ()))
   )
 
 (provide 'prog-feature)

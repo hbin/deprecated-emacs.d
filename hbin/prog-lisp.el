@@ -25,7 +25,12 @@
 ;;; Code:
 
 ;;;###autoload
-(progn
-  )
+(defun hbin-lisp-mode-init ()
+  (autopair-mode -1)
+  (paredit-mode 1)
+  (eldoc-mode 1)
+  (local-set-key (kbd "<return>") 'newline-and-indent))
+
+(add-hook 'emacs-lisp-mode-hook 'hbin-lisp-mode-init)
 
 (provide 'prog-lisp)

@@ -24,72 +24,101 @@
 
 ;;; Code:
 
-;;;###autoload
-(progn
-  ;; RVM
-  (require 'rvm)
-  (rvm-use-default)
+;; We never want to edit Rubinius bytecode or MacRuby binaries
+(add-to-list 'completion-ignored-extensions ".rbc")
+(add-to-list 'completion-ignored-extensions ".rbo")
 
-  ;; Ruby tools
-  (require 'yari)
-  (require 'ruby-tools)
+;; Rake files are ruby too, as are gemspecs, rackup files, etc.
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.thor$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rjs$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rxml$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
-  ;; Setting for Ruby block mode
-  (require 'ruby-block)
-  (setq ruby-block-delay 0)
-  (setq ruby-block-highlight-toggle t)
-  (ruby-block-mode t)
+;;; RVM
+(require 'rvm)
+(rvm-use-default)
 
-  ;; Rspec and its workaround for ZSH issues.
-  (require 'rspec-mode)
-  (defadvice rspec-compile (around rspec-compile-around)
-    (let ((shell-file-name "/bin/bash"))
-      ad-do-it))
-  (ad-activate 'rspec-compile)
+;;; Ruby tools
+(require 'yari)
+(require 'ruby-tools)
+(define-key 'help-command "R" 'yari)
 
-  ;; Setting for Rsense
-  (setq rsense-home (substitute-in-file-name "$RSENSE_HOME"))
-  (add-to-list 'load-path (concat rsense-home "/etc"))
-  (require 'rsense nil 'noerror)
-  (if (featurep 'rsense)
-      (progn
-        (add-hook 'ruby-mode-hook
-                  (lambda ()
-                    (add-to-list 'ac-sources 'ac-source-rsense-constant)
-                    (add-to-list 'ac-sources 'ac-source-rsense-method)))
-        (add-hook 'kill-emacs-hook
-                  (lambda ()
-                    (rsense-exit)))))
+;;; Ruby block highlight
+(require 'ruby-block)
+(custom-set-variables
+ '(ruby-block-delay 0)
+ '(ruby-block-highlight-toggle t))
 
-  ;; No lighters
-  (hbin-remove-mm-lighter 'ruby-block-mode)
-  (hbin-remove-mm-lighter 'ruby-tools-mode)
+;;; Rspec {{{
+(require 'rspec-mode)
 
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (modify-syntax-entry ?$ "w")
-              (modify-syntax-entry ?@ "w")
-              (modify-syntax-entry ?: ".")))
+;; workaround for ZSH issues.
+(defadvice rspec-compile (around rspec-compile-around)
+  (let ((shell-file-name "/bin/bash"))
+    ad-do-it))
+(ad-activate 'rspec-compile)
+;;; }}}
 
-  ;; Borrow from [doitian](http://blog.iany.me/2012/01/hilight-ruby-new-hash-in-emacs/)
-  (font-lock-add-keywords
-   'ruby-mode
-   '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face))))
+;;; Rsense {{{
+(setq rsense-home (substitute-in-file-name "$RSENSE_HOME"))
+(add-to-list 'load-path (concat rsense-home "/etc"))
+(require 'rsense nil 'noerror)
+(if (and (not (eq rsense-home "$RSENSE_HOME"))
+         (featurep 'rsense))
+    (progn
+      (add-hook 'ruby-mode-hook
+                (lambda ()
+                  (add-to-list 'ac-sources 'ac-source-rsense-constant)
+                  (add-to-list 'ac-sources 'ac-source-rsense-method)))
+      (add-hook 'kill-emacs-hook 'rsense-exit)))
+;;; }}}
 
-  (define-key 'help-command "R" 'yari)
-  (define-key ruby-mode-map (kbd "C-.") 'insert-arrow))
-
-;;;###autoload
+;;; Insert arrow {{{
 (defun insert-arrow ()
   "Insert arrow and put cursor at the right position."
   (interactive)
   (delete-horizontal-space t)
   (insert " => "))
+(global-set-key (kbd "C-.") 'insert-arrow)
+;;; }}}
 
-;; hs-minor-mode for ruby mode
-(add-to-list 'hs-special-modes-alist
-             '(ruby-mode
-               "\\(def\\|do\\|if\\)" "\\(end\\)" "#"
-               (lambda (arg) (ruby-end-of-block)) nil))
+;;; Ruby mode {{{
+(defun hbin-ruby-mode-setup ()
+  ;; Font lock for new hash style
+  (font-lock-add-keywords
+   'ruby-mode
+   '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face)))))
+
+(defun hbin-ruby-mode-init ()
+  (local-set-key (kbd "C-j") 'newline)
+  (local-set-key (kbd "<return>") 'newline-and-indent)
+
+  ;; Words prefixed with $ are global variables,
+  ;; prefixed with @ are instance variables.
+  (modify-syntax-entry ?$ "w")
+  (modify-syntax-entry ?@ "w")
+
+  (ruby-block-mode 1))
+
+(eval-after-load 'ruby-mode '(hbin-ruby-mode-setup))
+(add-hook 'ruby-mode-hook 'hbin-ruby-mode-init)
+;;; }}}
+
+;;; Rinari {{{
+;; Awesome plugin for programming Rails App.
+(require 'rinari)
+(defun hbin-rinari-minor-mode-init ()
+  (setq yas-extra-modes (cons 'rails-mode yas-extra-modes)))
+(add-hook 'rinari-minor-mode-hook 'hbin-rinari-minor-mode-init)
+;;; }}}
+
+;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'prog-ruby)
