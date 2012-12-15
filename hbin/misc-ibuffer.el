@@ -26,63 +26,71 @@
 
 (require 'ibuffer)
 
-(setq ibuffer-saved-filter-groups
-      (quote (("default"
-               ("Code"
-                (or
-                 (mode . c-mode)
-                 (mode . clojure-mode)
-                 (mode . coffee-mode)
-                 (mode . java-mode)
-                 (mode . javascript-mode)
-                 (mode . js-mode)
-                 (mode . js2-mode)
-                 (mode . python-mode)
-                 (mode . yaml-mode)))
-               ("Lisp"
-                (or
-                 (mode . lisp-mode)
-                 (mode . emacs-lisp-mode)))
-               ("Ruby"
-                (or
-                 (mode . ruby-mode)))
-               ("Web Design"
-                (or
-                 (mode . css-mode)
-                 (mode . haml-mode)
-                 (mode . html-mode)
-                 (mode . rhtml-mode)
-                 (mode . slim-mode)
-                 (mode . scss-mode)
-                 (mode . nxhtml-mode)))
-               ("Documents"
-                (or
-                 (mode . org-mode)
-                 (mode . markdown-mode)))
-               ("Terminals"
-                (or
-                 (mode . shell-mode)
-                 (mode . eshell-mode)))
-               ("Magit"
-                (name . "\*magit"))
-               ("Directories"
-                (mode . dired-mode))
-               ("Help"
-                (or
-                 (mode . help-mode)
-                 (name . "\*Apropos\*")
-                 (name . "\*Help\*")
-                 (name . "\*info\*")
-                 (name . "\*Messages\*")))
-               ))))
+(custom-set-variables
+ '(ibuffer-always-show-last-buffer :nomini)
+ '(ibuffer-default-shrink-to-minimum-size t)
+ '(ibuffer-jump-offer-only-visible-buffers nil)
+ '(ibuffer-show-empty-filter-groups nil))
 
-(add-hook 'ibuffer-mode-hook
-          (lambda ()
-            (ibuffer-auto-mode 1)
-            (ibuffer-switch-to-saved-filter-groups "default")))
+(defun hbin-ibuffer-mode-setup ()
+  (define-key ibuffer-mode-map (kbd "C-x C-f") 'ido-find-file)
+  (define-key ibuffer-mode-map (kbd "M-o") 'other-window)
 
-;; override default find-file in Ibuffer mode
-(define-key ibuffer-mode-map (kbd "C-x C-f") 'ido-find-file)
+  (setq ibuffer-saved-filter-groups
+        (quote (("default"
+                 ("Dired" (mode . dired-mode))
+                 ("Code"
+                  (or
+                   (mode . c-mode)
+                   (mode . clojure-mode)
+                   (mode . java-mode)))
+                 ("Lisp"
+                  (or
+                   (mode . lisp-mode)
+                   (mode . emacs-lisp-mode)))
+                 ("Ruby"
+                  (or
+                   (mode . ruby-mode)))
+                 ("Python"
+                  (or
+                   (mode . python-mode)))
+                 ("Web"
+                  (or
+                   (mode . css-mode)
+                   (mode . js-mode)
+                   (mode . js2-mode)
+                   (mode . javascript-mode)
+                   (mode . coffee-mode)
+                   (mode . haml-mode)
+                   (mode . slim-mode)
+                   (mode . scss-mode)
+                   (mode . yaml-mode)
+                   (mode . html-mode)
+                   (mode . rhtml-mode)
+                   (mode . nxhtml-mode)))
+                 ("Docs"
+                  (or
+                   (mode . org-mode)
+                   (mode . text-mode)
+                   (mode . markdown-mode)))
+                 ("Terminals"
+                  (or
+                   (mode . shell-mode)
+                   (mode . eshell-mode)))
+                 ("System"
+                  (or
+                   (mode . help-mode)
+                   (mode . completion-list-mode)
+                   (mode . apropos-mode)
+                   (name . "^\\*.*\\*$")))
+                 )))))
+
+(defun hbin-ibuffer-mode-init ()
+  (ibuffer-switch-to-saved-filter-groups "default")
+  (hl-line-mode))
+
+(eval-after-load "ibuffer" '(hbin-ibuffer-mode-setup))
+(add-hook 'ibuffer-mode-hook 'hbin-ibuffer-mode-init)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
