@@ -233,29 +233,6 @@ indent yanked text (with prefix arg don't indent)."
       (let ((transient-mark-mode nil))
         (yank-advised-indent-function (region-beginning) (region-end)))))
 
-;;;;;;; Switch functions used for hooks
-
-(defun turn-on-watchwords ()
-  (interactive)
-  (font-lock-add-keywords
-   nil '(("\\<\\(FIX\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
-          1 font-lock-warning-face t))))
-
-(defun turn-on-rainbow-delimiters-mode ()
-  (interactive)
-  (rainbow-delimiters-mode 1))
-
-(defun turn-on-autopair-mode ()
-  (interactive)
-  (autopair-mode 1))
-
-(defun turn-on-textmate-mode ()
-  (interactive)
-  (textmate-mode 1))
-
-(defun turn-on-hs-mode ()
-  (interactive)
-  (hs-minor-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
