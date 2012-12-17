@@ -24,35 +24,13 @@
 
 ;;; Code:
 
-;;;;;;; Here are for trickers
-(require 'misc)
-(require 'misc-ac)                       ; Auto Complete
-(require 'misc-yas)                      ; Yasnippet
-(require 'misc-doc)                      ; Documents
-(require 'misc-tags)                     ; Navigation in project
-(require 'misc-hist)                     ; Save some history
-(require 'misc-mark)                     ; Highlight and mark symbols
-(require 'misc-dired)                    ; Extends build-in dired
-(require 'misc-magit)                    ; Awesome extension!!!!
-(require 'misc-eshell)                   ; Eshell
-(require 'misc-ispell)                   ; Spell check
-(require 'misc-ibuffer)                  ; Nice Ibuffer
-(require 'misc-flymake)                  ; On-the-fly syntax checks
-(require 'misc-diminish)                 ; Clean up the mode line
-(require 'misc-navigation)               ; Fast navigation
-
-;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
-(when (string= system-type "Darwin")
-  (require 'misc-mac))
-
 ;;;;;;; Here are for vendors
-
-;; Pair
 (require 'paredit)
+(define-key paredit-mode-map (kbd "M-s") 'hbin-map)
+
 (require 'autopair)
 (setq autopair-blink nil)
 
-;; WLR
 (require 'whole-line-or-region)
 (whole-line-or-region-mode)
 
@@ -83,6 +61,30 @@
 
 ;; Show FIXME/TODO/BUG(...)
 (require 'fic-mode)
+
+;; On-the-fly syntax checks
+(require 'flycheck)
+(require 'flymake-cursor)
+
+;;;;;;; Here are for trickers
+(require 'misc)
+(require 'misc-ac)                       ; Auto Complete
+(require 'misc-yas)                      ; Yasnippet
+(require 'misc-doc)                      ; Documents
+(require 'misc-tags)                     ; Navigation in project
+(require 'misc-hist)                     ; Save some history
+(require 'misc-mark)                     ; Highlight and mark symbols
+(require 'misc-dired)                    ; Extends build-in dired
+(require 'misc-magit)                    ; Awesome extension!!!!
+(require 'misc-eshell)                   ; Eshell
+(require 'misc-ispell)                   ; Spell check
+(require 'misc-ibuffer)                  ; Nice Ibuffer
+(require 'misc-diminish)                 ; Clean up the mode line
+(require 'misc-navigation)               ; Fast navigation
+
+;;; load Mac OS X config if needed, unfortunately, I don't need it ;-)
+(when (string= system-type "Darwin")
+  (require 'misc-mac))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 

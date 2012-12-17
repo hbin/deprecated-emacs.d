@@ -105,6 +105,7 @@
   (modify-syntax-entry ?$ "w")
   (modify-syntax-entry ?@ "w")
 
+  (flycheck-mode 1)
   (ruby-block-mode 1))
 
 (eval-after-load 'ruby-mode '(hbin-ruby-mode-setup))
