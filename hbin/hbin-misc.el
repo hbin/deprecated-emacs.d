@@ -26,7 +26,7 @@
 
 ;;;;;;; Here are for vendors
 (require 'paredit)
-(define-key paredit-mode-map (kbd "M-s") 'hbin-map)
+(define-key paredit-mode-map (kbd "M-s") hbin-map)
 
 (require 'autopair)
 (setq autopair-blink nil)

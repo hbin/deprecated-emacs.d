@@ -24,6 +24,10 @@
 
 ;;; Code:
 
+;; define my own keymap
+(defvar hbin-map (make-sparse-keymap))
+(global-set-key (kbd "M-s") hbin-map)
+
 ;;; Unbinding keys
 (global-unset-key (kbd "C-SPC"))        ; conflict with IME
 (global-unset-key (kbd "C-x C-p"))      ; used to mark page
@@ -118,8 +122,11 @@
 (global-set-key (kbd "C-x C-m") 'shell)                             ; Start a regular shell if you prefer that.
 
 ;;; Flymake
-(global-set-key (kbd "M-g M-n") 'flymake-goto-next-error)
-(global-set-key (kbd "M-g M-p") 'flymake-goto-prev-error)
+(define-key hbin-map (kbd "f n") 'flymake-goto-next-error)
+(define-key hbin-map (kbd "f p") 'flymake-goto-prev-error)
+
+;;; Ack
+(define-key hbin-map (kbd "a") 'ack)
 
 ;;; Magit
 (eval-after-load "magit" '(progn (global-set-key (kbd "C-c g") 'magit-status)))
