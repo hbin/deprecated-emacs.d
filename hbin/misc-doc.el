@@ -38,6 +38,7 @@
   (auto-complete-mode 1))
 
 ;;; Need flyspell against my poor english
+(add-hook 'org-mode-hook (lambda () (doc-setting)))
 (add-hook 'markdown-mode-hook (lambda () (doc-setting)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
