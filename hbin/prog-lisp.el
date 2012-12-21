@@ -24,12 +24,17 @@
 
 ;;; Code:
 
-;;;###autoload
+(require'eldoc)
+(eldoc-add-command
+ 'paredit-backward-delete
+ 'paredit-close-round)
+
 (defun hbin-lisp-mode-init ()
   (autopair-mode -1)
   (paredit-mode 1)
   (eldoc-mode 1)
   (local-set-key (kbd "M-s") hbin-map)
+  (local-set-key (kbd "M-\\") 'paredit-splice-sexp)
   (local-set-key (kbd "<return>") 'newline-and-indent))
 
 (add-hook 'lisp-mode-hook 'hbin-lisp-mode-init)
