@@ -128,11 +128,22 @@
 ;;; Ack
 (define-key hbin-map (kbd "a") 'ack)
 
+;;; Imenu
+(define-key hbin-map (kbd "i") 'imenu)
+
 ;;; Magit
 (eval-after-load "magit" '(progn (global-set-key (kbd "C-c g") 'magit-status)))
 
 ;;; Smex
 (eval-after-load "smex" '(progn (global-set-key (kbd "M-x") 'smex)))
+
+;;; Org-mode
+;; (define-key hbin-map (kbd "o") 'org-agenda)
+(define-key hbin-map (kbd "o t") 'org-todo-list)
+(define-key hbin-map (kbd "o l") 'org-store-link)
+(define-key hbin-map (kbd "o c") 'org-capture)
+(define-key hbin-map (kbd "o a") 'org-agenda)
+(define-key hbin-map (kbd "o b") 'org-iswitchb)
 
 ;; This is a little hacky since VC doesn't support git add internally
 (eval-after-load 'vc
