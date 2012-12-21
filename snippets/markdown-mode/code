@@ -1,0 +1,6 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: code
+# --
+\`\`\`${1:ruby}
+  $0
+\`\`\`
