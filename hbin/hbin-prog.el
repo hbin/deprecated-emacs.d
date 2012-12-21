@@ -32,6 +32,7 @@
   (rainbow-delimiters-mode 1)
 
   (local-set-key (kbd "C-M-h") 'backward-kill-word)
+  (local-set-key (kbd "C-j") 'reindent-then-newline-and-indent)
   (local-set-key (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2))
 
 (add-hook 'prog-mode-hook 'hbin-prog-mode-init)

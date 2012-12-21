@@ -98,7 +98,6 @@
    '(("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" (1 font-lock-constant-face)))))
 
 (defun hbin-ruby-mode-init ()
-  (local-set-key (kbd "C-j") 'newline)
   (local-set-key (kbd "<return>") 'newline-and-indent)
 
   ;; Words prefixed with $ are global variables,
