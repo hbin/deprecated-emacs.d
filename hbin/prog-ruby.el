@@ -47,6 +47,7 @@
 
 ;;; Ruby tools
 (require 'yari)
+(require 'ruby-end)
 (require 'ruby-tools)
 (define-key 'help-command "R" 'yari)
 

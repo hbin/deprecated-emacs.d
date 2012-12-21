@@ -34,6 +34,7 @@
     (flycheck-mode . "")
     (paredit-mode . "")
     (rainbow-mode . "")
+    (ruby-end-mode . "")
     (ruby-block-mode . "")
     (ruby-tools-mode . "")
     (textmate-mode . "")
