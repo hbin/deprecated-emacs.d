@@ -37,19 +37,20 @@
 (global-set-key (kbd "M-N") 'highlight-symbol-next-in-defun)
 (global-set-key (kbd "M-P") 'highlight-symbol-prev-in-defun)
 
-;; Rectangle operate
-(require 'inline-string-rectangle)
-(global-set-key (kbd "C-x r t") 'inline-string-rectangle)
-
 ;; Mark several regions at once
-(require 'mark-more-like-this)
-(global-set-key (kbd "C-<") 'mark-previous-like-this)
-(global-set-key (kbd "C->") 'mark-next-like-this)
-(global-set-key (kbd "C-M-m") 'mark-more-like-this)
-(global-set-key (kbd "C-*") 'mark-all-like-this)
+(require 'multiple-cursors)
+(setq mc/list-file (concat tmp-dir "mc-lists.cache"))
 
-;; Mark pairs of html tags
-(require 'rename-sgml-tag)
+;; Enables the ability of having a custom keys for working with regions
+(require 'region-bindings-mode)
+(region-bindings-mode-enable)
+
+;; Define key for working with regions
+(define-key region-bindings-mode-map "a" 'mc/mark-all-like-this)
+(define-key region-bindings-mode-map "p" 'mc/mark-previous-like-this)
+(define-key region-bindings-mode-map "n" 'mc/mark-next-like-this)
+(define-key region-bindings-mode-map "m" 'mc/mark-more-like-this-extended)
+(define-key region-bindings-mode-map "t" 'mc/mark-sgml-tag-pair)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 

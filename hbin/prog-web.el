@@ -46,7 +46,6 @@
   (rainbow-mode 1)
   (auto-complete-mode 1)
   (zencoding-mode 1)
-  ;; (define-key 'sgml-mode-map (kbd "C-c C-r") 'rename-sgml-tag)
   (hbin-prog-mode-init))
 (add-hook 'sgml-mode-hook 'hbin-html-mode-init)
 ;;; }}}

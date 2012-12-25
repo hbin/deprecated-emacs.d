@@ -91,9 +91,6 @@
 [submodule "vendor/dirtree"]
 	path = vendor/dirtree
 	url = git://github.com/zkim/emacs-dirtree.git
-[submodule "vendor/mark-multiple"]
-	path = vendor/mark-multiple
-	url = git://github.com/magnars/mark-multiple.el.git
 [submodule "vendor/full-ack"]
 	path = vendor/full-ack
 	url = git://github.com/nschum/full-ack.git
@@ -154,3 +151,9 @@
 [submodule "vendor/ruby-end"]
 	path = vendor/ruby-end
 	url = git://github.com/rejeep/ruby-end.git
+[submodule "vendor/multiple-cursors"]
+	path = vendor/multiple-cursors
+	url = git://github.com/magnars/multiple-cursors.el.git
+[submodule "vendor/region-bindings-mode"]
+	path = vendor/region-bindings-mode
+	url = git://github.com/fgallina/region-bindings-mode.git
