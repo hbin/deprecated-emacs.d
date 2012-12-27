@@ -25,13 +25,16 @@
 
 ;;; Code:
 
+;; explicitly set flycheck lighter
+(defconst flycheck-mode-line-lighter " fly"
+  "The standard lighter for flycheck mode.")
+
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (yas-minor-mode . " υ")
     (autopair-mode . "")
     (abbrev-mode . "")
     (eldoc-mode . "")
-    (flycheck-mode . "")
     (paredit-mode . "")
     (rainbow-mode . "")
     (ruby-end-mode . "")
@@ -39,6 +42,7 @@
     (ruby-tools-mode . "")
     (textmate-mode . "")
     (undo-tree-mode . "")
+    (region-bindings-mode . "")
     (whole-line-or-region-mode . ""))
   "Alist for `clean-mode-line'.
 
