@@ -40,6 +40,10 @@
   (define-key dired-mode-map (kbd ".") 'dired-omit-mode)
   (define-key dired-mode-map (kbd "M-o") 'other-window)
   (define-key dired-mode-map (kbd "/") 'diredp-omit-marked)
+  (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))
+
+  ;; Dired reuse directory buffer
+  (toggle-diredp-find-file-reuse-dir 1)
 
   (setq dired-omit-files
         (rx (or (seq bol "#")
