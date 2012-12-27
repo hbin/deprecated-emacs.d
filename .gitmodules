@@ -157,3 +157,6 @@
 [submodule "vendor/region-bindings-mode"]
 	path = vendor/region-bindings-mode
 	url = git://github.com/fgallina/region-bindings-mode.git
+[submodule "vendor/s.el"]
+	path = vendor/s.el
+	url = git://github.com/magnars/s.el.git
