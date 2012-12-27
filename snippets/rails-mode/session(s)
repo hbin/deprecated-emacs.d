@@ -2,4 +2,4 @@
 # name: session
 # key: s
 # --
-session[:$1]$0
+session[:$0]
