@@ -104,6 +104,7 @@
   ;; prefixed with @ are instance variables.
   (modify-syntax-entry ?$ "w")
   (modify-syntax-entry ?@ "w")
+  (modify-syntax-entry ?: ".")
 
   (flycheck-mode 1)
   (ruby-block-mode 1))
