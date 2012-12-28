@@ -41,9 +41,15 @@
 (defconst tmp-dir (expand-file-name "temp/" user-emacs-directory)
   "The root folder of temps")
 
+(defconst custom-file (expand-file-name "custom.el" user-emacs-directory)
+  "Customizations")
+
 ;; Borrow from bbatsov's prelude to create automatically.
 (unless (file-exists-p tmp-dir)
   (make-directory tmp-dir))
+
+(unless (file-exists-p custom-file)
+  (write-region nil nil custom-file))
 
 (defun add-subfolders-to-load-path (parent-dir)
   "Add subfolders to load path"
@@ -77,7 +83,6 @@
 (require 'hbin-prog)                    ; programming
 
 ;; set an explicit file to customization created via the UI
-(setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
 
 ;;;;;;;;;;;; init.el END
