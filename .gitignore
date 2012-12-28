@@ -1,5 +1,12 @@
-# Ignore temperate.
-temp/
+# Ignore custom.el
+custom.el
 
-# TAGS file
+# Ignore temperate
+temp/
+auto-save-list/
+
+# Ignore Game folder
+games/
+
+# Ignore TAGS file
 TAGS
