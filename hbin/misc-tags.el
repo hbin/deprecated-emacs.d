@@ -32,7 +32,7 @@
   (message "building project tags")
   (let ((root (eproject-root)))
     (shell-command
-     (concat "ctags-exuberant -e -R --extra=+fq --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
+     (concat "ctags -e -R --extra=+fq --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
   (visit-project-tags)
   (message "tags built successfully"))
 
@@ -51,5 +51,7 @@
   (etags-select-find-tag-at-point))
 
 (global-set-key (kbd "M-.") 'hbin-find-tag)
+(define-key hbin-map (kbd "t") 'build-ctags)
+(define-key hbin-map (kbd ".") 'find-tag)
 
 (provide 'misc-tags)
