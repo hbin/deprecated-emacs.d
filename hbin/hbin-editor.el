@@ -42,7 +42,7 @@
 (setq show-paren-delay 0)                ; 匹配无延时
 (setq show-paren-style 'parenthesis)     ; 只高亮显示匹配的括号
 
-(mouse-avoidance-mode 'banish)           ; 鼠标自动移动到右上角，以免挡住视线
+(mouse-avoidance-mode 'exile)            ; 鼠标自动移动到右上角，以免挡住视线
 (fset 'yes-or-no-p 'y-or-n-p)            ; 以 y/n 代表 yes/no
 
 (setq-default tab-width 2)
@@ -61,6 +61,10 @@
 (setq scroll-margin 0
       scroll-conservatively 100000
       scroll-preserve-screen-position 1)
+
+;; 鼠标滚动
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 5) ((control) . nil)))
 
 ;; Interactively Do
 (ido-mode t)
