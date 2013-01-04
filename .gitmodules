@@ -42,7 +42,7 @@
 	url = git://github.com/nex3/haml-mode.git
 [submodule "vendor/slim-mode"]
 	path = vendor/slim-mode
-	url = git://github.com/minad/emacs-slim.git
+	url = git://github.com/slim-template/emacs-slim.git
 [submodule "vendor/rhtml-mode"]
 	path = vendor/rhtml-mode
 	url = git://github.com/eschulte/rhtml.git
@@ -160,3 +160,6 @@
 [submodule "vendor/s.el"]
 	path = vendor/s.el
 	url = git://github.com/magnars/s.el.git
+[submodule "vendor/dash.el"]
+	path = vendor/dash.el
+	url = git://github.com/magnars/dash.el.git
