@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: define-key
+# key: dk
+# --
+(define-key ${1:key-map} (kbd "$2") '${0:FUNCNAME})

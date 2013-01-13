@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: f
-# --
-flash[:$1]$0

@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_equal
-# --
-assert_equal ${1:expected}, ${0:actual}

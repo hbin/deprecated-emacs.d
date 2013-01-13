@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: session
-# key: s
-# --
-session[:$0]

@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: ffl
+# --
+<%= f.label :${1:attribute}${2:, "${3:Attribute}"} %>$0

@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_not_same
-# --
-assert_not_same ${1:unexpected}, ${0:actual}

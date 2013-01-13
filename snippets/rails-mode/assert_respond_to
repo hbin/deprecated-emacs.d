@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_respond_to
-# --
-assert_respond_to ${1:object}, :${0:method}

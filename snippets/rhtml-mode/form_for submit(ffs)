@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: ffs
+# --
+<%= f.submit "${1:Submit}"${2:, :disable_with => 'Submiting...'} %>$0

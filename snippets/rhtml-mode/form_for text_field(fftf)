@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_not_nil
+# key: fftf
 # --
-assert_not_nil ${object}
+<%= f.text_field :${1:attribute} %>$0

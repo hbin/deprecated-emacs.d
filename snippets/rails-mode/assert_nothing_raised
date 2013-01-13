@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_nothing_raised
-# --
-assert_nothing_raised(${1:Exception}) { $0 }

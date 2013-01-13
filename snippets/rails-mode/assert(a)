@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: a
-# --
-assert ${1:true}${2:, "${0:failure message.}"}

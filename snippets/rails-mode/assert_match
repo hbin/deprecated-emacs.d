@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_match
-# --
-assert_match ${1:expected_pattern}, ${0:actual_string}

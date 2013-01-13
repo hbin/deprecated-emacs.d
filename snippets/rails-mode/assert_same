@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_same
-# --
-assert_same ${1:expected}, ${0:actual}

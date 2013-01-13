@@ -1,4 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# key: assert_nothing_thrown
-# --
-assert_nothing_thrown { $0 }

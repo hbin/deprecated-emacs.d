@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
 # key: describe
 # --
-describe '$1' do
+describe "$1" do
   $0
 end

@@ -1,0 +1,5 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: lambda
+# key: lambda
+# --
+(lambda ($1) "${2:DOCSTRING}" (interactive) ${0:BODY})
