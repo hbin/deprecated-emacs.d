@@ -119,6 +119,7 @@
 (defun hbin-rinari-minor-mode-init ()
   (setq yas-extra-modes (cons 'rails-mode yas-extra-modes)))
 (add-hook 'rinari-minor-mode-hook 'hbin-rinari-minor-mode-init)
+(global-rinari-mode)
 ;;; }}}
 
 ;;;;;;;;;;;;;;;;;;;;;;;
