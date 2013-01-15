@@ -36,7 +36,7 @@
 
 (require 'linum)
 (setq linum-format "%4d ")               ; 自定义行号格式
-(global-linum-mode 1)                    ; 显示 Linum 行号
+(global-linum-mode -1)                   ; 不显示 Linum 行号
 
 (show-paren-mode t)                      ; 显示匹配括号
 (setq show-paren-delay 0)                ; 匹配无延时

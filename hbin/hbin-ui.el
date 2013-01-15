@@ -31,14 +31,17 @@
   (menu-bar-mode -1)           ; 不要菜单栏
   (tool-bar-mode -1)           ; 不需要工具栏
   (scroll-bar-mode -1)         ; 不需要滚动条
-  (set-fringe-mode '(0 . 1))   ; 小的 fringe 边距
+  (set-fringe-mode '(1 . 1))   ; 小的 fringe 边距
   (blink-cursor-mode -1)       ; 光标不闪
   (tooltip-mode -1)
   (mouse-wheel-mode t))
 
 ;; Fonts and Themes
-(set-frame-font "Monaco-14")   ; To get Monaco -> http://d.yun.io/qQhWRj
-(set-fontset-font (frame-parameter nil 'font) 'han '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
+;; Monaco: http://s.yunio.com/3FuQfa
+;; Menlo: http://s.yunio.com/8XBaSx
+;; YaHei Consolas Hybrid: http://s.yunio.com/ZFORNb
+(set-frame-font "Menlo-13")
+(set-fontset-font (frame-parameter nil 'font) 'han '("YaHei Consolas Hybrid" . "unicode-bmp"))
 
 ;; Swith the flavour
 (if (< (string-to-number (format-time-string "%w")) 7)
