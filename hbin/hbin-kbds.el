@@ -34,7 +34,7 @@
 (global-unset-key (kbd "C-x C-n"))      ; used to set-goal-column
 
 ;;; Translate C-h with C-? in any mode.
-(global-set-key (kbd "M-?") 'help-command)
+(global-set-key (kbd "<f1>") 'help-command)
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (define-key key-translation-map [?\C-h] [?\C-?])
