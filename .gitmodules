@@ -91,9 +91,6 @@
 [submodule "vendor/dirtree"]
 	path = vendor/dirtree
 	url = git://github.com/zkim/emacs-dirtree.git
-[submodule "vendor/full-ack"]
-	path = vendor/full-ack
-	url = git://github.com/nschum/full-ack.git
 [submodule "vendor/lua-mode"]
 	path = vendor/lua-mode
 	url = git://github.com/immerrr/lua-mode.git
@@ -166,3 +163,6 @@
 [submodule "vendor/mustache-mode"]
 	path = vendor/mustache-mode
 	url = git://github.com/emacsmirror/mustache-mode.git
+[submodule "vendor/ack-and-a-half"]
+	path = vendor/ack-and-a-half
+	url = git://github.com/jhelwig/ack-and-a-half.git

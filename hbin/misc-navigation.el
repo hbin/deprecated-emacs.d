@@ -28,8 +28,12 @@
 (require 'dirtree)
 
 ;; Ack is a tool like grep, optimized for programmers
-(require 'full-ack)
-(setq ack-executable (executable-find "ack-grep"))
+(require 'ack-and-a-half)
+
+(defalias 'ack 'ack-and-a-half)
+(defalias 'ack-same 'ack-and-a-half-same)
+(defalias 'ack-find-file 'ack-and-a-half-find-file)
+(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
 ;; A fancy and quickly cursor location minor mode
 (require 'ace-jump-mode)
