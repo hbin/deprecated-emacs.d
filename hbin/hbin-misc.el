@@ -61,6 +61,8 @@
 
 ;; Show FIXME/TODO/BUG(...)
 (require 'fic-mode)
+(setq fic-highlighted-words
+      '("FIXME" "TODO" "BUG" "OPTIMIZE" "HACK" "REVIEW"))
 
 ;; On-the-fly syntax checks
 (defvar flycheck-mode nil
