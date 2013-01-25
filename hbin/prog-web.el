@@ -91,6 +91,13 @@
 (add-hook 'slim-mode-hook 'hbin-slim-mode-init)
 ;;; }}}
 
+;;; Mustache-mode {{{
+(require 'mustache-mode)
+(defun hbin-mustache-mode-init ()
+  (hbin-prog-mode-init))
+(add-hook 'mustache-mode-hook 'hbin-mustache-mode-init)
+;;; }}}
+
 ;;; Scss-mode {{{
 (require 'scss-mode)
 (defun hbin-scss-mode-init ()

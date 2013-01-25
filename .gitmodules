@@ -163,3 +163,6 @@
 [submodule "vendor/dash.el"]
 	path = vendor/dash.el
 	url = git://github.com/magnars/dash.el.git
+[submodule "vendor/mustache-mode"]
+	path = vendor/mustache-mode
+	url = git://github.com/emacsmirror/mustache-mode.git
