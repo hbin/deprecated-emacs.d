@@ -106,12 +106,12 @@
   (interactive)
   (if (region-active-p)
       (progn
-        (delete-trailing-whitespace)
+        (delete-trailing-whitespace (region-beginning) (region-end))
         (indent-region (region-beginning) (region-end))
         (untabify (region-beginning) (region-end))
         (message "Clean selected region done."))
     (progn
-      (delete-trailing-whitespace)
+      (delete-trailing-whitespace (point-min) (point-max))
       (indent-region (point-min) (point-max))
       (untabify (point-min) (point-max))
       (message "Clean buffer done."))))
