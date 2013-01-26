@@ -42,6 +42,8 @@
 (setq show-paren-delay 0)                ; 匹配无延时
 (setq show-paren-style 'parenthesis)     ; 只高亮显示匹配的括号
 
+(toggle-indicate-empty-lines 1)
+
 (mouse-avoidance-mode 'exile)            ; 鼠标自动移动到右上角，以免挡住视线
 (fset 'yes-or-no-p 'y-or-n-p)            ; 以 y/n 代表 yes/no
 
