@@ -10,3 +10,6 @@ games/
 
 # Ignore TAGS file
 TAGS
+
+# Ignore Tramp
+tramp

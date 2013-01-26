@@ -25,34 +25,38 @@
 ;;; Code:
 (setq inhibit-startup-screen t)
 
-;; turn off mouse interface early in startup to avoid momentary dispaly
-(when window-system
-  (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+;; Set frame title
+(setq frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
+
+(defun hbin-frame-init (frame)
+  "Custom behaviours for new frames."
+  (tooltip-mode -1)            ; 不要 tooltip
   (menu-bar-mode -1)           ; 不要菜单栏
   (tool-bar-mode -1)           ; 不需要工具栏
   (scroll-bar-mode -1)         ; 不需要滚动条
   (set-fringe-mode '(1 . 1))   ; 小的 fringe 边距
   (blink-cursor-mode -1)       ; 光标不闪
-  (tooltip-mode -1)
   (mouse-wheel-mode t))
+
+;; run now
+(hbin-frame-init (selected-frame))
+
+;; and later
+(add-hook 'after-make-frame-functions 'hbin-frame-init)
 
 ;; Fonts and Themes
 ;; Monaco: http://s.yunio.com/3FuQfa
 ;; Menlo: http://s.yunio.com/8XBaSx
 ;; YaHei Consolas Hybrid: http://s.yunio.com/ZFORNb
-(set-frame-font "Menlo-13")
-(set-fontset-font (frame-parameter nil 'font) 'han '("YaHei Consolas Hybrid" . "unicode-bmp"))
+(defcustom hbin-frame-font "Menlo:pixelsize=17" "Default font")
+(defcustom hbin-frame-font-chinese "YaHei Consolas Hybrid:pixelsize=17" "Chinese font")
 
-;; Swith the flavour
-(if (< (string-to-number (format-time-string "%w")) 7)
-    (progn
-      (add-subfolders-to-theme-load-path themes-dir)
-      (load-theme 'solarized-dark t))
-  (progn
-    (require 'color-theme)
-    (require 'color-theme-molokai)
-    (color-theme-initialize)
-    (color-theme-molokai)))
+(set-frame-font hbin-frame-font)
+(set-fontset-font "fontset-default" 'chinese-gbk hbin-frame-font-chinese)
+(add-to-list 'default-frame-alist (cons 'font hbin-frame-font))
+
+(add-subfolders-to-theme-load-path themes-dir)
+(load-theme 'solarized-dark t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
