@@ -70,6 +70,12 @@
 (require 'flycheck)
 (require 'flymake-cursor)
 
+;; Ignore '/'
+(defadvice ffap-file-at-point (after ffap-file-at-point-after-advice ())
+  (if (string= ad-return-value "/")
+      (setq ad-return-value nil)))
+(ad-activate 'ffap-file-at-point)
+
 ;;;;;;; Here are for trickers
 (require 'misc)
 (require 'misc-ac)                       ; Auto Complete
