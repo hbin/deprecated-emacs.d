@@ -79,39 +79,17 @@
   (insert char)
   (forward-char -1))
 
-(defun indent-region-or-buffer ()
-  "Indent a region if selected, otherwise the whole buffer."
-  (interactive)
-  (if (region-active-p)
-      (progn
-        (indent-region (region-beginning) (region-end))
-        (message "Indent selected region done."))
-    (progn
-      (indent-region (point-min) (point-max))
-      (message "Indent buffer done."))))
-
-(defun untabify-region-or-buffer ()
-  "Untabify a region if selected, otherwise the whole buffer."
-  (interactive)
-  (if (region-active-p)
-      (progn
-        (untabify (region-beginning) (region-end))
-        (message "Untabify selected region done."))
-    (progn
-      (untabify (point-min) (point-max))
-      (message "Untabify buffer done."))))
-
 (defun cleanup-region-or-buffer ()
   "Cleanup a region if selected, otherwise the whole buffer."
   (interactive)
   (if (region-active-p)
       (progn
-        (delete-trailing-whitespace (region-beginning) (region-end))
+        (whitespace-cleanup-region (region-beginning) (region-end))
         (indent-region (region-beginning) (region-end))
         (untabify (region-beginning) (region-end))
         (message "Clean selected region done."))
     (progn
-      (delete-trailing-whitespace (point-min) (point-max))
+      (whitespace-cleanup)
       (indent-region (point-min) (point-max))
       (untabify (point-min) (point-max))
       (message "Clean buffer done."))))
