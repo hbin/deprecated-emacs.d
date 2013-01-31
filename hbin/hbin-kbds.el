@@ -32,6 +32,10 @@
 (global-unset-key (kbd "C-SPC"))        ; conflict with IME
 (global-unset-key (kbd "C-x C-p"))      ; used to mark page
 (global-unset-key (kbd "C-x C-n"))      ; used to set-goal-column
+(global-unset-key (kbd "C-x 0"))        ; used to delete-window
+(global-unset-key (kbd "C-x 1"))        ; used to delete-other-windows
+(global-unset-key (kbd "C-x 2"))        ; used to split-window-vertically
+(global-unset-key (kbd "C-x 3"))        ; used to split-window-horizontally
 
 ;;; Translate C-h with C-? in any mode.
 (global-set-key (kbd "<f1>") 'help-command)
@@ -84,6 +88,11 @@
     (global-set-key (kbd "M-]") 'previous-buffer)
     (global-set-key (kbd "M-[") 'next-buffer)))
 
+;;; Winner Mode
+(winner-mode 1)
+(global-set-key (kbd "C-x <left>") 'winner-undo)
+(global-set-key (kbd "C-x <right>") 'winner-redo)
+
 ;;; Use regex searches by default.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
@@ -93,11 +102,21 @@
 (global-set-key (kbd "C-M-%") 'query-replace)
 (global-set-key (kbd "M-r") 'highlight-symbol-query-replace)
 
+;;; Buffer move
+(require 'buffer-move)
+(global-set-key (kbd "<C-S-up>")     'buf-move-up)
+(global-set-key (kbd "<C-S-down>")   'buf-move-down)
+(global-set-key (kbd "<C-S-left>")   'buf-move-left)
+(global-set-key (kbd "<C-S-right>")  'buf-move-right)
+
 ;;; Window switching
 (windmove-default-keybindings) ;; Shift+direction
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
-(global-set-key (kbd "M-o") 'other-window)                               ; next window
+(global-set-key (kbd "M-2") 'split-window-vertically)
+(global-set-key (kbd "M-3") 'split-window-horizontally)
+(global-set-key (kbd "M-4") 'delete-other-windows-vertically)
+(global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-O") (lambda () (interactive) (other-window -1))) ; back one
 
 ;; Window manipulate - use keypad

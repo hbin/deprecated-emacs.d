@@ -163,3 +163,6 @@
 [submodule "vendor/ack-and-a-half"]
 	path = vendor/ack-and-a-half
 	url = git://github.com/jhelwig/ack-and-a-half.git
+[submodule "vendor/buffer-move"]
+	path = vendor/buffer-move
+	url = git://github.com/emacsmirror/buffer-move.git
