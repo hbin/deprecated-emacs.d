@@ -28,8 +28,20 @@
 ;; Set frame title
 (setq frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
 
+;; Monaco: http://s.yunio.com/3FuQfa
+;; Menlo: http://s.yunio.com/8XBaSx
+;; YaHei Consolas Hybrid: http://s.yunio.com/ZFORNb
+(defcustom hbin-frame-font "Menlo:pixelsize=18" "Default font")
+(defcustom hbin-frame-font-chinese "YaHei Consolas Hybrid:pixelsize=16" "Chinese font")
+
 (defun hbin-frame-init (frame)
   "Custom behaviours for new frames."
+  ;; Fonts
+  (set-frame-font hbin-frame-font)
+  (set-fontset-font "fontset-default" 'chinese-gbk hbin-frame-font-chinese)
+  (add-to-list 'default-frame-alist
+               (cons 'font hbin-frame-font))
+  ;; UI
   (tooltip-mode -1)            ; 不要 tooltip
   (menu-bar-mode -1)           ; 不要菜单栏
   (tool-bar-mode -1)           ; 不需要工具栏
@@ -44,19 +56,14 @@
 ;; and later
 (add-hook 'after-make-frame-functions 'hbin-frame-init)
 
-;; Fonts and Themes
-;; Monaco: http://s.yunio.com/3FuQfa
-;; Menlo: http://s.yunio.com/8XBaSx
-;; YaHei Consolas Hybrid: http://s.yunio.com/ZFORNb
-(defcustom hbin-frame-font "Menlo:pixelsize=17" "Default font")
-(defcustom hbin-frame-font-chinese "YaHei Consolas Hybrid:pixelsize=17" "Chinese font")
-
-(set-frame-font hbin-frame-font)
-(set-fontset-font "fontset-default" 'chinese-gbk hbin-frame-font-chinese)
-(add-to-list 'default-frame-alist (cons 'font hbin-frame-font))
-
+;; Add themes to load path
 (add-subfolders-to-theme-load-path themes-dir)
-(load-theme 'solarized-dark t)
+
+;; If Emacs was invoked as daemon mode, use wombat.
+;; Since that the solarized color theme does not work well as daemon mode.
+;; https://github.com/sellout/emacs-color-theme-solarized#important-note-for-terminal-users
+(if (daemonp) (load-theme 'wombat)
+  (load-theme 'solarized-dark t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 

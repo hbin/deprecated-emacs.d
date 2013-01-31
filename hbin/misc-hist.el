@@ -70,16 +70,15 @@
 
 ;; Desktop
 (require 'desktop)
-
-;; save the desktop file automatically if it already exists
 (desktop-save-mode 1)
 
-;; use only one desktop
-(setq desktop-path (list tmp-dir))
-(setq desktop-dirname tmp-dir)
-(setq desktop-base-file-name "desktop.cache")
-
-(setq desktop-restore-eager 15)
+(custom-set-variables
+ '(desktop-save 't)
+ '(desktop-path (list tmp-dir))
+ '(desktop-dirname tmp-dir)
+ '(desktop-base-file-name "desktop.cache")
+ '(desktop-restore-eager t)
+ '(desktop-load-locked-desktop t))
 
 ;; save a bunch of variables to the desktop file
 ;; for lists specify the len of the maximal saved data also
@@ -104,45 +103,11 @@
               "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
               "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
               "\\)$"))
+
 (add-to-list 'desktop-modes-not-to-save 'dired-mode)
 (add-to-list 'desktop-modes-not-to-save 'Info-mode)
 (add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
 (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
-
-;; remove desktop after it's been read
-(add-hook 'desktop-after-read-hook
-          '(lambda ()
-             (setq desktop-dirname-tmp desktop-dirname)
-             (desktop-remove)
-             (setq desktop-dirname desktop-dirname-tmp)))
-
-(defun saved-session ()
-  (file-exists-p (concat desktop-dirname "/" desktop-base-file-name)))
-
-;; use session-restore to restore the desktop manually
-(defun session-restore ()
-  "Restore a saved emacs session."
-  (interactive)
-  (if (saved-session)
-      (desktop-read)
-    (message "No desktop found.")))
-
-;; use session-save to save the desktop manually
-(defun session-save ()
-  "Save an emacs session."
-  (interactive)
-  (if (saved-session)
-      (if (y-or-n-p "Overwrite existing desktop? ")
-          (desktop-save-in-desktop-dir)
-        (message "Session not saved."))
-    (desktop-save-in-desktop-dir)))
-
-;; ask user whether to restore desktop at start-up
-(add-hook 'after-init-hook
-          '(lambda ()
-             (if (saved-session)
-                 (if (not (y-or-n-p "Restore desktop? "))
-                     (session-restore)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
