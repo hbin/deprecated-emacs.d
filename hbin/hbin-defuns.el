@@ -66,18 +66,10 @@
   (transpose-lines 1)
   (forward-line -1))
 
-(defun insert-date ()
+(defun hbin-insert-date ()
   "Insert a time-stamp according to locale's date and time format."
   (interactive)
   (insert (format-time-string "%c" (current-time))))
-
-(defun zap-up-to-char (arg char)
-  "Kill up to the ARG'th occurence of CHAR, and leave CHAR.
-  The CHAR is replaced and the point is put before CHAR."
-  (interactive "p\ncZap up to char: ")
-  (zap-to-char arg char)
-  (insert char)
-  (forward-char -1))
 
 (defun cleanup-region-or-buffer ()
   "Cleanup a region if selected, otherwise the whole buffer."
@@ -94,7 +86,7 @@
       (untabify (point-min) (point-max))
       (message "Clean buffer done."))))
 
-(defun copy-filename ()
+(defun hbin-copy-filename ()
   "Put the current file name on the clipboard"
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
@@ -106,27 +98,7 @@
         (clipboard-kill-region (point-min) (point-max)))
       (message filename))))
 
-(defun duplicate-current-line-or-region (arg)
-  "Duplicates the current line or region ARG times.
-If there's no region, the current line will be duplicated. However, if
-there's a region, all lines that region covers will be duplicated."
-  (interactive "p")
-  (let (beg end (origin (point)))
-    (if (and mark-active (> (point) (mark)))
-        (exchange-point-and-mark))
-    (setq beg (line-beginning-position))
-    (if mark-active
-        (exchange-point-and-mark))
-    (setq end (line-end-position))
-    (let ((region (buffer-substring-no-properties beg end)))
-      (dotimes (i arg)
-        (goto-char end)
-        (newline)
-        (insert region)
-        (setq end (point)))
-      (goto-char (+ origin (* (length region) arg) arg)))))
-
-(defun rename-file-and-buffer ()
+(defun hbin-rename-file-and-buffer ()
   "Renames current buffer and file it is visiting."
   (interactive)
   (let ((name (buffer-name))
@@ -142,7 +114,7 @@ there's a region, all lines that region covers will be duplicated."
                (set-visited-file-name new-name)
                (set-buffer-modified-p nil)))))))
 
-(defun delete-file-and-buffer ()
+(defun hbin-delete-file-and-buffer ()
   "Kills the current buffer and deletes the file it is visiting"
   (interactive)
   (if (y-or-n-p "Delete file and buffer?")
@@ -152,7 +124,7 @@ there's a region, all lines that region covers will be duplicated."
                  (message "Deleted file %s" filename)))
              (kill-buffer))))
 
-(defun swap-windows ()
+(defun hbin-swap-windows ()
   "Borrow from prelude."
   (interactive)
   (if (/= (count-windows) 2)
@@ -169,7 +141,7 @@ there's a region, all lines that region covers will be duplicated."
       (set-window-start w2 s1)))
   (other-window 1))
 
-(defun recompile-init ()
+(defun hbin-recompile-init ()
   "Byte-compile all your dotfiles again."
   (interactive)
   (byte-recompile-directory user-emacs-directory 0))
@@ -181,7 +153,8 @@ there's a region, all lines that region covers will be duplicated."
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 ;;;;;;; Automatically indenting yanked text if in programming-modes
-(defvar yank-indent-modes '(python-mode LaTeX-mode TeX-mode)
+(defvar yank-indent-modes
+  '(clojure-mode scala-mode python-mode LaTeX-mode TeX-mode)
   "Modes in which to indent regions that are yanked (or yank-popped). Only
 modes that don't derive from `prog-mode' should be listed here.")
 

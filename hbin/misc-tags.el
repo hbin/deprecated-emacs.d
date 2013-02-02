@@ -42,7 +42,7 @@
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
 
-(defun hbin-find-tag ()
+(defun find-or-create-tag ()
   "Borrow from http://mattbriggs.net/blog/2012/03/18/awesome-emacs-plugins-ctags/"
   (interactive)
   (if (file-exists-p (concat (eproject-root) "TAGS"))
@@ -50,7 +50,7 @@
     (build-ctags))
   (etags-select-find-tag-at-point))
 
-(global-set-key (kbd "M-.") 'hbin-find-tag)
+(global-set-key (kbd "M-.") 'find-or-create-tag)
 (define-key hbin-map (kbd "t") 'build-ctags)
 (define-key hbin-map (kbd ".") 'find-tag)
 
