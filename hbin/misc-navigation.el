@@ -37,7 +37,8 @@
 
 ;; A fancy and quickly cursor location minor mode
 (require 'ace-jump-mode)
-(global-set-key (kbd "M-i") 'ace-jump-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 

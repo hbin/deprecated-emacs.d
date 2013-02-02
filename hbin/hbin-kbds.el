@@ -29,7 +29,6 @@
 (global-set-key (kbd "M-s") hbin-map)
 
 ;;; Unbinding keys
-(global-unset-key (kbd "C-SPC"))        ; conflict with IME
 (global-unset-key (kbd "C-x C-p"))      ; used to mark page
 (global-unset-key (kbd "C-x C-n"))      ; used to set-goal-column
 (global-unset-key (kbd "C-x 0"))        ; used to delete-window
@@ -37,31 +36,31 @@
 (global-unset-key (kbd "C-x 2"))        ; used to split-window-vertically
 (global-unset-key (kbd "C-x 3"))        ; used to split-window-horizontally
 
-;;; Translate C-h with C-? in any mode.
+;;; Help command
 (global-set-key (kbd "<f1>") 'help-command)
+
+;;; Translate C-h with C-? in any mode.
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (define-key key-translation-map [?\C-h] [?\C-?])
 
-;;; Buffer manipulate
-(global-set-key (kbd "C-c n") 'cleanup-region-or-buffer)
+(global-set-key (kbd "C-\\") 'align-regexp)
+
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "C-c y") 'bury-buffer)
-(global-set-key (kbd "C-c C-c") 'whole-line-or-region-comment-dwim-2)
+(global-set-key (kbd "C-c n") 'cleanup-region-or-buffer)
+(global-set-key (kbd "C-c x") 'execute-extended-command)
+
+;; Start proced in a similar manner to dired
+(global-set-key (kbd "C-x p") 'proced)
+(global-set-key (kbd "C-x d") 'hbin-delete-file-and-buffer)
+
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(global-set-key (kbd "M-k") 'kill-this-buffer)
+(global-set-key (kbd "C-x C-i") 'imenu)
 
-;;; File manipulate
-(global-set-key (kbd "C-c d") 'diff-buffer-with-file)
-(global-set-key (kbd "C-x d") 'delete-file-and-buffer)
-
-;;; Edit
-(global-set-key (kbd "M-'") 'match-paren)
 (global-set-key (kbd "C-a") 'beginning-of-line++)
+(global-set-key (kbd "M-'") 'match-paren)
 (global-set-key (kbd "M-z") 'zap-up-to-char)
-(global-set-key (kbd "M-^") 'join-line)
-(global-set-key (kbd "M-@") 'hs-toggle-hiding)
-(global-set-key (kbd "M-f") (lambda (arg) (interactive "^p") (forward-to-word arg)))
 
 ;; Vim lke scroll up/down line
 (global-set-key (kbd "C-z") (lambda () (interactive) (scroll-up 1)))
@@ -71,13 +70,26 @@
 (global-set-key (kbd "C-o") 'open-next-line)
 (global-set-key (kbd "C-M-o") 'open-previous-line)
 
-;; Move current line one line up/down
 (global-set-key (kbd "<M-up>") 'move-line-up)
 (global-set-key (kbd "<M-down>") 'move-line-down)
 
 ;;; Font size
 (global-set-key (kbd "C-x C-+") 'text-scale-increase)
 (global-set-key (kbd "C-x C--") 'text-scale-decrease)
+
+;;; Use regex searches by default.
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+(global-set-key (kbd "M-%") 'query-replace-regexp)
+(global-set-key (kbd "C-M-%") 'query-replace)
+(global-set-key (kbd "M-r") 'highlight-symbol-query-replace)
+
+;;; Eshell and shell
+(global-set-key (kbd "C-x m") 'eshell)                              ; Start eshell or switch to it if it's active.
+(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t))) ; Start a new eshell even if one is active.
+(global-set-key (kbd "C-x C-m") 'shell)                             ; Start a regular shell if you prefer that.
 
 ;;; Easily navigate between recent buffers
 (if (>= emacs-major-version 24)
@@ -92,15 +104,6 @@
 (winner-mode 1)
 (global-set-key (kbd "C-x <left>") 'winner-undo)
 (global-set-key (kbd "C-x <right>") 'winner-redo)
-
-;;; Use regex searches by default.
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
-(global-set-key (kbd "M-%") 'query-replace-regexp)
-(global-set-key (kbd "C-M-%") 'query-replace)
-(global-set-key (kbd "M-r") 'highlight-symbol-query-replace)
 
 ;;; Buffer move
 (require 'buffer-move)
@@ -118,6 +121,7 @@
 (global-set-key (kbd "M-4") 'delete-other-windows-vertically)
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-O") (lambda () (interactive) (other-window -1))) ; back one
+(global-set-key (kbd "M-k") 'kill-this-buffer)
 
 ;; Window manipulate - use keypad
 (global-set-key (kbd "<C-kp-6>") 'enlarge-window-horizontally)
@@ -135,20 +139,12 @@
 (global-set-key (kbd "<C-kp-add>") 'next-buffer)
 (global-set-key (kbd "<C-S-kp-begin>") (lambda () (interactive) (other-window -1)))
 
-;;; Eshell and shell
-(global-set-key (kbd "C-x m") 'eshell)                              ; Start eshell or switch to it if it's active.
-(global-set-key (kbd "C-x M") (lambda () (interactive) (eshell t))) ; Start a new eshell even if one is active.
-(global-set-key (kbd "C-x C-m") 'shell)                             ; Start a regular shell if you prefer that.
-
 ;;; Flymake
 (define-key hbin-map (kbd "f n") 'flymake-goto-next-error)
 (define-key hbin-map (kbd "f p") 'flymake-goto-prev-error)
 
 ;;; Ack
 (define-key hbin-map (kbd "a") 'ack)
-
-;;; Imenu
-(define-key hbin-map (kbd "i") 'imenu)
 
 ;;; Magit
 (eval-after-load "magit" '(progn (global-set-key (kbd "C-c g") 'magit-status)))
