@@ -32,8 +32,8 @@
         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))))
 
 ;; Smart beginning of line
-(defun beginning-of-line++ ()
-  (interactive)
+(defun beginning-of-line++ (arg)
+  (interactive "^p")
   (if (bolp)
       (back-to-indentation)
     (beginning-of-line)))
