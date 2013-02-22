@@ -68,6 +68,11 @@
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
 (define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace)
 
+;;; Frontend for git blame
+(autoload 'mo-git-blame-file "mo-git-blame" nil t)
+(autoload 'mo-git-blame-current "mo-git-blame" nil t)
+(defalias 'git-blame 'mo-git-blame-current)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (provide 'misc-magit)

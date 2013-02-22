@@ -163,3 +163,6 @@
 [submodule "vendor/buffer-move"]
 	path = vendor/buffer-move
 	url = git://github.com/emacsmirror/buffer-move.git
+[submodule "vendor/mo-git-blame"]
+	path = vendor/mo-git-blame
+	url = https://github.com/mbunkus/mo-git-blame.git
