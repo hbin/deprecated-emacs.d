@@ -152,6 +152,10 @@
 ;;; Smex
 (eval-after-load "smex" '(progn (global-set-key (kbd "M-x") 'smex)))
 
+;;; Browser kill ring
+(eval-after-load "browse-kill-ring"
+  '(progn (define-key hbin-map (kbd "k") 'browse-kill-ring)))
+
 ;;; Org-mode
 ;; (define-key hbin-map (kbd "o") 'org-agenda)
 (define-key hbin-map (kbd "o t") 'org-todo-list)

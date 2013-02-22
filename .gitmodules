@@ -166,3 +166,6 @@
 [submodule "vendor/mo-git-blame"]
 	path = vendor/mo-git-blame
 	url = https://github.com/mbunkus/mo-git-blame.git
+[submodule "vendor/browse-kill-ring"]
+	path = vendor/browse-kill-ring
+	url = https://github.com/browse-kill-ring/browse-kill-ring.git

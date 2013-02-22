@@ -64,6 +64,9 @@
 (setq fic-highlighted-words
       '("FIXME" "TODO" "BUG" "OPTIMIZE" "HACK" "REVIEW"))
 
+;; Look through everything killed
+(require 'browse-kill-ring)
+
 ;; On-the-fly syntax checks
 (defvar flycheck-mode nil
   "Fix reference to free variable warning")
