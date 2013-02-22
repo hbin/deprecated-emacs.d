@@ -142,9 +142,6 @@
 [submodule "vendor/fic-mode"]
 	path = vendor/fic-mode
 	url = git://github.com/lewang/fic-mode.git
-[submodule "vendor/ruby-end"]
-	path = vendor/ruby-end
-	url = git://github.com/rejeep/ruby-end.git
 [submodule "vendor/multiple-cursors"]
 	path = vendor/multiple-cursors
 	url = git://github.com/magnars/multiple-cursors.el.git
