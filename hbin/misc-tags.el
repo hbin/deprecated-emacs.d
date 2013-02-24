@@ -45,6 +45,8 @@
    3. thing at 'current_user!'  get current_user!;
    4. thing at 'current_user='  get current_user=;
    5. thing at 'current_user =' get current_user=;
+   6. thing at 'current_user ==' get current_user;
+   7. thing at 'current_user ||=' get current_user=;
    Otherwise, get `find-tag-default symbol."
   (if (member (symbol-name major-mode)
               '("ruby-mode" "rhtml-mode" "haml-mode" "slim-mode"))
@@ -53,7 +55,7 @@
         (if (and symbol remain)
             (let ((sym (s-chop-prefixes '("!!" "!") symbol))
                   (rem (s-chop-prefixes '("!!" "!") remain)))
-              (if (s-matches? (concat "^" sym "\\( *\\(||\\)?=[^=]?.*\\)") rem)
+              (if (s-matches? (concat "^" sym "\\( *\\(||\\)?=[^=]\\)") rem)
                   (concat sym "=")
                 sym))
           (find-tag-default)))
