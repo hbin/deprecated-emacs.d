@@ -75,7 +75,7 @@
 	url = git://github.com/emacsmirror/flymake-cursor.git
 [submodule "vendor/etags-select"]
 	path = vendor/etags-select
-	url = git://github.com/emacsmirror/etags-select.git
+	url = git://github.com/hbin/etags-select.git
 [submodule "vendor/eproject"]
 	path = vendor/eproject
 	url = git://github.com/jrockway/eproject.git

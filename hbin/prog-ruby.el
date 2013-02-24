@@ -103,6 +103,8 @@
   ;; prefixed with @ are instance variables.
   (modify-syntax-entry ?$ "w")
   (modify-syntax-entry ?@ "w")
+  (modify-syntax-entry ?? "w")
+  (modify-syntax-entry ?! "w")
   (modify-syntax-entry ?: ".")
 
   (flycheck-mode 1)

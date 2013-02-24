@@ -70,24 +70,45 @@
 
 ;;; Rhtml-mode {{{
 (require 'rhtml-mode)
-(defun hbin-rhtml-mode-init ()
-  (ruby-tools-mode 1))
 
-(eval-after-load "rhtml-mode"
-  '(add-to-list
-    'rhtml-in-erb-keywords
-    '("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" . (1 font-lock-constant-face prepend))))
+(defun hbin-rhtml-mode-setup ()
+  (add-to-list
+   'rhtml-in-erb-keywords
+   '("\\(\\b\\sw[_a-zA-Z0-9]*:\\)\\(?:\\s-\\|$\\)" . (1 font-lock-constant-face prepend)))
+  )
+
+(defun hbin-rhtml-mode-init ()
+  (ruby-tools-mode 1)
+  (modify-syntax-entry ?? "w")
+  (modify-syntax-entry ?! "w")
+  )
+
+(eval-after-load "rhtml-mode" '(hbin-rhtml-mode-setup))
 (add-hook 'rhtml-mode-hook 'hbin-rhtml-mode-init)
 ;;; }}}
 
 ;;; Haml-mode {{{
 (require 'haml-mode)
+
+(defun hbin-haml-mode-init ()
+  (ruby-tools-mode 1)
+  (modify-syntax-entry ?? "w")
+  (modify-syntax-entry ?! "w")
+  )
+
+(add-hook 'haml-mode-hook 'hbin-haml-mode-init)
 ;;; }}}
 
 ;;; Slim-mode {{{
 (require 'slim-mode)
+
 (defun hbin-slim-mode-init ()
-  (hbin-prog-mode-init))
+  (hbin-prog-mode-init)
+  (ruby-tools-mode 1)
+  (modify-syntax-entry ?? "w")
+  (modify-syntax-entry ?! "w")
+  )
+
 (add-hook 'slim-mode-hook 'hbin-slim-mode-init)
 ;;; }}}
 
