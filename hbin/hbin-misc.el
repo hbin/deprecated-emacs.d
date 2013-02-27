@@ -68,10 +68,7 @@
 (require 'browse-kill-ring)
 
 ;; On-the-fly syntax checks
-(defvar flycheck-mode nil
-  "Fix reference to free variable warning")
 (require 'flycheck)
-(require 'flymake-cursor)
 
 ;; Ignore '/'
 (require 'ffap)

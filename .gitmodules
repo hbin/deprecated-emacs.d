@@ -70,9 +70,6 @@
 [submodule "vendor/zencoding"]
 	path = vendor/zencoding
 	url = git://github.com/rooney/zencoding.git
-[submodule "vendor/flymake-cursor"]
-	path = vendor/flymake-cursor
-	url = git://github.com/emacsmirror/flymake-cursor.git
 [submodule "vendor/etags-select"]
 	path = vendor/etags-select
 	url = git://github.com/hbin/etags-select.git
