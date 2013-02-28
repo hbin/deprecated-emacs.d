@@ -32,6 +32,7 @@
 (defvar mode-line-cleaner-alist
   `((auto-complete-mode . " α")
     (yas-minor-mode . " υ")
+    (auto-fill-mode . "")
     (autopair-mode . "")
     (abbrev-mode . "")
     (eldoc-mode . "")
@@ -40,6 +41,7 @@
     (ruby-end-mode . "")
     (ruby-block-mode . "")
     (ruby-tools-mode . "")
+    (isearch-mode . "")
     (textmate-mode . "")
     (undo-tree-mode . "")
     (region-bindings-mode . "")
