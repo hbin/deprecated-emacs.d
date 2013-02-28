@@ -28,6 +28,10 @@
 ;; Set frame title
 (setq frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
 
+;; Set frame size
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . fullboth))
+
 ;; Monaco: http://s.yunio.com/3FuQfa
 ;; Menlo: http://s.yunio.com/8XBaSx
 ;; YaHei Consolas Hybrid: http://s.yunio.com/ZFORNb
