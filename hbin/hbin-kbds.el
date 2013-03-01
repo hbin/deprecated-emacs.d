@@ -105,15 +105,8 @@
 (global-set-key (kbd "C-x <left>") 'winner-undo)
 (global-set-key (kbd "C-x <right>") 'winner-redo)
 
-;;; Buffer move
-(require 'buffer-move)
-(global-set-key (kbd "<C-S-up>")     'buf-move-up)
-(global-set-key (kbd "<C-S-down>")   'buf-move-down)
-(global-set-key (kbd "<C-S-left>")   'buf-move-left)
-(global-set-key (kbd "<C-S-right>")  'buf-move-right)
-
 ;;; Window switching
-(windmove-default-keybindings) ;; Shift+direction
+(windmove-default-keybindings 'super) ;; super+direction
 (global-set-key (kbd "M-0") 'delete-window)
 (global-set-key (kbd "M-1") 'delete-other-windows)
 (global-set-key (kbd "M-2") 'split-window-vertically)
@@ -139,10 +132,6 @@
 (global-set-key (kbd "<C-kp-add>") 'next-buffer)
 (global-set-key (kbd "<C-S-kp-begin>") (lambda () (interactive) (other-window -1)))
 
-;;; Flymake
-(define-key hbin-map (kbd "f n") 'flymake-goto-next-error)
-(define-key hbin-map (kbd "f p") 'flymake-goto-prev-error)
-
 ;;; Ack
 (define-key hbin-map (kbd "a") 'ack)
 
@@ -151,6 +140,20 @@
 
 ;;; Smex
 (eval-after-load "smex" '(progn (global-set-key (kbd "M-x") 'smex)))
+
+;;; Textmate
+(eval-after-load "textmate"
+  '(progn (define-key *textmate-mode-map* (kbd "<C-tab>") nil)
+          (global-set-key (kbd "M-[") 'textmate-shift-left)
+          (global-set-key (kbd "M-]") 'textmate-shift-right)))
+
+;;; Buffer move
+(eval-after-load "buffer-move"
+  '(progn
+     (global-set-key (kbd "<S-s-up>")     'buf-move-up)
+     (global-set-key (kbd "<S-s-down>")   'buf-move-down)
+     (global-set-key (kbd "<S-s-left>")   'buf-move-left)
+     (global-set-key (kbd "<S-s-right>")  'buf-move-right)))
 
 ;;; Browser kill ring
 (eval-after-load "browse-kill-ring"

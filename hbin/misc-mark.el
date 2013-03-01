@@ -46,10 +46,12 @@
 (region-bindings-mode-enable)
 
 ;; Define key for working with regions
-(define-key region-bindings-mode-map "a" 'mc/mark-all-like-this)
-(define-key region-bindings-mode-map "p" 'mc/mark-previous-like-this)
-(define-key region-bindings-mode-map "n" 'mc/mark-next-like-this)
-(define-key region-bindings-mode-map "t" 'mc/mark-sgml-tag-pair)
+(global-set-key (kbd "S-<up>") 'mc/mark-previous-lines)
+(global-set-key (kbd "S-<down>") 'mc/mark-next-lines)
+(define-key region-bindings-mode-map "*" 'mc/mark-all-symbols-like-this)
+(define-key region-bindings-mode-map "<" 'mc/mark-previous-symbol-like-this)
+(define-key region-bindings-mode-map ">" 'mc/mark-next-symbol-like-this)
+(define-key region-bindings-mode-map "%" 'mc/mark-sgml-tag-pair)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
