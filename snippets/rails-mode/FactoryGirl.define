@@ -1,8 +1,9 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: fgd
+# name: FactoryGirl.define
+# key: define
 # --
 FactoryGirl.define do
-  factory :$1 do
+  factory :${1:model} do
     $0
   end
 end

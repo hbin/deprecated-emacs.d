@@ -1,4 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: match
+# key: ->
 # --
-match '$1', :to => '$0'
+->($1) { $0 }

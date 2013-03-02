@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: factory
+# key: if
 # --
-factory :$1 do
-  $0
-end
+if (${1:condition}) {
+    $0
+}

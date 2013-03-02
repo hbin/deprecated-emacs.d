@@ -1,0 +1,9 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# name: RSpec::Matchers.define
+# key: define
+# --
+RSpec::Matchers.define :$1 do |message|
+  match do |page|
+    $0
+  end
+end

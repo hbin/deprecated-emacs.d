@@ -1,5 +1,0 @@
-# contributor: hbin <embrace.hbin@gmail.com>
-# name: :key => "value"
-# key: :
-# --
-:${1:key} => ${2:"${3:value}"}$0

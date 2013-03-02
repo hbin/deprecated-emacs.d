@@ -27,7 +27,6 @@
 (require 's)
 (require 'eproject)
 (require 'etags-select)
-(require 'etags-table)
 
 (defun thing-after-point ()
   "Things after point, including current symbol."

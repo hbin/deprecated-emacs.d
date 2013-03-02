@@ -1,6 +1,4 @@
 # contributor: hbin <embrace.hbin@gmail.com>
-# key: ft
+# key: syso
 # --
-<%= form_tag($1) do %>
-  $0
-<% end %>
+System.out.println($0);

@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: map
+# --
+Map<${1:String}, ${2:Object}> ${3:map} = new HashMap<$1, $2>();

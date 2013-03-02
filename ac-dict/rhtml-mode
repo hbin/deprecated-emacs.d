@@ -25,6 +25,7 @@ csrf_meta_tag
 collection_select
 email_field
 form_tag
+flash
 hidden_field
 hidden_field_tag
 image_tag
@@ -35,9 +36,11 @@ options_from_collection_for_select
 params
 password_field_tag
 radio_button_tag
+render
 search_field
 select
 select_tag
+session
 stylesheet_link_tag
 submit_tag
 text_field
@@ -54,6 +57,7 @@ video_tag
 button_to
 cycle
 form_for
+fields_for
 link_to
 number_to_currency
 pluralize

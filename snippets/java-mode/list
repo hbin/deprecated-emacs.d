@@ -1,0 +1,4 @@
+# contributor: hbin <embrace.hbin@gmail.com>
+# key: list
+# --
+List<${1:String}> ${2:list} = new ArrayList<$1>();
