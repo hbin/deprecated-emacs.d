@@ -166,3 +166,9 @@
 [submodule "vendor/browse-kill-ring"]
 	path = vendor/browse-kill-ring
 	url = https://github.com/browse-kill-ring/browse-kill-ring.git
+[submodule "vendor/inf-ruby"]
+	path = vendor/inf-ruby
+	url = https://github.com/nonsequitur/inf-ruby.git
+[submodule "vendor/cl-lib"]
+	path = vendor/cl-lib
+	url = https://github.com/emacsmirror/cl-lib.git
