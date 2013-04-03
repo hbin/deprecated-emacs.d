@@ -13,3 +13,12 @@ TAGS
 
 # Ignore Tramp
 tramp
+
+# Ignore Eshell
+eshell/
+
+# Ignore AC data file
+ac-comphist.dat
+
+# Ignore session
+session*
