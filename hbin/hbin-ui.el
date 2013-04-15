@@ -35,8 +35,8 @@
 ;; Monaco: http://s.yunio.com/3FuQfa
 ;; Menlo: http://s.yunio.com/8XBaSx
 ;; YaHei Consolas Hybrid: http://s.yunio.com/ZFORNb
-(defcustom hbin-frame-font "Menlo:pixelsize=18" "Default font")
-(defcustom hbin-frame-font-chinese "YaHei Consolas Hybrid:pixelsize=16" "Chinese font")
+(defcustom hbin-frame-font "Menlo:pixelsize=20" "Default font")
+(defcustom hbin-frame-font-chinese "YaHei Consolas Hybrid:pixelsize=18" "Chinese font")
 
 (defun hbin-frame-init (frame)
   "Custom behaviours for new frames."
@@ -66,7 +66,7 @@
 ;; If Emacs was invoked as daemon mode, use wombat.
 ;; Since that the solarized color theme does not work well as daemon mode.
 ;; https://github.com/sellout/emacs-color-theme-solarized#important-note-for-terminal-users
-(if (daemonp) (load-theme 'wombat)
+(if (daemonp) (load-theme 'zenburn t)
   (load-theme 'solarized-dark t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
