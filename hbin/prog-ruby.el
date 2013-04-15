@@ -53,8 +53,7 @@
 ;;; Ruby block highlight
 (require 'ruby-block)
 (custom-set-variables
- '(ruby-block-delay 0)
- '(ruby-block-highlight-toggle t))
+ '(ruby-block-delay 0))
 
 ;;; Rspec {{{
 (require 'rspec-mode)
