@@ -7,10 +7,9 @@ This is a personal Emacs configuration repo written/accumulated by [hbin](http:/
 ### 1. Install the dotfile and its submodules
 
 ```bash
-$ git clone git://github.com/hbin/dotfiles-for-emacs.git ~/emacs-hbin
+$ git clone https://github.com/hbin/emacs.d.git ~/.emacs.d
 $ git submodule sync
 $ git submodule update --init --recursive
-$ ln -ns ~/emacs-hbin ~/.emacs.d
 ```
 
 ### 2. Ack!
@@ -29,7 +28,7 @@ sudo aptitude install ctags
 
 This package has been optimized the etags select feature, it's so awesome.
 
-### 4. Markdown(*optional*)
+### 4. Markdown
 
 For preview the markdown doc(markdown-preview), you may need this.
 
@@ -59,7 +58,7 @@ alias ec="emacsclient -e '(kill-emacs)'"
 
 ## Bugs & Improvements
 
-Thank you very much for helping me at the [known issue list](https://github.com/hbin/dotfiles-for-emacs/issues?sort=created&direction=desc&state=open).
+Thank you very much for helping me at the [known issue list](https://github.com/hbin/emacs.d/issues?sort=created&direction=desc&state=open).
 <br>
 If you have any questions, feel free to contact me.
 Bug reports always welcome.<br/>
