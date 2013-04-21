@@ -22,3 +22,6 @@ ac-comphist.dat
 
 # Ignore session
 session*
+
+# Ignore elpa
+elpa/
