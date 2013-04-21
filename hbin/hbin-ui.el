@@ -63,11 +63,8 @@
 ;; Add themes to load path
 (add-subfolders-to-theme-load-path themes-dir)
 
-;; If Emacs was invoked as daemon mode, use wombat.
-;; Since that the solarized color theme does not work well as daemon mode.
-;; https://github.com/sellout/emacs-color-theme-solarized#important-note-for-terminal-users
-(if (daemonp) (load-theme 'zenburn t)
-  (load-theme 'solarized-dark t))
+;; Use molokai as default theme
+(load-theme 'molokai t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 

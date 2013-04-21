@@ -72,7 +72,6 @@
 ;; add the first level subfolders automatically
 (add-subfolders-to-load-path user-emacs-directory)
 (add-subfolders-to-load-path vendor-dir)
-(add-subfolders-to-load-path themes-dir)
 
 ;; load configurations.
 (require 'hbin-ui)                      ; eye candy
