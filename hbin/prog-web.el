@@ -26,6 +26,8 @@
 
 (custom-set-variables
  '(js-indent-level 2)
+ '(js2-basic-offset 2)
+ '(js2-bounce-indent-p t)
  '(css-indent-offset 2)
  '(coffee-tab-width 2)
  '(zencoding-indentation 2))
