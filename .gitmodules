@@ -175,3 +175,6 @@
 [submodule "vendor/dropdown-list"]
 	path = vendor/dropdown-list
 	url = https://github.com/emacsmirror/dropdown-list.git
+[submodule "themes/molokai-theme"]
+	path = themes/molokai-theme
+	url = git://github.com/hbin/molokai-theme.git

@@ -64,6 +64,7 @@
 (add-subfolders-to-theme-load-path themes-dir)
 
 ;; Use molokai as default theme
+(setq molokai-theme-kit t)
 (load-theme 'molokai t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
