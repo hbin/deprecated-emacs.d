@@ -35,7 +35,12 @@
   "Common settings for document."
   (turn-on-flyspell)
   (auto-fill-mode 1)
+  (yas-minor-mode -1)
   (auto-complete-mode 1))
+
+(eval-after-load "org"
+  '(progn (define-key org-mode-map (kbd "C-a") 'beginning-of-line++)
+          (define-key org-mode-map (kbd "C-e") 'end-of-line)))
 
 ;;; Need flyspell against my poor english
 (add-hook 'org-mode-hook (lambda () (doc-setting)))

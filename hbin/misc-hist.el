@@ -70,10 +70,9 @@
 
 ;; Desktop
 (require 'desktop)
-(desktop-save-mode 1)
 
 (custom-set-variables
- '(desktop-save 't)
+ '(desktop-save t)
  '(desktop-path (list tmp-dir))
  '(desktop-dirname tmp-dir)
  '(desktop-base-file-name "desktop.cache")
@@ -108,6 +107,13 @@
 (add-to-list 'desktop-modes-not-to-save 'Info-mode)
 (add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
 (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
+
+;; remove desktop after it's been read
+(add-hook 'desktop-after-read-hook
+          '(lambda ()
+             (setq desktop-dirname-tmp desktop-dirname)
+             (desktop-remove)
+             (setq desktop-dirname desktop-dirname-tmp)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
