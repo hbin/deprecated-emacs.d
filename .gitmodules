@@ -172,6 +172,6 @@
 [submodule "themes/zenburn"]
 	path = themes/zenburn
 	url = https://github.com/bbatsov/zenburn-emacs.git
-[submodule "themes/molokai-theme"]
-	path = themes/molokai-theme
-	url = git@github.com:hbin/molokai-theme.git
+[submodule "vendor/dropdown-list"]
+	path = vendor/dropdown-list
+	url = https://github.com/emacsmirror/dropdown-list.git
