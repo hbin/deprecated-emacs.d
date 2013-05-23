@@ -1,6 +1,6 @@
 # contributor: hbin <embrace.hbin@gmail.com>
 # name : module ModuleName ... end
-# key: module
+# key: mod
 # --
 module ${1:`(let ((fn (capitalize (file-name-nondirectory
                                  (file-name-sans-extension

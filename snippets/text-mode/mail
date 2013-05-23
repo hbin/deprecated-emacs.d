@@ -1,4 +1,4 @@
 # name: (user's email)
 # key: mail
 # --
-`(replace-regexp-in-string "@" "@." user-mail-address)`
+`(message user-mail-address)`
