@@ -178,3 +178,6 @@
 [submodule "themes/molokai-theme"]
 	path = themes/molokai-theme
 	url = git://github.com/hbin/molokai-theme.git
+[submodule "vendor/dired-el"]
+	path = vendor/dired-el
+	url = https://github.com/m2ym/direx-el.git
