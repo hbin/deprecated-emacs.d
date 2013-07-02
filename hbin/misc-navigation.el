@@ -24,9 +24,6 @@
 
 ;;; Code:
 
-;; File tree browser
-(require 'dirtree)
-
 ;; Ack is a tool like grep, optimized for programmers
 (require 'ack-and-a-half)
 
