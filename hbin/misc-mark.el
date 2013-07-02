@@ -46,8 +46,9 @@
 (region-bindings-mode-enable)
 
 ;; Define key for working with regions
-(global-set-key (kbd "S-<up>") 'mc/mark-previous-lines)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "S-<down>") 'mc/mark-next-lines)
+(global-set-key (kbd "S-<up>") 'mc/mark-previous-lines)
 (define-key region-bindings-mode-map "*" 'mc/mark-all-symbols-like-this)
 (define-key region-bindings-mode-map "<" 'mc/mark-previous-symbol-like-this)
 (define-key region-bindings-mode-map ">" 'mc/mark-next-symbol-like-this)
