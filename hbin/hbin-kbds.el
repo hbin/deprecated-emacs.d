@@ -92,13 +92,8 @@
 (global-set-key (kbd "C-x C-m") 'shell)                             ; Start a regular shell if you prefer that.
 
 ;;; Easily navigate between recent buffers
-(if (>= emacs-major-version 24)
-    (progn
-      (global-set-key (kbd "M-]") 'next-buffer)
-      (global-set-key (kbd "M-[") 'previous-buffer))
-  (progn
-    (global-set-key (kbd "M-]") 'previous-buffer)
-    (global-set-key (kbd "M-[") 'next-buffer)))
+(global-set-key (kbd "<C-tab>") 'next-buffer)
+(global-set-key (kbd "<C-S-iso-lefttab>") 'previous-buffer)
 
 ;;; Winner Mode
 (winner-mode 1)
