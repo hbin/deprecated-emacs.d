@@ -1,6 +1,6 @@
 ;; hbin-ui.el --- Eye candy Emacs
 ;;
-;; Copyright (C) 2012 Huang Bin
+;; Copyright (C) 2012-2013 Huang Bin
 ;;
 ;; Author: Huang Bin <embrace.hbin@gmail.com>
 ;; Version: 1.0.0
@@ -35,7 +35,7 @@
 ;; Monaco: http://s.yunio.com/3FuQfa
 ;; Menlo: http://s.yunio.com/8XBaSx
 ;; YaHei Consolas Hybrid: http://s.yunio.com/ZFORNb
-(defcustom hbin-frame-font "Menlo:pixelsize=20" "Default font")
+(defcustom hbin-frame-font "Monaco:pixelsize=20" "Default font")
 (defcustom hbin-frame-font-chinese "YaHei Consolas Hybrid:pixelsize=18" "Chinese font")
 
 (defun hbin-frame-init (frame)

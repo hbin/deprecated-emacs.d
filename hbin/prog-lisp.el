@@ -1,6 +1,6 @@
 ;; prog-lisp.el --- Enhance Lisp programming
 ;;
-;; Copyright (C) 2012 Huang Bin
+;; Copyright (C) 2012-2013 Huang Bin
 ;;
 ;; Author: Huang Bin <embrace.hbin@gmail.com>
 ;; Version: 1.0.0
