@@ -87,6 +87,10 @@
 ;; Minibuffer 补全
 (icomplete-mode +1)
 
+;; Sweet window-splits
+(defadvice split-window-right (after balance activate) (balance-windows))
+(defadvice delete-window (after balance activate) (balance-windows))
+
 ;; 存盘前删除行末多余的空格/空行
 (add-hook 'before-save-hook (lambda () (whitespace-cleanup)))
 
