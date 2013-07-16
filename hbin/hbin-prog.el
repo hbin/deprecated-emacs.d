@@ -27,6 +27,7 @@
 (defun hbin-prog-mode-init ()
   "Common settings for programming."
   (fic-mode 1)
+  (subword-mode 1)
   (autopair-mode 1)
   (textmate-mode 1)
   (rainbow-delimiters-mode 1)
