@@ -172,3 +172,6 @@
 [submodule "vendor/dired-el"]
 	path = vendor/dired-el
 	url = https://github.com/m2ym/direx-el.git
+[submodule "vendor/flx"]
+	path = vendor/flx
+	url = https://github.com/lewang/flx.git

@@ -34,6 +34,10 @@
 (require 'whole-line-or-region)
 (whole-line-or-region-mode)
 
+(require 'flx-ido)
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
+
 ;; Interactively Do hacks
 (require 'ido-hacks)
 (ido-hacks-mode 1)
