@@ -100,6 +100,9 @@
 (defun hbin-ruby-mode-init ()
   (local-set-key (kbd "<return>") 'newline-and-indent)
 
+  ;; Prevent Emacs from adding coding shebang automatically.
+  (setq ruby-insert-encoding-magic-comment nil)
+
   ;; Words prefixed with $ are global variables,
   ;; prefixed with @ are instance variables.
   (modify-syntax-entry ?$ "w")
