@@ -32,11 +32,15 @@
         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))))
 
 ;; Smart beginning of line
-(defun beginning-of-line++ (arg)
+(defun smart-beginning-of-line (arg)
   (interactive "^p")
-  (if (bolp)
-      (back-to-indentation)
-    (beginning-of-line)))
+  (let ((orig-point (point)))
+    (back-to-indentation)
+    (when (= orig-point (point))
+      (beginning-of-line))))
+
+(global-set-key [remap move-beginning-of-line]
+                'smart-beginning-of-line)
 
 (defun open-next-line ()
   "Move to the next line and then opens a line."
@@ -71,7 +75,7 @@
   (interactive)
   (insert (format-time-string "%c" (current-time))))
 
-(defun cleanup-region-or-buffer ()
+(defun hbin-cleanup-region-or-buffer ()
   "Cleanup a region if selected, otherwise the whole buffer."
   (interactive)
   (if (region-active-p)
@@ -86,17 +90,15 @@
       (untabify (point-min) (point-max))
       (message "Clean buffer done."))))
 
-(defun hbin-copy-filename ()
-  "Put the current file name on the clipboard"
+(defun hbin-copy-file-name-to-clipboard ()
+  "Copy the current file name to the clipboard."
   (interactive)
   (let ((filename (if (equal major-mode 'dired-mode)
                       default-directory
                     (buffer-file-name))))
     (when filename
-      (with-temp-buffer
-        (insert filename)
-        (clipboard-kill-region (point-min) (point-max)))
-      (message filename))))
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
 
 (defun hbin-rename-file-and-buffer ()
   "Renames current buffer and file it is visiting."
@@ -117,12 +119,36 @@
 (defun hbin-delete-file-and-buffer ()
   "Kills the current buffer and deletes the file it is visiting"
   (interactive)
-  (if (y-or-n-p "Delete file and buffer?")
-      (progn (let ((filename (buffer-file-name)))
-               (when filename
-                 (delete-file filename)
-                 (message "Deleted file %s" filename)))
-             (kill-buffer))))
+  (let ((filename (buffer-file-name)))
+    (when filename
+      (if (vc-backend filename)
+          (vc-delete-file filename)
+        (progn
+          (delete-file filename)
+          (message "Deleted file %s" filename)
+          (kill-buffer))))))
+
+(defun hbin-recentf-ido-find-file ()
+  "Find a recent file using ido. Borrow from the prelude."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: "
+                                   (-map 'abbreviate-file-name recentf-list)
+                                   nil t)))
+    (when file
+      (find-file file))))
+
+(defun hbin-switch-to-previous-buffer ()
+  "Switch to previously open buffer. Borrow from the prelude."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(defun hbin-create-scratch-buffer ()
+  "Create a new scratch buffer."
+  (interactive)
+  (progn
+    (switch-to-buffer
+     (get-buffer-create (generate-new-buffer-name "*scratch*")))
+    (lisp-interaction-mode)))
 
 (defun hbin-swap-windows ()
   "Borrow from prelude."
@@ -184,6 +210,18 @@ indent yanked text (with prefix arg don't indent)."
       (let ((transient-mark-mode nil))
         (yank-advised-indent-function (region-beginning) (region-end)))))
 
+;;; Emacs in OSX already has fullscreen support
+;;; Emacs has a similar built-in command in 24.4
+;;; Borrow from prelude.
+(defun prelude-fullscreen ()
+  "Make Emacs window fullscreen.
+
+This follows freedesktop standards, should work in X servers."
+  (interactive)
+  (if (eq window-system 'x)
+      (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+                             '(2 "_NET_WM_STATE_FULLSCREEN" 0))
+    (error "Only X server is supported")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

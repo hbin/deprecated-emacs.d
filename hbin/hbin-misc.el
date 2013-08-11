@@ -36,7 +36,6 @@
 
 (require 'flx-ido)
 (flx-ido-mode 1)
-(setq ido-use-faces nil)
 
 ;; Interactively Do hacks
 (require 'ido-hacks)
@@ -55,6 +54,10 @@
 ;; Visible tree-like undo history
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+;; Key chords
+(require 'key-chord)
+(key-chord-mode +1)
 
 ;; Popup window manager
 (require 'popwin)

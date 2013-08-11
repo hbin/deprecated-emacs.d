@@ -450,6 +450,17 @@ value?
 values
 value_at
 
+reverse_merge
+slice
+stringify_keys
+symbolize_keys
+
+reverse_merge!
+slice!
+stringify_keys!
+symbolize_keys!
+extractable_options?
+
 ##########
 # String #
 ##########
@@ -1561,6 +1572,19 @@ member
 post
 resources
 
+##################
+# Active Support #
+##################
+
+alias_method_chain
+
+##############################
+# Rails Active Record Basics #
+##############################
+table_name =
+set_fixture_class
+set_primary_key
+
 ####################################
 # Rails Active Record Associations #
 ####################################
@@ -1658,12 +1682,25 @@ length
 limit
 maximum
 minimum
+too_long
+too_short
+wrong_length
+tokenizer
 message
 numericality
 only_integer
+greater_than
+greater_than_or_equal_to
+equal_to
+less_than
+less_than_or_equal_to
+odd
+even
 presence
 unique
 uniqueness
+scope
+case_sensitive
 
 #################################
 # Rails Active Record Migration #
@@ -1707,6 +1744,42 @@ default
 null
 precision
 scale
+
+#################################
+# Active Record Query Interface #
+#################################
+find_by
+find_each
+find_in_batches
+take
+bind
+create_with
+eager_load
+extending
+from
+group
+having
+includes
+joins
+limit
+lock
+none
+offset
+order
+preload
+readonly
+references
+reorder
+reverse_order
+select
+distinct
+uniq
+where
+
+##### Hash keys #####
+
+start
+batch_size
 
 ###########################
 # Rails Active Controller #
@@ -1786,6 +1859,9 @@ blank?
 time_ago_in_words
 created_at
 updated_at
+establish_connection
+abstract_class
+set_table_name
 
 ###########
 #  Time   #
@@ -2011,7 +2087,6 @@ to_time
 truncate
 underscore
 
-
 ##############
 # Rails test #
 ##############
@@ -2080,6 +2155,11 @@ visit
 failure_message_for_should
 failure_message_for_should_not
 
+Content-Type
+PATH_INFO
+QUERY_STRING
+REQUEST_METHOD
+
 ############
 #   Rake   #
 ############
@@ -2088,81 +2168,23 @@ namespace
 task
 with_defaults
 
-#############
-#   Gems    #
-#############
-
-#
-# {{{ Gravatar START
-#
-
-gravatar_for
-
-#
-# }}}
-#
-
-
-#
-# {{{ FactoryGirl START
-#
-
-factory_girl
-factory_girl_rails
-
-FactoryGirl
-FactoryGirl::Syntax::Methods
-
-attributes_for
-reload
-sequence
-
-#
-# }}}
-#
-
-
-#
-# {{{ will_paginate START
-#
-will_paginate
-
-page
-paginate
-per_page
-
-#
-# }}}
-#
-
-#
-# {{{ Faker
-#
-
-Faker::Name
-Faker::Lorem
-
-sentence
-
-#
-# }}}
-#
-
-# {{{ Capybara
-
-# }}}
-
-#################
-#   Gem names   #
-#################
+###########
+#   Gem   #
+###########
 
 annotate
+
 bcrypt-ruby
-
-bootstrap-sass
-
 better_errors
 binding_of_caller
+bootstrap-sass
+
+capybara
+coffee-rails
+cucumber
+cucumber-rails
+
+database_cleaner
 
 factory_girl
 factory_girl_rails
@@ -2170,11 +2192,35 @@ factory_girl_rails
 guard-rspec
 guard-spork
 
-will_paginate
+jbuilder
+jquery-rails
 
-capybara
-rspec_rails
+kaminari
+total_pages
+num_pages
+current_page
+first_page?
+last_page?
+max_per_page
+
+meta_request
+
 quiet_assets
 
+sass-rails
+selenium-webdriver
+slim-rails
+
+turbolinks
+
+will_paginate
+page
+paginate
+per_page
+total_entries
+
+
+rack-mini-profiler
+rspec-rails
 
 ;;;;; Rails dictionary }}}

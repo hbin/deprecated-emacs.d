@@ -36,19 +36,26 @@
 (global-unset-key (kbd "C-x 2"))        ; used to split-window-vertically
 (global-unset-key (kbd "C-x 3"))        ; used to split-window-horizontally
 
-;;; Help command
+;; Align the code
+(global-set-key (kbd "C-x \\") 'align-regexp)
+
+;; Help command
 (global-set-key (kbd "<f1>") 'help-command)
 
-;;; Translate C-h with C-? in any mode.
+;; Fullscreen
+(unless (fboundp 'toggle-frame-fullscreen)
+  (global-set-key (kbd "<f11>") 'prelude-fullscreen))
+
+;; Toggle menu-bar visibility
+(global-set-key (kbd "<f12>") 'menu-bar-mode)
+
+;; Back killing
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (define-key key-translation-map [?\C-h] [?\C-?])
 
-(global-set-key (kbd "C-\\") 'align-regexp)
-
 (global-set-key (kbd "C-c r") 'revert-buffer)
-(global-set-key (kbd "C-c y") 'bury-buffer)
-(global-set-key (kbd "C-c n") 'cleanup-region-or-buffer)
+(global-set-key (kbd "C-c n") 'hbin-cleanup-region-or-buffer)
 (global-set-key (kbd "C-c x") 'execute-extended-command)
 
 ;; Start proced in a similar manner to dired
@@ -58,9 +65,8 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x C-i") 'imenu)
 
-(global-set-key (kbd "C-a") 'beginning-of-line++)
 (global-set-key (kbd "M-'") 'match-paren)
-(global-set-key (kbd "M-z") 'zap-up-to-char)
+(global-set-key [remap zap-to-char] 'zap-up-to-char)
 
 ;; Vim lke scroll up/down line
 (global-set-key (kbd "C-z") (lambda () (interactive) (scroll-up 1)))
@@ -85,6 +91,12 @@
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 (global-set-key (kbd "C-M-%") 'query-replace)
 (global-set-key (kbd "M-r") 'highlight-symbol-query-replace)
+
+;; Activate occur easily inside isearch
+(define-key isearch-mode-map (kbd "C-o")
+  (lambda () (interactive)
+    (let ((case-fold-search isearch-case-fold-search))
+      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 ;;; Eshell and shell
 (global-set-key (kbd "C-x m") 'eshell)                              ; Start eshell or switch to it if it's active.
@@ -136,6 +148,14 @@
 ;;; Smex
 (eval-after-load "smex" '(progn (global-set-key (kbd "M-x") 'smex)))
 
+;;; Key chord mode
+(eval-after-load "key-chord"
+  '(progn
+     (key-chord-define-global "jj" 'ace-jump-word-mode)
+     (key-chord-define-global "jl" 'ace-jump-line-mode)
+     (key-chord-define-global "jk" 'ace-jump-char-mode)
+     (key-chord-define-global "JJ" 'hbin-switch-to-previous-buffer)))
+
 ;;; Textmate
 (eval-after-load "textmate"
   '(progn (define-key *textmate-mode-map* (kbd "<C-tab>") nil)
@@ -161,21 +181,6 @@
 (define-key hbin-map (kbd "o c") 'org-capture)
 (define-key hbin-map (kbd "o a") 'org-agenda)
 (define-key hbin-map (kbd "o b") 'org-iswitchb)
-
-;; This is a little hacky since VC doesn't support git add internally
-(eval-after-load 'vc
-  (define-key vc-prefix-map "i"
-    '(lambda () (interactive)
-       (if (not (eq 'Git (vc-backend buffer-file-name)))
-           (vc-register)
-         (shell-command (format "git add %s" buffer-file-name))
-         (message "Staged changes.")))))
-
-;; Activate occur easily inside isearch
-(define-key isearch-mode-map (kbd "C-o")
-  (lambda () (interactive)
-    (let ((case-fold-search isearch-case-fold-search))
-      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

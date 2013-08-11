@@ -38,6 +38,10 @@
 (global-set-key (kbd "M-P") 'highlight-symbol-prev-in-defun)
 
 ;; Mark several regions at once
+(defvar mc--read-char nil)
+(defvar multiple-cursors-mode nil)
+(defvar mc--read-quoted-char nil)
+(defvar rectangular-region-mode nil)
 (require 'multiple-cursors)
 (setq mc/list-file (concat tmp-dir "mc-lists.cache"))
 

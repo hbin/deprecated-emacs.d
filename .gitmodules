@@ -175,3 +175,6 @@
 [submodule "vendor/flx"]
 	path = vendor/flx
 	url = https://github.com/lewang/flx.git
+[submodule "vendor/key-chord"]
+	path = vendor/key-chord
+	url = https://github.com/emacsmirror/key-chord.git
